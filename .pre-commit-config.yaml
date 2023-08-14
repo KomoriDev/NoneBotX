@@ -1,0 +1,21 @@
+default_install_hook_types: [pre-commit, prepare-commit-msg]
+ci:
+  autofix_commit_msg: ":rotating_light: auto fix by pre-commit hooks"
+  autofix_prs: true
+  autoupdate_branch: master
+  autoupdate_schedule: monthly
+  autoupdate_commit_msg: ":arrow_up: auto update by pre-commit hooks"
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: 'v3.0.1'
+    hooks:
+      - id: prettier
+        types_or: [scss, css, javascript, jsx, ts, tsx, vue, html, json, yaml, markdown]
+        stages: [commit]

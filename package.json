@@ -1,0 +1,49 @@
+{
+  "name": "vitepress-starter",
+  "version": "1.0.0",
+  "description": "Nonebot 社区文档",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "keywords": [
+    "nonebot"
+  ],
+  "author": "Komorebi <mute231010@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.3.3",
+    "@tsconfig/node18": "^18.2.0",
+    "@types/markdown-it": "^13.0.0",
+    "@types/markdown-it-container": "^2.0.6",
+    "@types/markdown-it-footnote": "^3.0.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^11.0.3",
+    "@vue/tsconfig": "^0.4.0",
+    "eslint": "^8.47.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-footnote": "^3.0.3",
+    "mermaid": "^10.3.1",
+    "prettier": "^3.0.1",
+    "rollup-plugin-external-globals": "^0.8.0",
+    "sass": "^1.65.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9",
+    "vite-plugin-compression": "^0.5.1",
+    "vitepress": "1.0.0-rc.4",
+    "vue": "^3.3.4"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.3.0",
+    "fflate": "^0.8.0"
+  }
+}
