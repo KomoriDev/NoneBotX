@@ -1,0 +1,98 @@
+.custom-block {
+  & .heimu {
+    &:hover a {
+      color: #fff !important;
+    }
+  }
+  html.dark & .heimu {
+    &:hover a {
+      color: currentColor !important;
+    }
+  }
+}
+
+.custom-block.tip .heimu {
+  background-color: var(--vp-c-green-darker);
+  color: var(--vp-c-green-darker);
+
+  a {
+    color: var(--vp-c-green-darker);
+  }
+
+  html.dark & {
+    background-color: var(--vp-c-green);
+    color: var(--vp-c-green);
+
+    a {
+      color: var(--vp-c-green);
+    }
+  }
+}
+
+.custom-block.warning .heimu {
+  background-color: var(--vp-c-yellow-dark);
+  color: var(--vp-c-yellow-dark);
+
+  a {
+    color: var(--vp-c-yellow-dark);
+  }
+
+  html.dark & {
+    background-color: var(--vp-c-yellow-light);
+    color: var(--vp-c-yellow-light);
+
+    a {
+      color: var(--vp-c-yellow-light);
+    }
+  }
+}
+
+.custom-block.danger .heimu {
+  background-color: var(--vp-c-red-dark);
+  color: var(--vp-c-red-dark);
+
+  a {
+    color: var(--vp-c-red-dark);
+  }
+
+  html.dark & {
+    background-color: var(--vp-c-red-light);
+    color: var(--vp-c-red-light);
+
+    a {
+      color: var(--vp-c-red-light);
+    }
+  }
+}
+
+.custom-block.interlink {
+  border-color: #5b6dd37f;
+  color: #5b6dd3;
+  background-color: #5b6dd30a;
+
+  html.dark & .heimu,
+  & .heimu {
+    background-color: #5b6dd3;
+    color: #5b6dd3;
+
+    a {
+      color: #5b6dd3;
+    }
+  }
+}
+
+.custom-block.tsukkomi {
+  border-color: #a959d17f;
+  color: #a959d1;
+  background-color: #a959d10a;
+
+  html.dark & .heimu,
+  & .heimu {
+    background-color: #a959d1;
+    color: #a959d1;
+
+    a {
+      color: #a959d1;
+    }
+  }
+}

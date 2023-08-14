@@ -1,0 +1,110 @@
+@import './custom-container.scss';
+@import './code-group.scss';
+@import './mermaid.scss';
+@import './tasklist.scss';
+
+.vp-doc .custom-block blockquote > p {
+  font-size: inherit;
+}
+
+:root {
+  --vp-c-brand: #ea5252;
+  --vp-c-brand-light: #F76560;
+  --vp-c-brand-lighter: #F98981;
+  --vp-c-brand-dark: #F53F3F;
+  --vp-c-brand-darker: #CB2E34;
+  --vp-custom-block-tip-border: var(--vp-c-green);
+  --vp-custom-block-tip-text: var(--vp-c-green-dark);
+  --vp-font-family-base: 'HarmonyOSHans', 'HarmonyOS Sans SC', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Oxygen, Ubuntu, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Microsoft YaHei,
+    sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// 滑稽表情
+.face {
+  display: inline;
+  height: 20px;
+  vertical-align: text-bottom;
+}
+
+@font-face {
+  font-family: 'HarmonyOSHans';
+  src: url('/fonts/HarmonyOS_Sans_SC.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HarmonyOSHans';
+  src: url('/fonts/HarmonyOS_Sans_SC.woff2') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+  font-variation-settings: 'wght' 100;
+}
+
+@font-face {
+  font-family: 'HarmonyOSHans';
+  src: url('/fonts/HarmonyOS_Sans_SC.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+  font-variation-settings: 'wght' 200;
+}
+
+@font-face {
+  font-family: 'HarmonyOSHans';
+  src: url('/fonts/HarmonyOS_Sans_SC.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+  font-variation-settings: 'wght' 300;
+}
+
+@font-face {
+  font-family: 'HarmonyOSHans';
+  src: url('/fonts/HarmonyOS_Sans_SC.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-variation-settings: 'wght' 400;
+}
+
+@font-face {
+  font-family: 'HarmonyOSHans';
+  src: url('/fonts/HarmonyOS_Sans_SC.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+  font-variation-settings: 'wght' 500;
+}
+
+@font-face {
+  font-family: 'HarmonyOSHans';
+  src: url('/fonts/HarmonyOS_Sans_SC.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+  font-variation-settings: 'wght' 600;
+}
+
+@font-face {
+  font-family: 'HarmonyOSHans';
+  src: url('/fonts/HarmonyOS_Sans_SC.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  font-variation-settings: 'wght' 700;
+}
+
+@font-face {
+  font-family: 'HarmonyOSHans';
+  src: url('/fonts/HarmonyOS_Sans_SC.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+  font-variation-settings: 'wght' 800;
+}
+
+@font-face {
+  font-family: 'HarmonyOSHans';
+  src: url('/fonts/HarmonyOS_Sans_SC.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+  font-variation-settings: 'wght' 900;
+}
