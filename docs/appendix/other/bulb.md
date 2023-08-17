@@ -1,4 +1,4 @@
-# 换一个灯泡需要多少nonebot人？
+# 换一个灯泡需要多少 NoneBot 人？
 
 > 本文~~由主要编者~~复制自 [NoneMeme 仓库同名文章](https://github.com/NoneMeme/NoneMeme/blob/main/art/nonebot-lightbulb.md) 并修正文本格式。
 
