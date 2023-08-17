@@ -4,7 +4,7 @@
 
 以下是 Nonebot 社区目前已正式发布的项目的百分之一：
 
-- [Saa](https://github.com/felinae98/nonebot-plugin-send-anything-anywhere) -
+- [SAA](https://github.com/felinae98/nonebot-plugin-send-anything-anywhere) -
   最新版本: ![PyPI](https://img.shields.io/pypi/v/nonebot-plugin-send-anything-anywhere)
 - [Alconna](https://github.com/nonebot/plugin-alconna) -
   最新版本: ![PyPI](https://img.shields.io/pypi/v/nonebot_plugin_alconna)
