@@ -14,6 +14,6 @@ SAA 是一个帮助多平台/Adapter 消息适配和发送的库插件。~~一�
     name="Saa"
     license="MIT"
     author="felinae98"
-    repoUser="felinae98"
+    repoUser="MountainDash"
     repoName="nonebot-plugin-send-anything-anywhere"
 />
