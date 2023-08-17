@@ -21,12 +21,12 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 
 当然，你也可以直接阅读本文档，遇到不清楚的内容再查阅官方文档，阅读时请善用搜索功能。
 
-## 4. 关于 Go-cqhttp
+## 4. 关于 Go-CQHTTP
 
 请容许我先介绍一下：
 
 - [Mirai](https://github.com/mamoe/mirai)，Mirai，是一个高性能，高可扩展性的 QQ 协议库
-- [Go-cqhhtp](https://github.com/Mrs4s/go-cqhttp)，基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现
+- [Go-CQHTTP](https://github.com/Mrs4s/go-cqhttp)，基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现
 
 简单来说，`NoneBot2` 是通过 `go-cqhttp` 间接连接到 QQ 服务器的。
 
@@ -40,7 +40,7 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 - 在登录的时候， **go-cqhttp** 报错，报错内容涉及“code 45”等
 - ……
 
-以上发生的这类事件，我们一般称之为 `风控`
+以上发生的这类事件，我们一般称之为 `风控` <curtain><rp>(</rp><rt style="font-size:0.75em">喜报</rt><rp>)</rp></curtain>
 
 被风控一般有如下原因：
 
@@ -84,7 +84,7 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 2. 当你在群聊中提出问题的时候，请附上**完整的报错**跟**报错部分的代码**。
    要不然你只会收获我们的问号。<curtain>什么闭眼开车</curtain>
 
-> 请注意, 开发者并没有义务回复您的问题. 您应该具备基本的提问技巧。  
+> 请注意, 开发者并没有义务回复您的问题，您应该具备基本的提问技巧。
 > 有关如何提问，请阅读[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
 :::

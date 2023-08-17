@@ -55,10 +55,10 @@ Windows 为例，在官网下载页面点击 “Windows”，在新弹出的页�
 
 ```bash
 brew install git      // 安装了 Homebrew 的 Linux/macOS
-sudo apt install git  // Debian / Ubuntu
+sudo apt install git  // Debian / Ubuntu / 其它使用 'apt' 进行包管理的环境
 sudo yum install git  // Centos 6/7
-sudo dnf install git  // Centos 8
-sudo pacman -S git    // Arch Linux
+sudo dnf install git  // Centos 8 / 其它使用 'dnf' 进行包管理的环境
+sudo pacman -S git    // Arch Linux / 其它使用 'pacman' 进行包管理的环境
 ```
 
 ::::

@@ -21,7 +21,7 @@
 PDM 相比 Poetry 有以下几个优点：
 
 - PDM 更遵守 PEP 规范。例如在 `pyproject.toml` 中 PDM
-  不会把项目信息放在类似 `[tool.poetry]` 和 `[tool.poetry.dependencies]` 之类的不规范的小节
+  不会把项目信息放在类似 `[tool.poetry]` 和 `[tool.poetry.dependencies]` 之类的私有小节
 - PDM 可以直接使用 `pdm run main.py` 命令直接运行 Python 脚本，而不用像 Poetry
   那样要多加一个 python，即 `poetry run python main.py`
 - PDM 可以像 NodeJs 的 `package.json` 中的 `scripts`

@@ -4,7 +4,7 @@
 
 ### Windows
 
-灰常简单，假如你使用的是 Windows 10 1809 及更新版本的话请打开你的终端，然后使用以下命令安装
+灰常简单，假如你使用的是 Windows 10 1809 及更新版本的话，请打开你的终端，然后使用以下命令安装
 Python 3.10。
 
 ```bash
@@ -19,7 +19,7 @@ Python 3.9 已经不支持 Windows 7 了，更别说 XP 了~
 
 ### Linux
 
-通常来说，Linux 系的系统都自带了 Python，无非版本的新与旧（Arch Linux除外）。
+通常来说，Linux 系的系统都自带了 Python，无非版本的新与旧（Arch Linux 除外）。
 
 以 Ubuntu 为例，各主流 Ubuntu 版本自带的 Python 版本关系如下所示：
 
@@ -66,7 +66,7 @@ brew install python3
 
 前面提到了我们选择使用 PDM 或 Poetry 进行 Python 包管理，所以接下来要安装 PDM 或 Poetry。
 
-为例避免污染系统的 `site-packages`，我们可以先安装 `pipx` 再使用 `pipx` 安装 PDM 或 Poetry。
+为了避免污染系统的 `site-packages`<curtain>（这玩意也需要一篇文章专门描述）</curtain>，我们可以先安装 `pipx` 再使用 `pipx` 安装 PDM 或 Poetry。
 
 :::info
 自 Ubuntu 23.04 起，系统的 Python 禁止使用 pip 安装任何库了，仅支持
