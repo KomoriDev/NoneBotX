@@ -71,7 +71,7 @@ Image(path="./GraiaX/EroEroBot/eropic.jpg")
 - [rsilk](https://github.com/synodriver/rsilk)
 - [pilk](https://github.com/foyoux/pilk)
 
-以下我们将会以 [**GraiaX Silkcoder**](/before/introduction/project/silkcoder)
+以下我们将会以 [**GraiaX Silkcoder**](#)
 举例（因为其是现阶段上述转换器中唯一支持 wav/pcm 以外格式的编解码器<curtain>虽然是借助 ffmpeg
 这种牛刀</curtain><curtain>不过 0.3.x 开始支持 libsndfile 了，占用会超小（不到 1Mb 大概）</curtain>）
 
