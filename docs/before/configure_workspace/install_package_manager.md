@@ -27,7 +27,7 @@ Python 3.9 已经不支持 Windows 7 了，更别说 XP 了~
 - 21.04：Python 3.9
 - 22.04 LTS：Python 3.10
 
-Nonebot 大部分包推荐使用 Python 3.8 及以上版本，因此如果你使用的系统自带的
+NoneBot 大部分包推荐使用 Python 3.8 及以上版本，因此如果你使用的系统自带的
 Python 满足要求，就不用单独安装 Python 了。
 
 而假如系统自带的 Python 版本较低或不自带 Python，那么你可以尝试在系统的软件包管理器中搜索有没有新版

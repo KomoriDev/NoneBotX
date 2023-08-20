@@ -1,6 +1,6 @@
 # Alconna
 
-强大的 Nonebot2 命令匹配拓展。
+强大的 NoneBot2 命令匹配拓展。
 
 <project-info
     name="Alconna"

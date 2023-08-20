@@ -15,7 +15,7 @@ hero:
       text: 🎉 快速开始
       link: /before/
     - theme: alt
-      text: Nonebot 官方文档
+      text: NoneBot 官方文档
       link: https://nonebot.dev/
 
 features:

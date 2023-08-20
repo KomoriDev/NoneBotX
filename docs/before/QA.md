@@ -2,7 +2,7 @@
 
 ## 1. NoneBot1 与 NoneBot2 的区别
 
-NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架，而 NoneBot1 专注于 onebot 协议。NoneBot2 不是 NoneBot1 的替代品。事实上，它们都在被积极的维护着。但是，如果你想尝试一些新功能，或者想要支持更多的平台，可以考虑使用 NoneBot2。为方便赘述，本文所说的 NoneBot 都指 `Nonebot2`
+NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架，而 NoneBot1 专注于 onebot 协议。NoneBot2 不是 NoneBot1 的替代品。事实上，它们都在被积极的维护着。但是，如果你想尝试一些新功能，或者想要支持更多的平台，可以考虑使用 NoneBot2。为方便赘述，本文所说的 NoneBot 都指 `NoneBot2`
 
 > ~~NoneBot2 和 NoneBot1 的区别，就像是 VisualStudio Code 和 VisualStudio 一样~~
 
@@ -15,7 +15,7 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 :::warning
 
 - 当你遇到不懂且文档没有给出解释的技术名词时，请尝试结合例子来自行理解。
-- 本文档也不会介绍 Nonebot 的所有用法
+- 本文档也不会介绍 NoneBot 的所有用法
 
 :::
 

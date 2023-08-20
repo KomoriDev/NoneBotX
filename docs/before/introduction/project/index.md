@@ -1,8 +1,8 @@
 # NoneBot 社区项目
 
-是的，我知道你可能很惊讶，但是 Nonebot 社区并不是只有 Nonebot
+是的，我知道你可能很惊讶，但是 NoneBot 社区并不是只有 NoneBot
 
-以下是 Nonebot 社区目前已正式发布的项目的百分之一：
+以下是 NoneBot 社区目前已正式发布的项目的百分之一：
 
 - [SAA](https://github.com/felinae98/nonebot-plugin-send-anything-anywhere) -
   最新版本: ![PyPI](https://img.shields.io/pypi/v/nonebot-plugin-send-anything-anywhere)
