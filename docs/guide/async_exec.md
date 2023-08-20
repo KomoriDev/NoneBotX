@@ -42,7 +42,7 @@ Playwright 或 Selenium 等使用无头浏览器的库来调用Edge、Chrome、F
 :::tsukkomi
 假设你会一点 HTML 和 CSS，通过 HTML + CSS 进行布局不比硬算坐标方便多了？
 
-感兴趣的话，就来康康 [Graiax Text2img Playwright](/before/introduction/project/t2i/playwright)
+感兴趣的话，就来康康 [Graiax Text2img Playwright](#)
 吧~
 
 Graiax Text2img Playwright 会在后台常驻一个浏览器，以便在需要制图时快速响应，这需要占用一定的内存资源。
