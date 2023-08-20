@@ -23,7 +23,7 @@ winget install Python.Python.3.10
 假如你用的是 LTSC 或很旧很旧的 Windows 10，那你可能只能去
 [Python 官网](https://www.python.org/) 下载安装包了~
 
-假如你用的是 Windows 7 或者 Windows XP，建议你考虑以下更新系统，因为
+假如你用的是 Windows 7 或者 Windows XP，<ruby>强烈<rp>(</rp><rt style="font-size:0.75em"><curtain>墙 裂</curtain></rt><rp>)</rp></ruby>建议更新你的系统，因为
 Python 3.9 已经不支持 Windows 7 了，更别说 XP 了~
 
 ### Linux
