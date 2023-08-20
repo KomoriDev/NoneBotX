@@ -11,6 +11,15 @@ Python 3.10。
 winget install Python.Python.3.10
 ```
 
+:::info 关于微软商店版 Python
+上面这条命令会安装微软商店版的 Python。
+
+微软商店版 Python 的存储目录与官网版本区别**很大**，不过通常情况下几乎没有查看 Python 存储目录的需求。
+如果你有，请左转 [Python 官网](https://www.python.org/)。
+
+不过可能会遇到执行 `python.exe` 时跳转到微软商店的情况<curtain>Fxxk List 喜加一</curtain>。
+:::
+
 假如你用的是 LTSC 或很旧很旧的 Windows 10，那你可能只能去
 [Python 官网](https://www.python.org/) 下载安装包了~
 
@@ -19,7 +28,7 @@ Python 3.9 已经不支持 Windows 7 了，更别说 XP 了~
 
 ### Linux
 
-通常来说，Linux 系的系统都自带了 Python，无非版本的新与旧（Arch Linux 除外）。
+通常来说，Linux 系的系统都自带了 Python（有系统组件依赖 Python），无非版本的新与旧（Arch Linux 除外）。
 
 以 Ubuntu 为例，各主流 Ubuntu 版本自带的 Python 版本关系如下所示：
 
@@ -52,11 +61,17 @@ pacman -S python
 ::::
 
 :::tsukkomi 版本太新的烦恼
-部分 Linux 发行版默认只提供尽可能新的 Python 版本（如 Fedora, Arch<curtain>~~, Termux（这货的兼容性需要一篇文章专门描述）~~</curtain> 等）<curtain>，
+部分 Linux 发行版默认只提供尽可能新的 Python 版本（如 Fedora, Arch<curtain>~~, Termux
+（这货的兼容性需要一篇文章专门描述）~~</curtain> 等）<curtain>，
 这种时候某些兼容不好的传统派 Python 库就有可能会在安装过程中创飞你</curtain>。
 :::
 
-假如系统软件包管理器搜不到你想要的 Python 版本，那么你可以选择从源代码安装。
+假如系统软件包管理器提供了 `pyenv` 的话，我们推荐使用这个管理多版本 Python，用法可以自己搜。
+
+:::warning 从源代码安装只能是最后的退路
+尽管源码包的预设基本能保证安装可用的 Python，但你通常**不应该**用默认编译配置（因为会缺 SSL
+等相关模块导致网络访问寄掉等一系列问题），而且很多发行版都会针对自身特性打一堆补丁。
+:::
 
 ### macOS
 
