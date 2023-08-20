@@ -51,7 +51,7 @@ pacman -S python
 :::
 ::::
 
-:::tsukkomi
+:::tsukkomi 版本太新的烦恼
 部分 Linux 发行版默认只提供尽可能新的 Python 版本（如 Fedora, Arch<curtain>~~, Termux（这货的兼容性需要一篇文章专门描述）~~</curtain> 等）<curtain>，
 这种时候某些兼容不好的传统派 Python 库就有可能会在安装过程中创飞你</curtain>。
 :::
