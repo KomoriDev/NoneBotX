@@ -88,3 +88,12 @@ as-is, commit Unix-style line endings”，即从远端拉取文件时保持文�
 - [菜鸟教程](https://www.runoob.com/git/git-tutorial.html)
 
 :::
+
+## 小提示
+
+- 使用 VSCode 只提交特定的片段
+
+  ![使用 VSCode 只提交特定的片段](/images/before/git/vsc_partial_stage.webp)
+
+  点击编辑界面上行号旁边指示文件更改的颜色条，下面展开的就是当前部分的更改。
+  你可以在此处选择暂存/取消暂存、丢弃或者什么都不管。

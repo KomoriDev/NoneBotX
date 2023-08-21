@@ -40,7 +40,7 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 - 在登录的时候， **go-cqhttp** 报错，报错内容涉及“code 45”等
 - ……
 
-以上发生的这类事件，我们一般称之为<ruby>风控 <rp>(</rp><rt style="font-size:0.75em"><curtain>喜 报</curtain></rt><rp>)</rp></ruby>
+以上发生的这类事件，我们一般称之为<ruby>风控 <rp>(</rp><rt style="font-size:0.75em">~~喜 报~~</rt><rp>)</rp></ruby>
 
 被风控一般有如下原因：
 
