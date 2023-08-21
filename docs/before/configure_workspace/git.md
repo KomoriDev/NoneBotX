@@ -55,10 +55,10 @@ Windows 为例，在官网下载页面点击 “Windows”，在新弹出的页�
 
 ```bash
 brew install git      // 安装了 Homebrew 的 Linux/macOS
-sudo apt install git  // Debian / Ubuntu
+sudo apt install git  // Debian / Ubuntu / 其它使用 'apt' 进行包管理的环境
 sudo yum install git  // Centos 6/7
-sudo dnf install git  // Centos 8
-sudo pacman -S git    // Arch Linux
+sudo dnf install git  // Centos 8 / 其它使用 'dnf' 进行包管理的环境
+sudo pacman -S git    // Arch Linux / 其它使用 'pacman' 进行包管理的环境
 ```
 
 ::::
@@ -88,3 +88,12 @@ as-is, commit Unix-style line endings”，即从远端拉取文件时保持文�
 - [菜鸟教程](https://www.runoob.com/git/git-tutorial.html)
 
 :::
+
+## 小提示
+
+- 使用 VSCode 只提交特定的片段
+
+  ![使用 VSCode 只提交特定的片段](/images/before/git/vsc_partial_stage.webp)
+
+  点击编辑界面上行号旁边指示文件更改的颜色条，下面展开的就是当前部分的更改。
+  你可以在此处选择暂存/取消暂存、丢弃或者什么都不管。

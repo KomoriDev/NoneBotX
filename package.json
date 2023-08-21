@@ -1,7 +1,7 @@
 {
   "name": "vitepress-starter",
   "version": "1.0.0",
-  "description": "Nonebot 社区文档",
+  "description": "NoneBot 社区文档",
   "main": "index.js",
   "scripts": {
     "docs:dev": "vitepress dev docs",

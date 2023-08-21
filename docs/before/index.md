@@ -1,7 +1,7 @@
 # 引言
 
 :::danger
-本文档非 **Nonebot** 官方文档，官方文档指路
+本文档非 **NoneBot** 官方文档，官方文档指路
 :point_right: [点我](https://nonebot.dev)
 
 这个文档只是社区的一小部分，不是社区的所有。

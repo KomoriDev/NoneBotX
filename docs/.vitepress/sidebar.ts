@@ -28,7 +28,7 @@ const before = [
           }
         ]
       },
-      { text: 'Go-cqhttp 的安装与配置', link: '/before/install_go-cqhttp' },
+      { text: 'Go-CQHTTP 的安装与配置', link: '/before/install_go-cqhttp' },
       { text: '名词解释', link: '/before/terms' }
     ]
   },
@@ -40,7 +40,7 @@ const before = [
         text: '社区项目',
         link: '/before/introduction/project/',
         items: [
-          { text: 'Saa', link: '/before/introduction/project/saa' },
+          { text: 'SAA', link: '/before/introduction/project/saa' },
           { text: 'Alconna', link: '/before/introduction/project/alconna' },
           { text: 'KiramiBot', link: '/before/introduction/project/kirami' },
           { text: 'SoraBot', link: '/before/introduction/project/sora' },
@@ -114,7 +114,7 @@ const appendix = [
     text: '奇奇怪怪的东西',
     items: [
       { text: '热点追踪 - 群搜图小助手', link: '/appendix/other/saucenao' },
-      { text: '蜜汁好活 - 论到底需要几个 Graia 人 换灯泡', link: '/appendix/other/bulb' }
+      { text: '蜜汁好活 - 论到底需要几个 NoneBot 人换灯泡', link: '/appendix/other/bulb' }
     ]
   }
 ]

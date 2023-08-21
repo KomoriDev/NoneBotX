@@ -8,7 +8,7 @@ export default defineConfig({
   lang: 'zh-CN',
 
   title: 'NoneBot 文档',
-  description: 'Nonebot2 社区文档',
+  description: 'NoneBot2 社区文档',
 
   lastUpdated: true,
   cleanUrls: true,
@@ -78,6 +78,6 @@ function nav() {
     { text: '开始之前', link: '/before/', activeMatch: '/before/' },
     { text: '实战演练', link: '/guide/', activeMatch: '/guide/' },
     { text: '附录', link: '/appendix/credit', activeMatch: '/appendix/' },
-    { text: 'Nonebot 官方文档', link: 'https://nonebot.dev/' }
+    { text: 'NoneBot 官方文档', link: 'https://nonebot.dev/' }
   ]
 }
