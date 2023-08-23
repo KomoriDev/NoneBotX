@@ -91,7 +91,10 @@ defineProps<{
         </span>
         <span class="key">最新版本:</span>
         <span class="value">
-          <img :src="`https://img.shields.io/github/v/release/${repoUser}/${repoName}`" alt="release" />
+          <img
+            :src="`https://img.shields.io/github/v/release/${repoUser}/${repoName}`"
+            alt="release"
+          />
         </span>
       </div>
       <div class="cell author">

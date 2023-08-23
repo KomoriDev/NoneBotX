@@ -1,12 +1,22 @@
 # 开始之前你需要知道的一些事
 
-## 1. NoneBot1 与 NoneBot2 的区别
+## 1. 什么是 NoneBot2？
+
+NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架，它基于 Python 的类型注解和异步特性，能够为你的需求实现提供便捷灵活的支持。
+
+## 2. NoneBot1 与 NoneBot2 的区别
 
 NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架，而 NoneBot1 专注于 onebot 协议。NoneBot2 不是 NoneBot1 的替代品。事实上，它们都在被积极的维护着。但是，如果你想尝试一些新功能，或者想要支持更多的平台，可以考虑使用 NoneBot2。为方便赘述，本文所说的 NoneBot 都指 `NoneBot2`
 
 > ~~NoneBot2 和 NoneBot1 的区别，就像是 VisualStudio Code 和 VisualStudio 一样~~
 
-## 2. 我应该先看官方文档还是社区文档？
+<div class="tip custom-block" style="padding-top: 8px">
+
+只是想尝试一下吗？跳至 [快速入门].
+
+</div>
+
+## 3. 我应该先看官方文档还是社区文档？
 
 <p align="center" style="font-size: 30px"><strong>前面的区域，以后再来探索吧</strong></p>
 
@@ -25,8 +35,8 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 
 请容许我先介绍一下：
 
-- [Mirai](https://github.com/mamoe/mirai)，Mirai，是一个高性能，高可扩展性的 QQ 协议库
-- [Go-CQHTTP](https://github.com/Mrs4s/go-cqhttp)，基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现
+- [Mirai]，Mirai，是一个高性能，高可扩展性的 QQ 协议库
+- [Go-CQHTTP]，基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现
 
 简单来说，`NoneBot2` 是通过 `go-cqhttp` 间接连接到 QQ 服务器的。
 
@@ -73,9 +83,9 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 
 鉴于 QQBot 社区的特殊性，我们建议你遵循以下步骤：
 
-1. 查看 [官方文档](https://nonebot.dev)
+1. 查看 [官方文档]
 2. 如果你发现官方文档没有提及……
-   1. 如果模块名以 `nonebot` 开头，立刻到 [交流群](https://jq.qq.com/?_wv=1027&k=5OFifDh) 里问
+   1. 如果模块名以 `nonebot` 开头，立刻到 [交流群] 里问
    2. 否则，去翻对应的文档（或者 `Stack Overflow` 之类的地方，同时善用搜索引擎 <curtain>不过请远离 CSDN</curtain>）
 
 :::warning
@@ -85,10 +95,18 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
    要不然你只会收获我们的问号。<curtain>什么闭眼开车</curtain>
 
 > 请注意, 开发者并没有义务回复您的问题，您应该具备基本的提问技巧。
-> 有关如何提问，请阅读[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
+> 有关如何提问，请阅读[《提问的智慧》]
 
 :::
 
 <div id="baidu"></div>
 
-![baidu](/images/before/baidu.webp)
+![baidu]
+
+[快速入门]: ../guide/create_env.md
+[Mirai]: https://github.com/mamoe/mirai
+[Go-CQHTTP]: https://github.com/Mrs4s/go-cqhttp
+[官方文档]: https://nonebot.dev
+[交流群]: https://jq.qq.com/?_wv=1027&k=5OFifDh
+[《提问的智慧》]: https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md
+[baidu]: /images/before/baidu.webp
