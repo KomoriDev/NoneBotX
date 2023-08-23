@@ -12,7 +12,7 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 
 <div class="tip custom-block" style="padding-top: 8px">
 
-只是想尝试一下吗？跳至 [快速入门](../guide/create_env.md).
+只是想尝试一下吗？跳至 [快速入门].
 
 </div>
 
@@ -35,8 +35,8 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 
 请容许我先介绍一下：
 
-- [Mirai](https://github.com/mamoe/mirai)，Mirai，是一个高性能，高可扩展性的 QQ 协议库
-- [Go-CQHTTP](https://github.com/Mrs4s/go-cqhttp)，基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现
+- [Mirai]，Mirai，是一个高性能，高可扩展性的 QQ 协议库
+- [Go-CQHTTP]，基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现
 
 简单来说，`NoneBot2` 是通过 `go-cqhttp` 间接连接到 QQ 服务器的。
 
@@ -83,9 +83,9 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 
 鉴于 QQBot 社区的特殊性，我们建议你遵循以下步骤：
 
-1. 查看 [官方文档](https://nonebot.dev)
+1. 查看 [官方文档]
 2. 如果你发现官方文档没有提及……
-   1. 如果模块名以 `nonebot` 开头，立刻到 [交流群](https://jq.qq.com/?_wv=1027&k=5OFifDh) 里问
+   1. 如果模块名以 `nonebot` 开头，立刻到 [交流群] 里问
    2. 否则，去翻对应的文档（或者 `Stack Overflow` 之类的地方，同时善用搜索引擎 <curtain>不过请远离 CSDN</curtain>）
 
 :::warning
@@ -95,10 +95,18 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
    要不然你只会收获我们的问号。<curtain>什么闭眼开车</curtain>
 
 > 请注意, 开发者并没有义务回复您的问题，您应该具备基本的提问技巧。
-> 有关如何提问，请阅读[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
+> 有关如何提问，请阅读[《提问的智慧》]
 
 :::
 
 <div id="baidu"></div>
 
-![baidu](/images/before/baidu.webp)
+![baidu]
+
+[快速入门]: ../guide/create_env.md
+[Mirai]: https://github.com/mamoe/mirai
+[Go-CQHTTP]: https://github.com/Mrs4s/go-cqhttp
+[官方文档]: https://nonebot.dev
+[交流群]: https://jq.qq.com/?_wv=1027&k=5OFifDh
+[《提问的智慧》]: https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md
+[baidu]: /images/before/baidu.webp
