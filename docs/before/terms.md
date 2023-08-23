@@ -17,7 +17,7 @@
 ### NoneBot 本体
 
 - **NoneBot** 用于指代[这一聊天机器人框架](https://nonebot.dev)，默认指
-  **NoneBot2**，<curtain>社区内有简称 “nb”，</curtain>NoneBot2 之前还有 **NoneBot1**（区别见[Q&A](QA.md#_1-nonebot1-与-nonebot2-的区别)）；
+  **NoneBot2**，<curtain>社区内有简称 “nb”，</curtain>NoneBot2 之前还有 **NoneBot1**（区别见[Q&A](QA.md#_2-nonebot1-与-nonebot2-的区别)）；
 - `nonebot2` 用于包管理器安装 NoneBot2 使用的包名；
 - `nonebot` 用于编写插件代码等内容时使用的导入名<curtain>~~，也是 NoneBot1 的安装名~~</curtain>。
 
