@@ -4,6 +4,7 @@
 本张旨在引导你更规范地向 NoneBotX 提交贡献，请务必认真阅读。
 
 **我们欢迎一切贡献！并对每个愿意贡献的人表示衷心的感谢！💖**
+
 > 如果你喜欢这个项目，可以为本项目点亮⭐️，这是对我们最大的鼓励。
 
 ## 新贡献者指南
@@ -17,6 +18,7 @@
 - [协作处理拉取请求](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests)
 
 ## 撰写/修正文档
+
 如果你在文档中发现了错误，欢迎随时提出问题或发起 Pull Request（PR）。
 
 一旦你提交了 PR，GitHub 会自动构建网站并将临时预览部署到 Netlify 上。
@@ -78,4 +80,3 @@ pnpm build
 在提交 PR 后，GitHub 将构建网站，然后将结果发送到 Netlify 进行预览。成功构建后，URL 将添加到 PR 的评论中。
 
 在将代码推送到主分支时，将触发构建，然后将生成的文件发送到 Netlify 以发布到生产环境。
-

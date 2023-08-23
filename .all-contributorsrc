@@ -33,6 +33,15 @@
         "doc",
         "content"
       ]
+    },
+    {
+      "login": "eya46",
+      "name": "eya46",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61458340?v=4",
+      "profile": "https://eya46.com",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "commitType": "docs"
