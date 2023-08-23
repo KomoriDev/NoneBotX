@@ -59,7 +59,7 @@ Would you like to create a virtualenv with ······ [y/n]
 (y): y # 输入 y 并按下回车以使用系统环境中的 Python 创建虚拟环境
 Virtualenv is created successfully at ······
 Is the project a library that is installable?
-If yes, we will need to ask a few more questions to include the project name and build backend [y/n] (n): y # 输入 y 并按下回车
+If yes, we will need to ask a few more questions to include the project name and build backend [y/n] (n): n # 输入 n 并按下回车
 Project name (EroEroBot): # 项目名称。默认使用给当前文件夹的名字，所以直接按下回车即可
 Project version (0.1.0): # 项目版本。如无特殊需要保持默认直接按下回车即可
 Project description ( ): # 项目描述。如无特殊需要保持默认直接按下回车即可
@@ -93,11 +93,11 @@ pdm run nb create
 
    ```shell :no-line-numbers
 
-   [?] 选择一个要使用的模板: bootstrap (初学者或用户)
+   [?] 选择一个要使用的模板: simple (初学者或用户)
 
    ```
 
-   这里我们选择 `bootstrap` 模板，它是一个简单的项目模板，能够安装商店插件。如果你需要**自行编写插件**，这里请选择 `simple` 模板。
+   这里我们选择 `simple` 模板，它是一个适用于**插件开发**的模板，为我们的<curtain>涩图</curtain>机器人提供了最基础的配置。
 
 2. 项目名称
 
