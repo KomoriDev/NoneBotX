@@ -11,7 +11,7 @@
   "commitConvention": "angular",
   "contributorsPerLine": 7,
   "contributorsSortAlphabetically": false,
-  "linkToUsage": true,
+  "linkToUsage": false,
   "skipCi": true,
   "contributors": [
     {
