@@ -52,7 +52,7 @@
 
 <!-- prettier-ignore-start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- prettier-ignore-end -->
 
@@ -66,6 +66,7 @@
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/KomoriDev"><img src="https://avatars.githubusercontent.com/u/110453675?v=4?s=80" width="80px;" alt="Komorebi"/><br /><sub><b>Komorebi</b></sub></a><br /><a href="https://github.com/KomoriDev/NoneBotX/commits?author=KomoriDev" title="Documentation">📖</a> <a href="#content-KomoriDev" title="Content">🖋</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/NCBM"><img src="https://avatars.githubusercontent.com/u/37037264?v=4?s=80" width="80px;" alt="worldmozara"/><br /><sub><b>worldmozara</b></sub></a><br /><a href="https://github.com/KomoriDev/NoneBotX/commits?author=NCBM" title="Documentation">📖</a> <a href="#content-NCBM" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://eya46.com"><img src="https://avatars.githubusercontent.com/u/61458340?v=4?s=80" width="80px;" alt="eya46"/><br /><sub><b>eya46</b></sub></a><br /><a href="https://github.com/KomoriDev/NoneBotX/issues?q=author%3Aeya46" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
