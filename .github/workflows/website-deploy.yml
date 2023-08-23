@@ -37,3 +37,14 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.SITE_ID }}
+
+      - name: Algolia Crawl
+        uses: algolia/algoliasearch-crawler-github-actions@v1.0.10
+        with:
+          crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
+          crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
+          algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
+          algolia-api-key: ${{ secrets.ALGOLIA_API_KEY }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          site-url: 'https://nonebotx.netlify.app/'
+          crawler-name: 'nonebotx-reading'

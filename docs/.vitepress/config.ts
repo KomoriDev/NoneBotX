@@ -42,6 +42,16 @@ export default defineConfig({
       prev: '上一页',
       next: '下一页'
     },
+
+    search: {
+      provider: 'algolia',
+      options: {
+        appId: 'F560IEWDN2',
+        apiKey: '2c22b92fe94a21a7f0a1af429823b4d3',
+        indexName: 'NoneBotX'
+      }
+    },
+
     darkModeSwitchLabel: '黑暗模式',
     sidebarMenuLabel: '目录',
     returnToTopLabel: '回到顶部 ▲'
