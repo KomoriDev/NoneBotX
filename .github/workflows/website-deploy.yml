@@ -30,10 +30,10 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         with:
-          publish-dir: "./docs/.vitepress/dist"
+          publish-dir: './docs/.vitepress/dist'
           production-deploy: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy ${{ env.BRANCH_NAME }}@${{ github.sha }}"
+          deploy-message: 'Deploy ${{ env.BRANCH_NAME }}@${{ github.sha }}'
           enable-commit-comment: false
           alias: ${{ env.BRANCH_NAME }}
         env:

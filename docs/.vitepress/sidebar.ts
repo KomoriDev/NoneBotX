@@ -43,7 +43,7 @@ const before = [
           { text: 'SAA', link: '/before/introduction/project/saa' },
           { text: 'Alconna', link: '/before/introduction/project/alconna' },
           { text: 'KiramiBot', link: '/before/introduction/project/kirami' },
-          { text: 'SoraBot', link: '/before/introduction/project/sora' },
+          { text: 'SoraBot', link: '/before/introduction/project/sora' }
         ]
       }
     ]

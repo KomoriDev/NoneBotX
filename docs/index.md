@@ -7,7 +7,7 @@ hero:
   name: NoneBot 社区文档
   text: NoneBotX Docs
   tagline: Documentation by Komorebi
-  image: 
+  image:
     src: ./favicon.png
     tagline: SoraBot
   actions:
