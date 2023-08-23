@@ -1,12 +1,22 @@
 # 开始之前你需要知道的一些事
 
-## 1. NoneBot1 与 NoneBot2 的区别
+## 1. 什么是 NoneBot2？
+
+NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架，它基于 Python 的类型注解和异步特性，能够为你的需求实现提供便捷灵活的支持。
+
+## 2. NoneBot1 与 NoneBot2 的区别
 
 NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架，而 NoneBot1 专注于 onebot 协议。NoneBot2 不是 NoneBot1 的替代品。事实上，它们都在被积极的维护着。但是，如果你想尝试一些新功能，或者想要支持更多的平台，可以考虑使用 NoneBot2。为方便赘述，本文所说的 NoneBot 都指 `NoneBot2`
 
 > ~~NoneBot2 和 NoneBot1 的区别，就像是 VisualStudio Code 和 VisualStudio 一样~~
 
-## 2. 我应该先看官方文档还是社区文档？
+<div class="tip custom-block" style="padding-top: 8px">
+
+只是想尝试一下吗？跳至 [快速入门](../guide/create_env.md).
+
+</div>
+
+## 3. 我应该先看官方文档还是社区文档？
 
 <p align="center" style="font-size: 30px"><strong>前面的区域，以后再来探索吧</strong></p>
 
