@@ -4,7 +4,7 @@
 </p>
 
 <div align="center">
-  
+
 # NoneBot 社区文档
 
 </div>
@@ -37,6 +37,7 @@
 </p>
 
 ## 📝 文档
+
 请详见 [文档]
 
 ## 🤝 贡献
@@ -45,7 +46,7 @@
 
 ## 💖 鸣谢
 
-* [`GraiaCommunity/Docs`](https://github.com/GraiaCommunity/Docs)：本文档主要样式参考
+- [`GraiaCommunity/Docs`](https://github.com/GraiaCommunity/Docs)：本文档主要样式参考
 
 ### 贡献者们
 

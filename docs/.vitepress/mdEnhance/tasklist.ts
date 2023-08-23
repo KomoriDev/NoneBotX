@@ -3,7 +3,6 @@
   @last-updated 2022-8-13
  */
 
-
 import type { PluginWithOptions } from 'markdown-it'
 import Token from 'markdown-it/lib/token'
 
