@@ -14,6 +14,6 @@ Novelai可以让你的bot对接Webui，实现涩图自产自销。~~虽然叫Nov
     name="novelai"
     license="MIT"
     author="sena-nana"
-    repoUser="NovaBot"
+    repoUser="sena-nana"
     repoName="nonebot-plugin-novelai"
 />
