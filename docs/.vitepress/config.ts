@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-
+import { fileURLToPath, URL } from 'node:url'
 import { before, guide, appendix } from './sidebar'
 
 import mdEnhance from './mdEnhance/index'
@@ -17,6 +17,19 @@ export default defineConfig({
     ['link', { rel: 'shortcut icon', href: './favicon.ico' }],
     ['script', { src: 'https://cdn.bootcdn.net/ajax/libs/mermaid/10.3.0/mermaid.min.js' }]
   ],
+
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPSwitchAppearance\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./components/SwitchAppearance.vue', import.meta.url),
+          ),
+        },
+      ],
+    },
+  },
 
   themeConfig: {
     i18nRouting: true,
