@@ -6,7 +6,6 @@
   "projectOwner": "KomoriDev",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": ["README.md"],
   "imageSize": 80,
   "commit": false,
   "commitConvention": "angular",
@@ -14,5 +13,17 @@
   "contributorsSortAlphabetically": false,
   "linkToUsage": true,
   "skipCi": true,
-  "contributors": []
+  "contributors": [
+    {
+      "login": "KomoriDev",
+      "name": "Komorebi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/110453675?v=4",
+      "profile": "https://github.com/KomoriDev",
+      "contributions": [
+        "doc",
+        "content"
+      ]
+    }
+  ],
+  "commitType": "docs"
 }
