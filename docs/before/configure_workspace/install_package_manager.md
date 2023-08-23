@@ -50,7 +50,7 @@ Python。
 
 ```bash
 sudo apt search "python3\."
-sudo apt install python3.10
+sudo apt install python3.10 python-is-python3
 ```
 
 :::
@@ -60,21 +60,17 @@ sudo apt install python3.10
 sudo pacman -S python
 ```
 
-<curtain>新啊，很新啊</curtain>
-
 :::
 :::code-group-item Fedora (dnf)
 
 ```bash
-sudo dnf install python3.10
+sudo dnf install python
 ```
-
-<curtain>新啊，很新啊</curtain>
 
 :::
 ::::
 
-:::tsukkomi 版本太新的烦恼
+:::tsukkomi 版本太新的烦恼 <curtain>新啊，很新啊</curtain>
 部分 Linux 发行版默认只提供尽可能新的 Python 版本（如 Fedora, Arch<curtain>~~, Termux
 （这货的兼容性需要一篇文章专门描述）~~</curtain> 等）<curtain>，
 这种时候某些兼容不好的传统派 Python 库就有可能会在安装过程中创飞你</curtain>。
