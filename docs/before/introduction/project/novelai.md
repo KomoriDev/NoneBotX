@@ -8,7 +8,7 @@ Novelai可以让你的bot对接Webui，实现涩图自产自销。~~虽然叫Nov
 
 > W.I.P.
 
-更多详见 Novelai 项目主页。
+更多详见 [Novelai 项目文档](https://nb.novelai.dev)。
 
 <project-info
     name="novelai"
