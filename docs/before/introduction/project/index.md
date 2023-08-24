@@ -11,6 +11,8 @@
 - [KiramiBot](https://github.com/A-kirami/KiramiBot) -
   最新版本: ![PyPI](https://img.shields.io/pypi/v/KiramiBot)
 - [SoraBot](https://github.com/netsora/SoraBot)
+- [Novelai](https://github.com/sena-nana/nonebot-plugin-novelai)
+  最新版本：![PyPI](https://img.shields.io/pypi/v/nonebot-plugin-novelai)
 
 :::tip
 相关文档请看左侧侧边栏（若有）

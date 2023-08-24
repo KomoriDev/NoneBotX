@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-import { before, guide, appendix } from './sidebar'
+import { before, guide, appendix, comment } from './sidebar'
 
 import mdEnhance from './mdEnhance/index'
 
@@ -25,7 +25,8 @@ export default defineConfig({
     sidebar: {
       '/before/': before,
       '/guide/': guide,
-      '/appendix/': appendix
+      '/appendix/': appendix,
+      '/comment': comment
     },
     editLink: {
       pattern: 'https://github.com/KomoriDev/NoneBotX/edit/remake/docs/:path',
@@ -80,6 +81,7 @@ function nav() {
     { text: '开始之前', link: '/before/', activeMatch: '/before/' },
     { text: '实战演练', link: '/guide/', activeMatch: '/guide/' },
     { text: '附录', link: '/appendix/credit', activeMatch: '/appendix/' },
+    { text: '论坛', link: '/comment', activeMatch: '/comment' },
     { text: 'NoneBot 官方文档', link: 'https://nonebot.dev/' }
   ]
 }
