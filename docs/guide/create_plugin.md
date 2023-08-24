@@ -4,7 +4,7 @@
 
 ## 插件结构
 
-在 NoneBot 中，插件就是一个 [模块 ( module )](https://docs.python.org/zh-cn/3/glossary.html#term-module)。NoneBot 会在导入时对这些模块做一些特殊的处理使得他们成为一个插件。插件间应尽量减少耦合，可以进行有限制的相互调用，NoneBot 能够正确解析插件间的依赖关系。
+在 NoneBot 中，插件就是一个 [模块（module）](https://docs.python.org/zh-cn/3/glossary.html#term-module)。NoneBot 会在导入时对这些模块做一些特殊的处理使得他们成为一个插件。插件间应尽量减少耦合，可以进行有限制的相互调用，NoneBot 能够正确解析插件间的依赖关系。
 
 ### 单文件插件
 
@@ -19,7 +19,7 @@
 
 ### 包插件
 
-一个包含 `__init__.py` 的文件夹即是一个常规 Python [包 ( package )](https://docs.python.org/zh-cn/3/glossary.html#term-regular-package)，例如创建一个 `foo` 文件夹：
+一个包含 `__init__.py` 的文件夹即是一个常规 Python [包（package）](https://docs.python.org/zh-cn/3/glossary.html#term-regular-package)，例如创建一个 `foo` 文件夹：
 
 ```txt :no-line-numbers
 📂 plugins
@@ -37,26 +37,18 @@
 
 [tool.nonebot]
 adapters = [
+    { name = "OneBot V11", module_name = "nonebot.adapters.onebot.v11" },
     { name = "Console", module_name = "nonebot.adapters.console" }
 ]
+# 适配器加载列表
+
 plugins = []
+# 加载的插件列表（一般是安装的第三方插件）
+
 plugin_dirs = ["hibiscus/plugins"]
+# 插件加载目录列表（自动搜索指定目录下的插件，不会主动递归查找子目录）
+
 builtin_plugins = ["echo"]
+# 内置插件列表
 
 ```
-
-### `adapters`
-
-加载的适配器列表
-
-### `plugins`
-
-加载的插件列表。
-
-### `plugin_dirs`
-
-插件目录列表。
-
-### `builtin_plugins`
-
-内置插件列表
