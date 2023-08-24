@@ -79,7 +79,7 @@ nb create
 
    ```shell :no-line-numbers
 
-   [?] 项目名称: EroEroBot
+   [?] 项目名称: Hibiscus
 
    ```
 
@@ -87,7 +87,9 @@ nb create
    使用键盘输入内容，按回车（Enter）键确认。
    :::
 
-   这里我们以 `EroEroBot` 为例，作为项目名称。你可以根据自己的需要来命名。 <curtain>PeroPero 震怒</curtain>
+   这里我们以 `Hibiscus` 作为项目名称。你可以根据自己的需要来命名。 <curtain>Komorebi: 中文名『木槿』，好听点（</curtain>
+
+   然而请不要使用诸如 `nonebot` 这样的名字作为项目名（会影响模块导入而出问题）。
 
 3. 驱动器
 
@@ -160,7 +162,7 @@ nb create
    ```shell :no-line-numbers
 
    [?] 请输入插件存储位置: (Use ↑ and ↓ to choose, Enter to submit)
-   ❯ 1) 在 "eroerobot" 文件夹中
+   ❯ 1) 在 "hibiscus" 文件夹中
      2) 在 "src" 文件夹中
 
    ```
@@ -171,7 +173,7 @@ nb create
    如果终端支持，整个交互式界面也支持鼠标点击操作。
    :::
 
-   实际使用中随意，本文档中选用 `eroerobot` 文件夹。
+   实际使用中随意，本文档中选用 `hibiscus` 文件夹。
 
 6. 其他选项
 
@@ -216,7 +218,7 @@ nb create
    使用 poetry 或 pdm 等依赖管理工具添加以下包:
      nonebot2[fastapi] nonebot-adapter-onebot nonebot-adapter-console
    运行以下命令来启动你的机器人:
-     cd EroEroBot
+     cd Hibiscus
      nb run --reload
 
    ```
@@ -227,7 +229,7 @@ nb create
 
    ```shell :no-line-numbers
 
-   cd EroEroBot
+   cd Hibiscus
 
    ```
 
@@ -255,7 +257,7 @@ nb create
    pyproject.toml already exists, update it now.
    Please enter the Python interpreter to use
    0. /usr/bin/python (3.11)
-   1. .../EroEroBot/.venv/bin/python (3.11)  # 这是 nb-cli 创建的虚拟环境，实际路径因人而异，故只保留关键部分，输入序号来选择这个
+   1. .../Hibiscus/.venv/bin/python (3.11)  # 这是 nb-cli 创建的虚拟环境，实际路径因人而异，故只保留关键部分，输入序号来选择这个
    2. /usr/bin/python3.11 (3.11)
    Please select (0): 1
    ```
@@ -302,7 +304,7 @@ nb create
 
 <chat-window title="NoneBot">
   <chat-msg name="Komorebi" avatar="/avatar/komorebi.jpg" onright>/echo hello world</chat-msg>
-  <chat-msg name="EroEroBot" tag="机器人" avatar="/avatar/ero.jpg">hello world</chat-msg>
+  <chat-msg name="Hibiscus" tag="机器人" avatar="/avatar/ero.jpg">hello world</chat-msg>
 </chat-window>
 
 按一次 `Ctrl+C` 可退出 `Console` 交互界面，再按一次即可结束运行机器人。
