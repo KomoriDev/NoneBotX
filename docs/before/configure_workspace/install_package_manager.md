@@ -25,7 +25,7 @@ winget install Python.Python.3.10
 :::
 
 假如你用的是 Windows 7（与 Windows Server 2012 等效）或者 Windows XP
-之类的老古董，<ruby>强烈<rp>(</rp><rt style="font-size:0.75em"><curtain>墙 裂</curtain></rt><rp>)</rp></ruby>建议更新你的系统，因为
+之类的老古董，<ruby-curtain up="墙裂">强烈</ruby-curtain>建议更新你的系统，因为
 Python 3.9 已经不支持 Windows 7 了，更别说 XP 了~
 
 ### Linux
