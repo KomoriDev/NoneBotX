@@ -32,7 +32,7 @@ pip uninstall nonebot
    pipx install nb-cli
    ```
 
-安装完成后，你可以在命令行使用 `nb` 命令来使用脚手架。如果出现无法找到命令的情况（例如出现 “Command not found” 字样），请参考 [pipx 文档](https://pypa.github.io/pipx/) 检查你的环境变量。
+安装完成后，你可以在命令行使用 `nb` 命令来使用脚手架。如果出现无法找到命令的情况（例如出现 `Command not found` 字样），请参考 [pipx 文档](https://pypa.github.io/pipx/) 检查你的环境变量。
 
 ## 创建项目
 
