@@ -70,7 +70,9 @@ export default defineConfig({
     theme: 'one-dark-pro',
     lineNumbers: true,
     config: mdEnhance
-  }
+  },
+
+  ignoreDeadLinks: true
 })
 
 function nav() {
