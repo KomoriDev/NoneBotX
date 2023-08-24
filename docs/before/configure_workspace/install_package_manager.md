@@ -10,7 +10,7 @@
 
 :::tsukkomi 吐槽 - 关于微软商店版 Python
 
-```bash
+```bash :no-line-numbers
 winget install Python.Python.3.10
 ```
 
@@ -48,7 +48,7 @@ Python。
 ::::code-group
 :::code-group-item Ubuntu (apt)
 
-```bash
+```bash :no-line-numbers
 sudo apt search "python3\."
 sudo apt install python3.10 python-is-python3
 ```
@@ -56,14 +56,14 @@ sudo apt install python3.10 python-is-python3
 :::
 :::code-group-item Arch Linux (pacman)
 
-```bash
+```bash :no-line-numbers
 sudo pacman -S python
 ```
 
 :::
 :::code-group-item Fedora (dnf)
 
-```bash
+```bash :no-line-numbers
 sudo dnf install python
 ```
 
@@ -88,7 +88,7 @@ sudo dnf install python
 你可以在 [Python 官网](https://www.python.org/)
 下载安装包安装，当然你也可以选择通过 Homebrew 安装：
 
-```bash
+```bash :no-line-numbers
 brew install python3
 ```
 
@@ -103,8 +103,8 @@ brew install python3
 `apt install python3-xxx` 或 `apt install python-xxx`，可喜可贺可喜可贺~
 :::
 
-```bash
-python3 -m pip install pipx
+```bash :no-line-numbers
+python -m pip install --user pipx
 pipx install pdm  # pipx install poetry
 pipx upgrade-all  # 更新所有使用 pipx 安装的包
 ```
