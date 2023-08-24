@@ -20,7 +20,7 @@ const { title } = useData()
       data-emit-metadata="0"
       data-input-position="top"
       data-lang="zh-CN"
-      data-theme="transparent_dark"
+      data-theme="preferred_color_scheme"
       data-loading="lazy"
       crossorigin="anonymous"
     />
