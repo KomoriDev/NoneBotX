@@ -55,8 +55,7 @@ const guide = [
     text: '手把手教你写机器人',
     items: [
       { text: '要致富，先撸树', link: '/guide/create_env' },
-      { text: '快速上手', link: '/guide/hello_ero' },
-      { text: '东西要分类好', link: '/guide/saya' },
+      { text: '东西要分类好', link: '/guide/create_plugin' },
       { text: '不要再戳了~', link: '/guide/nudge_event' },
       { text: '谁在找我', link: '/guide/multi_events' },
       {
