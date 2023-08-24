@@ -40,7 +40,7 @@ adapters = [
     { name = "Console", module_name = "nonebot.adapters.console" }
 ]
 plugins = []
-plugin_dirs = ["ero/plugins"]
+plugin_dirs = ["hibiscus/plugins"]
 builtin_plugins = ["echo"]
 
 ```
