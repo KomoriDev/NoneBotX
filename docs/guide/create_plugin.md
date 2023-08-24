@@ -31,7 +31,7 @@
 
 ## 配置结构
 
-当我们使用 `nb-cli` 创建了一个 `EroEroBot` 后，我们可以在 `pyproject.toml` 中找到有关 NoneBot 的配置
+当我们使用 `nb-cli` 创建了一个 `Hibiscus` 后，我们可以在 `pyproject.toml` 中找到有关 NoneBot 的配置
 
 ```toml :no-line-numbers
 
