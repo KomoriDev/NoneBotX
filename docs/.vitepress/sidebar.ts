@@ -119,4 +119,6 @@ const appendix = [
   }
 ]
 
-export { before, guide, appendix }
+const comment = [{ text: '论坛', link: '/comment' }]
+
+export { before, guide, appendix, comment }
