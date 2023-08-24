@@ -2,7 +2,7 @@
 
 > 一个支持插件的画图插件
 
-Novelai可以让你的bot对接Webui，实现涩图自产自销。~~虽然叫Novelai但实际对接的是SDWebui~~
+Novelai 可以让你的 Bot 对接 Webui，实现涩图自产自销。~~虽然叫 Novelai 但实际对接的是 SDWebui~~
 
 ## 用法
 
