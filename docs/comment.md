@@ -1,3 +1,7 @@
+---
+sidebar: false
+---
+
 # 论坛
 
 ::: tip INFO
