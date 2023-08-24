@@ -37,54 +37,12 @@ pip uninstall nonebot
 
 安装完成后，你可以在命令行使用 `nb` 命令来使用脚手架。如果出现无法找到命令的情况（例如出现 “Command not found” 字样），请参考 [pipx 文档](https://pypa.github.io/pipx/) 检查你的环境变量。
 
-## 创建虚拟环境
-
-1. 安装 `PDM` 虚拟环境
-
-   ```shell :no-line-numbers
-   pipx install pdm
-   ```
-
-2. 激活环境
-
-   ```shell :no-line-numbers
-   pdm init
-   ```
-
-稍后，你将会看到一些询问：
-
-```shell
-Creating a pyproject.toml for PDM...
-Would you like to create a virtualenv with ······ [y/n]
-(y): y # 输入 y 并按下回车以使用系统环境中的 Python 创建虚拟环境
-Virtualenv is created successfully at ······
-Is the project a library that is installable?
-If yes, we will need to ask a few more questions to include the project name and build backend [y/n] (n): n # 输入 n 并按下回车
-Project name (EroEroBot): # 项目名称。默认使用给当前文件夹的名字，所以直接按下回车即可
-Project version (0.1.0): # 项目版本。如无特殊需要保持默认直接按下回车即可
-Project description ( ): # 项目描述。如无特殊需要保持默认直接按下回车即可
-Which build backend to use?
-0. pdm-backend
-1. setuptools
-2. flit-core
-3. hatchling
-4. pdm-pep517
-Please select (0): # 选择构建器。如无特殊需要保持默认直接按下回车即可
-License(SPDX name) (MIT): MIT     # 项目的开源协议
-Author name (Komorebi):     # 作者名称。请尽量不要使用中文
-Author email (mute231010@gmail.com): # 作者邮箱
-Python requires('*' to allow any) (>=3.8): # 项目的 Python 版本。如无特殊需要保持默认直接按下回车即可
-Project is initialized successfully # 至此，一个基于 PDM 管理依赖的 Python 项目便初始化完毕
-```
-
-完成之后，你的项目文件夹内应该会出现一个 `pyproject.toml` 文件。
-
 ## 创建项目
 
 使用脚手架来创建一个项目：
 
 ```shell :no-line-numbers
-pdm run nb create
+nb create
 ```
 
 这一指令将会执行创建项目的流程，你将会看到一些询问：
@@ -120,6 +78,11 @@ pdm run nb create
 
    ```
 
+   ::: tip 为什么使用 Console Adapter ?
+   NoneBot Console Adapter 是一款基于终端的交互式适配器，使得开发者可以方便地在终端中与聊天机器人进行交互，
+   快速调试聊天机器人的功能，无需依赖其他平台或工具
+   :::
+
    这里我们选择了创建虚拟环境。因为 nb-cli 会安装依赖至当前激活的 Python 虚拟环境，也就是说会自动安装到 PDM 虚拟环境中。
 
 4. 选择内置插件
@@ -132,13 +95,44 @@ pdm run nb create
 
    这里我们选择 `echo` 插件作为示例。这是一个简单的复读回显插件，可以用于测试你的机器人是否正常运行。
 
+## 安装包管理器
+
+1. 安装 `PDM` 包管理器
+
+   ```shell :no-line-numbers
+   pipx install pdm
+   ```
+
+2. 初始化
+
+   ```shell :no-line-numbers
+   pdm init
+   ```
+
+稍后，你将会看到一些询问：
+
+```shell :no-line-numbers
+pyproject.toml already exists, update it now.
+Would you like to create a virtualenv with ······ [y/n] (y): y        # 使用系统环境中的 Python 创建虚拟环境
+Virtualenv is created successfully at ······
+Is the project a library that is installable?
+If yes, we will need to ask a few more questions to include the project name and build backend [y/n] (n):
+License(SPDX name) (MIT): MIT                           # 项目的开源协议
+Author name (Komorebi):                                 # 作者名称。请尽量不要使用中文
+Author email (mute231010@gmail.com):                    # 作者邮箱
+Python requires('*' to allow any) (>=3.8): >=3.8       # 项目的 Python 版本
+Project is initialized successfully
+```
+
+至此，一个基于 PDM 管理依赖的 Python 项目便初始化完毕
+
 ## 运行项目
 
 在项目创建完成后，你可以在**项目目录**中使用以下命令来运行项目：
 
 ```shell :no-line-numbers
 
-  pdm run nb run
+  nb run
 
 ```
 
