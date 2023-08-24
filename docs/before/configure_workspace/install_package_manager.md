@@ -76,6 +76,16 @@ sudo dnf install python
 这种时候某些兼容不好的传统派 Python 库就有可能会在安装过程中创飞你</curtain>。
 :::
 
+:::tsukkomi 小心 CentOS
+和前面那些不同，目前 CentOS 的稳定版已经处在濒死状态（CentOS 8
+已于 2021 年 12 月 31 日结束支持，CentOS 7 也将在 2024 年 6 月 30
+日结束支持）。其软件仓库亦非常老旧，使用近几年的新东西也很麻烦。
+如果条件允许还是换成 Debian 或者 Ubuntu 吧（最好尽可能新<curtain>，别整个
+16, 18 版的 Ubuntu 之类的，也别在服务器上折腾 Arch（本文默认读者折腾不起）</curtain>）。
+
+<curtain>你要用 CentOS Stream 那当我没说（</curtain>
+:::
+
 假如系统软件包管理器提供了 `pyenv` 的话，我们推荐使用这个管理多版本 Python，用法可以自行搜索。
 
 :::warning 从源代码安装只能是最后的退路
