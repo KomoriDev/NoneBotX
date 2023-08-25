@@ -31,46 +31,7 @@ Hibiscus 本身只负责处理消息，需要借助 go-cqhttp 与 QQ 进行通�
 
 <div align="center">我猜猜……当前系统应该用：</div>
 
-<div id="download-name" align="center" style="font-size: 20px">我不知道（</div>
-
-<script>
-  let setDownloadName = () => {
-    // Get the user's operating system and architecture
-    const platform = navigator.platform.toLowerCase();
-    const userAgent = navigator.userAgent.toLowerCase();
-    let arch;
-
-    if (userAgent.includes("arm64")) {
-      arch = "arm64";
-    } else if (userAgent.includes("arm")) {
-      arch = "arm";
-    } else if (userAgent.includes("x86_64") || userAgent.includes("x64")) {
-      arch = "amd64";
-    } else {
-      arch = "386";
-    }
-
-    // Determine the download name based on the user's platform and architecture
-    let downloadLink;
-    if (platform.includes("win")) {
-      downloadLink = `windows_${arch}`;
-    } else if (platform.includes("linux") || platform.includes("android")) {
-      downloadLink = `linux_${arch}`;
-    } else if (platform.includes("mac") || platform.includes("darwin")) {
-      downloadLink = `darwin_${arch}`;
-    } else {
-      downloadLink = "我不知道（";
-    }
-
-    // Display the download link on the page
-    document.getElementById("download-name").innerHTML = downloadLink;
-  }
-
-  // [!!] Maybe NOT working on mobile devices.
-  if (window != undefined || window != null)
-    window.onload = setDownloadName;
-  // document.addEventListener("DOMContentLoaded", (event) => {setDownloadName()});
-</script>
+<NameByPlatform />
 
 <br />
 
