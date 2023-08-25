@@ -22,19 +22,21 @@ export default {
       let arch
 
       if (
+        userAgent.includes('x86_64') ||
+        userAgent.includes('x64') ||
+        userAgent.includes('amd64') ||
+        userAgent.includes('intel')
+      ) {
+        arch = 'amd64'
+      } else if (
         userAgent.includes('arm64') ||
         userAgent.includes('aarch64') ||
-        userAgent.includes('armv8')
+        userAgent.includes('armv8') ||
+        userAgent.includes('android')
       ) {
         arch = 'arm64'
       } else if (userAgent.includes('arm')) {
         arch = 'arm'
-      } else if (
-        userAgent.includes('x86_64') ||
-        userAgent.includes('x64') ||
-        userAgent.includes('amd64')
-      ) {
-        arch = 'amd64'
       } else if (userAgent.includes('86')) {
         arch = '386'
       } else {
