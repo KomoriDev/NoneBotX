@@ -67,7 +67,8 @@ Hibiscus 本身只负责处理消息，需要借助 go-cqhttp 与 QQ 进行通�
   }
 
   // [!!] Maybe NOT working on mobile devices.
-  window.onload = setDownloadName;
+  if (window != undefined || window != null)
+    window.onload = setDownloadName;
   // document.addEventListener("DOMContentLoaded", (event) => {setDownloadName()});
 </script>
 
