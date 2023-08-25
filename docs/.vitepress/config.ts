@@ -23,12 +23,10 @@ export default defineConfig({
       alias: [
         {
           find: /^.*\/VPSwitchAppearance\.vue$/,
-          replacement: fileURLToPath(
-            new URL('./components/SwitchAppearance.vue', import.meta.url),
-          ),
-        },
-      ],
-    },
+          replacement: fileURLToPath(new URL('./components/SwitchAppearance.vue', import.meta.url))
+        }
+      ]
+    }
   },
 
   themeConfig: {

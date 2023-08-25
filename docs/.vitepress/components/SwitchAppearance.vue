@@ -16,8 +16,7 @@ onMounted(() => {
 
 const isAppearanceTransition =
   // @ts-expect-error: Transition API
-  document.startViewTransition &&
-  !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches
+  document.startViewTransition && !window.matchMedia(`(prefers-reduced-motion: reduce)`).matches
 
 function useAppearance() {
   const query = window.matchMedia('(prefers-color-scheme: dark)')
@@ -41,13 +40,7 @@ function useAppearance() {
     if (!isAppearanceTransition) {
       setClass((isDark = !isDark))
 
-      userPreference = isDark
-        ? query.matches
-          ? 'auto'
-          : 'dark'
-        : query.matches
-        ? 'light'
-        : 'auto'
+      userPreference = isDark ? (query.matches ? 'auto' : 'dark') : query.matches ? 'light' : 'auto'
 
       localStorage.setItem(APPEARANCE_KEY, userPreference)
 
@@ -56,43 +49,29 @@ function useAppearance() {
 
     const x = event.clientX
     const y = event.clientY
-    const endRadius = Math.hypot(
-      Math.max(x, innerWidth - x),
-      Math.max(y, innerHeight - y),
-    )
+    const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))
 
     // @ts-expect-error: Transition API
     const transition = document.startViewTransition(() => {
       setClass((isDark = !isDark))
 
-      userPreference = isDark
-        ? query.matches
-          ? 'auto'
-          : 'dark'
-        : query.matches
-        ? 'light'
-        : 'auto'
+      userPreference = isDark ? (query.matches ? 'auto' : 'dark') : query.matches ? 'light' : 'auto'
 
       localStorage.setItem(APPEARANCE_KEY, userPreference)
     })
 
     transition.ready.then(() => {
-      const clipPath = [
-        `circle(0px at ${x}px ${y}px)`,
-        `circle(${endRadius}px at ${x}px ${y}px)`,
-      ]
+      const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`]
 
       document.documentElement.animate(
         {
-          clipPath: isDark ? clipPath : [...clipPath].reverse(),
+          clipPath: isDark ? clipPath : [...clipPath].reverse()
         },
         {
           duration: 300,
           easing: 'ease-in',
-          pseudoElement: isDark
-            ? '::view-transition-new(root)'
-            : '::view-transition-old(root)',
-        },
+          pseudoElement: isDark ? '::view-transition-new(root)' : '::view-transition-old(root)'
+        }
       )
     })
   }
@@ -108,8 +87,8 @@ function useAppearance() {
           -o-transition: none !important;
           -ms-transition: none !important;
           transition: none !important;
-        }`,
-      ),
+        }`
+      )
     )
     document.head.appendChild(css)
 
