@@ -9,7 +9,6 @@ import type { default as StateCore } from 'markdown-it/lib/rules_core/state_core
 import Token from 'markdown-it/lib/token'
 
 interface TaskListOptions {
-
   /**
    * 是否禁用 checkbox
    *

@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import viteCompression from 'vite-plugin-compression'
 import externalGlobals from 'rollup-plugin-external-globals'
-  
+
 // https://cn.vitejs.dev/config/
 export default defineConfig({
   plugins: [
