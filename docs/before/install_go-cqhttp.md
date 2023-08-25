@@ -1,7 +1,7 @@
 # 配置 GO-CQHTTP
 
-::: danger 本章节已过时！！！！！！！
-由于目前腾讯严打机器人登录，且QQ服务器与客户端正在互相配合切换架构中，按照本章节的步骤暂时仍无法登录，且目前各框架登录方法仍在迭代中，请自行查找相关资料。
+::: danger 本章节极有可能已经过时！！！
+由于目前腾讯严打机器人登录，且QQ服务器与客户端正在互相配合切换架构中，按照本章节的步骤可能仍无法登录，且目前各框架登录方法仍在迭代中，非常建议自行查找相关资料。
 
 参考：
 
@@ -15,22 +15,105 @@
 
 ::: tip 我是否需要 go-cqhttp？
 
-Hibiscus 本身只负责处理消息，需要借助 go-cqhttp 与 QQ 进行通信。如果你想在除 QQ 以外的平台进行适配，可以跳过该配置
+Hibiscus 本身只负责处理消息，需要借助 go-cqhttp 与 QQ 进行通信。如果你只想在除 QQ 以外的平台进行适配，可以跳过该配置。
 
 :::
 
 ## 下载
 
-下载 dev 版 的 [go-cqhttp](https://github.com/Mrs4s/go-cqhttp/actions/workflows/ci.yml)，不知道下哪个可参考 [版本说明](https://docs.go-cqhttp.org/guide/quick_start.html#%E4%B8%8B%E8%BD%BD)
+下载 dev 版的 [go-cqhttp](https://github.com/Mrs4s/go-cqhttp/actions/workflows/ci.yml)。
 
 ![dev](/images/before/dev-gocq.webp)
 
+![artifact](/images/before/ci-artifact.webp)
+
+::: tip 该下哪个版本呢？
+
+<div align="center">我猜猜……当前系统应该用：</div>
+
+<div id="download-name" align="center" style="font-size: 20px">我不知道（</div>
+
+<script>
+  let setDownloadName = () => {
+    // Get the user's operating system and architecture
+    const platform = navigator.platform.toLowerCase();
+    const userAgent = navigator.userAgent.toLowerCase();
+    let arch;
+
+    if (userAgent.includes("arm64")) {
+      arch = "arm64";
+    } else if (userAgent.includes("arm")) {
+      arch = "arm";
+    } else if (userAgent.includes("x86_64") || userAgent.includes("x64")) {
+      arch = "amd64";
+    } else {
+      arch = "386";
+    }
+
+    // Determine the download name based on the user's platform and architecture
+    let downloadLink;
+    if (platform.includes("win")) {
+      downloadLink = `windows_${arch}`;
+    } else if (platform.includes("linux") || platform.includes("android")) {
+      downloadLink = `linux_${arch}`;
+    } else if (platform.includes("mac") || platform.includes("darwin")) {
+      downloadLink = `darwin_${arch}`;
+    } else {
+      downloadLink = "我不知道（";
+    }
+
+    // Display the download link on the page
+    document.getElementById("download-name").innerHTML = downloadLink;
+  }
+
+  // [!!] Maybe NOT working on mobile devices.
+  window.onload = setDownloadName;
+  // document.addEventListener("DOMContentLoaded", (event) => {setDownloadName()});
+</script>
+
+<br />
+
+<curtain>虚假的</curtain>太长不看版（假定你不知道需要的架构）：
+
+- 一定要看清是 **amd64** 还是 **arm64**！！！
+- 如果你要在一般的个人电脑或者装有 Windows Server 的服务器上运行，请优先尝试 `windows_amd64` 版本；
+- 如果你要在装有 Linux 发行版的个人电脑/服务器上运行，请优先尝试 `linux_amd64` 版本；
+- 如果你要在“树莓派”或智能手机等 ARM 设备上运行，请优先尝试 `linux_arm64` 版本，若无法运行则再尝试 `linux_arm` 版本；
+- 如果你要在 Apple M 系列芯片的电脑上运行，请选择 `darwin_arm64` 版本，否则请选择 `darwin_amd64` 版本。
+
+Go-CQHTTP 的 CI 产物命名大致如下：
+
+| 平台名称 | 对应系统 |
+| :------: | :------: |
+| windows  | Windows  |
+|  linux   |  Linux   |
+|  darwin  |  MacOS   |
+
+| 架构名称 | 体系 | 位数 | 别名/种类          |
+| :------: | :--: | :--: | :----------------- |
+|  amd64   | x86  |  64  | x86_64, x64        |
+|  arm64   | arm  |  64  | aarch64, armv8     |
+|   386    | x86  |  32  | i?86 (? = 3,4,5,6) |
+|   arm    | arm  |  32  | armv7, armhf, ...  |
+
+上表没有的平台/架构则需要自行编译源码。
+
+[Go-CQHTTP 的版本说明](https://docs.go-cqhttp.org/guide/quick_start.html#%E4%B8%8B%E8%BD%BD)
+
+:::
+
+::: tip 无法点击下载？
+GitHub Actions 的产物文件**必须**登录 GitHub 账号才能进行下载。
+:::
+
 ## 解压
 
-- Windows下请使用自己熟悉的解压软件自行解压
-- Linux下在命令行中输入 `tar -xzvf [文件名]`
+- Windows 下请使用自己熟悉的解压软件自行解压；
+- Linux 下在命令行中输入 `tar -xf [文件名]` 进行解压。
 
 ## 配置
+
+> 首次启动生成配置……
 
 您需要修改配置中的灰色部分
 
