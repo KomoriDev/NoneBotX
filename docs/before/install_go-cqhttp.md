@@ -33,6 +33,8 @@ Hibiscus 本身只负责处理消息，需要借助 go-cqhttp 与 QQ 进行通�
 
 <NameByPlatform />
 
+<div align="center" style="font-size: 8px">结果根据浏览器 UA 得出，仅供参考</div>
+
 <br />
 
 <curtain>虚假的</curtain>太长不看版（假定你不知道需要的架构）：

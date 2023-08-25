@@ -64,13 +64,6 @@ const theme: Theme = {
     app.component('CodeGroupItem', CodeGroupItem)
     app.component('Mermaid', Mermaid)
     app.component('NameByPlatform', NameByPlatform)
-    // app.mixin({
-    //   async mounted() {
-    //     import("../components/NameByPlatform.vue").then(
-    //       module => {app.use(module.default)}
-    //     )
-    //   },
-    // })
   }
 }
 
