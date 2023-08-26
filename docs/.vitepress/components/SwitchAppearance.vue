@@ -137,8 +137,16 @@ watch(checked, (newIsDark) => {
   opacity: 1;
 }
 
-.VPSwitchAppearance.VPSwitchAppearanceTransition {
-  width: 20px;
+.VPSwitch {
+  position: relative;
+  border-radius: 11px;
+  display: block;
+  width: 20.5px;
+  height: 21px;
+  flex-shrink: 0;
+  border: 1px solid var(--vp-input-border-color);
+  background-color: var(--vp-input-switch-bg-color);
+  transition: border-color 0.25s !important;
 }
 
 .dark .VPSwitchAppearance:not(.VPSwitchAppearanceTransition) :deep(.check) {
