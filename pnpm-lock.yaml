@@ -13,6 +13,9 @@ dependencies:
     version: 0.8.0
 
 devDependencies:
+  '@plugin-web-update-notification/vite':
+    specifier: ^1.6.4
+    version: 1.6.4(vite@4.4.9)
   '@rushstack/eslint-patch':
     specifier: ^1.3.3
     version: 1.3.3
@@ -580,6 +583,19 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       tslib: 2.6.1
+    dev: true
+
+  /@plugin-web-update-notification/core@1.6.4:
+    resolution: {integrity: sha512-U1qkujkSyc4lL7wJtkmVLDs/T3VW5iSAmBNq5FIZJx/f49gsaLuWr4zHLGZUqacp923tyI3GMVtO4EUARi2bAA==}
+    dev: true
+
+  /@plugin-web-update-notification/vite@1.6.4(vite@4.4.9):
+    resolution: {integrity: sha512-WHVzAJhzUW3tiiw3Qwl42c0uhdolyOK7fPnrlVa9BeNiSvmvzLA/rf1L70QosjCcn4+T+0QJ7fnPhNYRkQEJ8g==}
+    peerDependencies:
+      vite: '>4.0.0 || ^3.0.0 || ^2.0.0'
+    dependencies:
+      '@plugin-web-update-notification/core': 1.6.4
+      vite: 4.4.9(sass@1.65.1)
     dev: true
 
   /@rollup/pluginutils@5.0.2(rollup@3.28.0):
