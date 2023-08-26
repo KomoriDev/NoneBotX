@@ -25,6 +25,8 @@ import RubyCurtain from '../components/RubyCurtain.vue'
 import VolumeBar from '../components/VolumeBar.vue'
 import Comment from '../components/Comment.vue'
 
+import NameByPlatform from '../components/NameByPlatform.vue'
+
 import '../styles/index.scss'
 
 const theme: Theme = {
@@ -61,6 +63,7 @@ const theme: Theme = {
     app.component('CodeGroup', CodeGroup)
     app.component('CodeGroupItem', CodeGroupItem)
     app.component('Mermaid', Mermaid)
+    app.component('NameByPlatform', NameByPlatform)
   }
 }
 
