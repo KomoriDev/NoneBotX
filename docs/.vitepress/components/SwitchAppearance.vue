@@ -141,8 +141,8 @@ watch(checked, (newIsDark) => {
   position: relative;
   border-radius: 11px;
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 21.5px;
+  height: 21.6px;
   flex-shrink: 0;
   border: 1px solid var(--vp-input-border-color);
   background-color: var(--vp-input-switch-bg-color);
