@@ -4,10 +4,10 @@
 
 现在，我们来尝试编写第一个插件，让我们在插件目录下创建一个 `hello.py` 插件
 
-```py :no-line-numbers
+```py
 # plugins/hello.py
-from nonebot.plugin import on_message
-from nonebot.internal.adapter import Event
+from nonebot import on_message
+from nonebot.adapter import Event
 
 hello_setu = on_message()
 
@@ -15,8 +15,8 @@ hello_setu = on_message()
 @hello_setu.handle()
 async def hello_handle(event: Event):
     message = event.get_message()
-    # await hello.send(f"不要说{message}，来张涩图")
-    await hello.finish(f"不要说{message}，来张涩图")
+    # await hello.send(f"不要说{message}，来张涩图")  # 普通发送，完成后继续后续流程
+    await hello.finish(f"不要说{message}，来张涩图")  # 最终发送，完成后停止整个流程
 ```
 
 <chat-window title="NoneBot Console">
@@ -24,16 +24,19 @@ async def hello_handle(event: Event):
   <chat-msg name="Hibiscus" tag="机器人" avatar="/avatar/hibiscus.webp">不要说你好，来张涩图</chat-msg>
 </chat-window>
 
-值得注意的是，在执行 `finish` 方法时，NoneBot 会在向机器人用户发送消息内容后抛出异常来结束事件响应流程。也就是说，在 `finish` 被执行后，后面的程序是不会被执行的（类似于 `return`）。如果你需要回复机器人用户消息但不想事件处理流程结束，可以使用注释的部分中展示的 `send` 方法。
+值得注意的是，在执行 `finish` 方法时，NoneBot 会在向机器人用户发送消息内容后**抛出异常来结束事件响应流程**。也就是说，在
+`finish` 被执行后，后面的程序是不会被执行的（类似于 `return`）。如果你需要回复机器人用户消息但不想结束事件处理流程，可以使用注释的部分中展示的 `send` 方法。
 
 ::: tip 提示
-如果使用了 `Matcher` 的简写形式，我们可以通过 `matcher` 参数来调用事件响应器操作。
 
-```py
+如果偷懒把代码缩成这种形式，我们可以通过设定 `matcher` 参数来调用事件响应器操作。
+
+```py{4,8}
 # plugins/hello.py
+from nonebot import on_message
+from nonebot.adapter import Event
 from nonebot.matcher import Matcher
-from nonebot.plugin import on_message
-from nonebot.internal.adapter import Event
+
 
 @on_message().handle()
 async def hello_handle(event: Event, matcher: Matcher):
@@ -55,11 +58,15 @@ async def hello_handle(event: Event, matcher: Matcher):
 
 事件响应器（Matcher）是用于对接收到的事件进行响应的重要工具。通过定义简单的规则，事件响应器可以帮助你捕获特定类型的事件，并执行相应的操作。
 
-例如，在 Hello 插件中，我们创建了一个名为 `hello_setu` 的事件响应器。它会检查事件是否满足一些条件（`on_message` 是一个消息事件响应器，它会响应**所有**消息事件），如果满足，就会触发预先定义的操作（`hello_handle`）。这是插件与用户交互的基础。
+例如，在 Hello 插件中，我们创建了一个名为 `hello_setu` 的事件响应器。它会检查事件是否满足一些条件（`on_message()`
+可以构造一个消息事件响应器，它会响应**所有**消息事件），如果满足，就会触发预先定义的操作（`hello_handle`）。这是插件与用户交互的基础。
+
+<!-- [不是初阶内容]
 
 ## 辅助函数
 
-NoneBot 提供了许多方便的工具，来帮助你更优雅地向别人要涩图，被称为 “事件响应器辅助函数” （下称 “辅助函数” ）这些辅助函数不仅简化了 <ruby>代码编写<rp>(</rp><rt>索要涩图</rt><rp>)</rp></ruby> 的过程，还提高了代码的可读性。
+NoneBot 提供了许多方便的工具，来帮助你更优雅地向别人要涩图，被称为“事件响应器辅助函数”（下称“辅助函数”）这些辅助函数不仅简化了
+<ruby>代码编写<rp>(</rp><rt>索要涩图</rt><rp>)</rp></ruby> 的过程，还提高了代码的可读性。
 
 接下来，我们将详细介绍这些辅助函数，并展示如何使用它们来创建你所需的事件响应器。无论你是否有编程经验，这些工具都能够帮助你更轻松地开发插件，让你专注于功能实现而不是纠结于代码细节。
 
@@ -100,7 +107,7 @@ setu = on_command(
 
 ```
 
-在上述代码中，我们在 `on_command` 辅助函数中添加了两个命令，并将 `to_me` 设置为 `True`。  
+在上述代码中，我们在 `on_command` 辅助函数中添加了两个命令，并将 `to_me` 设置为 `True`。
 这样，我们就获得了一个可以响应 `来张涩图` 和 `来张色图` 的两个命令，同时需要 `@bot` 才会响应的事件响应器。
 
 ::: tip 提示
@@ -324,3 +331,5 @@ async def _(matcher: Matcher):
 </chat-window>
 
 [argparse]: https://docs.python.org/3/library/argparse.html
+
+-->
