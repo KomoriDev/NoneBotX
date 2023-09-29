@@ -302,19 +302,14 @@ servers:
 **使用启动脚本的用户请编辑启动脚本添加参数**，启动脚本还不会识别外部的命令行参数。
 :::
 
-:::: code-group
-::: code-group-item Windows
+::: code-group
 
-```bash :no-line-numbers
+```bash :no-line-numbers [Windows]
 .\go-cqhttp.exe -faststart
 ```
 
-:::
-::: code-group-item Linux
-
-```bash :no-line-numbers
+```bash :no-line-numbers [Linux]
 ./go-cqhttp -faststart
 ```
 
 :::
-::::
