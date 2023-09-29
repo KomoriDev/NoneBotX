@@ -62,22 +62,6 @@ const guide = [
   }
 ]
 
-const develop = [
-  {
-    text: '类型检查',
-    items: [
-      { text: '类型系统', link: '/develop/types/type_systems' },
-      { text: '你好类型', link: '/develop/types/hello_types' },
-      { text: '优点和缺点', link: '/develop/types/pros_and_cons' },
-      { text: '玩转类型', link: '/develop/types/play_types' }
-    ]
-  },
-  {
-    text: 'Alconna',
-    items: [{ text: 'Alconna 的安装与配置', link: '/develop/alconna/base' }]
-  }
-]
-
 const appendix = [
   {
     text: '附录',
@@ -102,4 +86,4 @@ const appendix = [
 
 const comment = [{ text: '论坛', link: '/comment' }]
 
-export { before, guide, develop, appendix, comment }
+export { before, guide, appendix, comment }
