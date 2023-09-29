@@ -26,32 +26,24 @@
 
 ## 安装
 
-::::code-group
-:::code-group-item Ubuntu / Debian
+:::code-group
 
-```sh
+```sh [Ubuntu / Debian]
 # 非 root 用户记得前面加 sudo
 apt install tmux
 ```
 
-:::
-:::code-group-item CentOS 8 / Rocky Linux 8
-
-```sh
+```sh [CentOS 8 / Rocky Linux 8]
 # 非 root 用户记得前面加 sudo
 dnf install tmux
 ```
 
-:::
-:::code-group-item CenOS 7
-
-```sh
+```sh [CenOS 7]
 # 非 root 用户记得前面加 sudo
 yum install tmux
 ```
 
 :::
-::::
 
 ## 如何使用？
 

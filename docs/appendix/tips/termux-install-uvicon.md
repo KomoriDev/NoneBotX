@@ -57,10 +57,9 @@ async def pic(app: Ariadne, group: Group, message: MessageChain)
 
 那怎么办？我们为您提供了以下两种办法解决这个问题：
 
-::::code-group
-:::code-group-item 直接传递值
+:::code-group
 
-```python{10}
+```python{10} [直接传递值]
 # 不要跟 Ariadne 中的 Image 搞混了
 from io import BytesIO
 from PIL import Image as IMG
@@ -73,10 +72,7 @@ async def pic(app: Ariadne, group: Group, message: MessageChain)
     await app.send_group_message(group, MessageChain(Image(data_bytes=b.getvalue())))
 ```
 
-:::
-:::code-group-item 操作文件指针
-
-```python{10}
+```python{10} [操作文件指针]
 # 不要跟 Ariadne 中的 Image 搞混了
 from io import BytesIO
 from PIL import Image as IMG
@@ -91,7 +87,6 @@ async def pic(app: Ariadne, group: Group, message: MessageChain)
 ```
 
 :::
-::::
 
 ### 关于我的 Python 版本好混乱这件事
 

@@ -69,7 +69,6 @@ export default defineConfig({
 
   markdown: {
     theme: 'one-dark-pro',
-    lineNumbers: true,
     config: mdEnhance
   }
 })
