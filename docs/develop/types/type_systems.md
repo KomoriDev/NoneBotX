@@ -1,6 +1,6 @@
 # 类型系统
 
-:::interlink
+::: info 相关链接
 RealPython: <https://realpython.com/python-type-checking/>  
 FastAPI Docs: <https://fastapi.tiangolo.com/>
 :::

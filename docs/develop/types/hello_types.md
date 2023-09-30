@@ -10,7 +10,7 @@
 
 让我们从一个简单的例子开始：
 
-```py :no-line-numbers
+```py
 def get_full_name(first_name, last_name):
     full_name = first_name.title() + " " + last_name.title()
     return full_name
@@ -32,7 +32,7 @@ John Doe
 
 现在是我们的第一个类型提示的时候了！要将有关类型的信息添加到函数中，只需注释其参数和返回值，如下所示：
 
-```py :no-line-numbers
+```py {2}
 def get_full_name(first_name: str, last_name: str) -> str:
     full_name = first_name.title() + " " + last_name.title()
     return full_name
@@ -42,7 +42,7 @@ print(get_full_name("john", "doe"))
 
 在语法方面，这和声明默认值是不同的，例如：
 
-```py :no-line-numbers
+```py
 first_name="john", last_name="doe"
 ```
 
@@ -72,7 +72,7 @@ first_name="john", last_name="doe"
 - `float`
 - `bytes`
 
-```py :no-line-numbers
+```py
 def get_items(
     item_a: str,
     item_b: int,
@@ -93,10 +93,9 @@ def get_items(
 
 让我们来定义一个由 `str` 组成的 `list` 变量。
 
-:::: code-group
-::: code-group-item 3.8+
+::: code-group
 
-```py :no-line-numbers
+```py [3.8+]
 from typing import List
 
 def process_items(items: List[str]):
@@ -104,42 +103,33 @@ def process_items(items: List[str]):
         print(item)
 ```
 
-:::
-::: code-group-item 3.10+
-
-```py :no-line-numbers
+```py :no-line-numbers [3.10+]
 def process_items(items: list[str]):
     for item in items:
         print(item)
 ```
 
 :::
-::::
 
 #### 元组和集合
 
 声明 `tuple` 和 `set` 的方法也是一样的：
 
-:::: code-group
-::: code-group-item 3.8+
+::: code-group
 
-```py :no-line-numbers
+```py [3.8+]
 from typing import Set, Tuple
 
 def process_items(items_t: Tuple[int, int, str], items_s: Set[bytes]):
     return items_t, items_s
 ```
 
-:::
-::: code-group-item 3.10+
-
-```py :no-line-numbers
+```py [3.10+]
 def process_items(items_t: tuple[int, int, str], items_s: set[bytes]):
     return items_t, items_s
 ```
 
 :::
-::::
 
 这表示：
 
@@ -152,10 +142,9 @@ def process_items(items_t: tuple[int, int, str], items_s: set[bytes]):
 
 第一个子类型声明 `dict` 的所有键，第二个子类型声明 `dict` 的所有值：
 
-:::: code-group
-::: code-group-item 3.8+
+::: code-group
 
-```py :no-line-numbers
+```py [3.8+]
 from typing import Dict
 
 def process_items(prices: Dict[str, float]):
@@ -164,10 +153,7 @@ def process_items(prices: Dict[str, float]):
         print(item_price)
 ```
 
-:::
-::: code-group-item 3.10+
-
-```py :no-line-numbers
+```py [3.10+]
 def process_items(prices: dict[str, float]):
     for item_name, item_price in prices.items():
         print(item_name)
@@ -175,7 +161,6 @@ def process_items(prices: dict[str, float]):
 ```
 
 :::
-::::
 
 这表示：
 

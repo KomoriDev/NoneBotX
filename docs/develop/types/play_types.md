@@ -75,10 +75,9 @@ options: dict = {"centered": False, "capitalize": True}
 
 还记得我们的 [嵌套类型] 吗？
 
-:::: code-group
-::: code-group-item 3.8+
+::: code-group
 
-```py :no-line-numbers
+```py [3.8+]
 from typing import Dict, List, Tuple
 
 names: List[str] = ["Guido", "Jukka", "Ivan"]
@@ -86,19 +85,17 @@ version: Tuple[int, int, int] = (3, 7, 1)
 options: Dict[str, bool] = {"centered": False, "capitalize": True}
 ```
 
-:::
-::: code-group-item 3.10+
-
-```py :no-line-numbers
+```py [3.10+]
 names: list[str] = ["Guido", "Jukka", "Ivan"]
 version: tuple[int, int, int] = (3, 7, 1)
 options: dict[str, bool] = {"centered": False, "capitalize": True}
 ```
 
 :::
-::::
 
-请注意，对于 3.8+ 的 Python，每种类型都以大写字母开头，并且它们都使用方括号来定义项目类型：
+::: danger
+请注意，对于 3.8+ 的 Python，每种类型都以大写字母开头，并且它们都使用方括号来定义项目类型
+:::
 
 - `names` 是一个字符串列表
 - `version` 是由三个整数组成的三元组
@@ -106,7 +103,7 @@ options: dict[str, bool] = {"centered": False, "capitalize": True}
 
 让我们回到卡牌游戏。一张卡片由两个字符串的元组表示。你可以把它写成 `Tuple[str, str]`，这样这副牌的类型就变成了 `List[Tuple[str, str]]`。因此你可以这样注释 `create_deck()`：
 
-```py :no-line-numbers
+```py
 from typing import List, Tuple
 
 ...
@@ -131,20 +128,16 @@ def create_deck(shuffle: bool = False) -> List[Tuple[str, str]]:
 
 在许多情况下，您的函数会期望某种 [序列]，而不真正关心它是列表还是元组。在这些情况下，您应该在注释函数参数时使用 `typing.Sequence`：
 
-:::: code-group
-::: code-group-item 3.8+
+::: code-group
 
-```py :no-line-numbers
+```py [3.8+]
 from typing import List, Sequence
 
 def square(elems: Sequence[float]) -> List[float]:
     return [x**2 for x in elems]
 ```
 
-:::
-::: code-group-item 3.10+
-
-```py :no-line-numbers
+```py [3.10+]
 from typing import Sequence
 
 def square(elems: Sequence[float]) -> list[float]:
@@ -154,6 +147,52 @@ def square(elems: Sequence[float]) -> list[float]:
 :::
 
 使用 `Sequence` 是使用鸭子类型的一个示例。 序列是任何支持 `len()` 和 `__getitem__()` 的东西，与其实际类型无关。
+
+## 类型别名
+
+当使用嵌套类型（例如一副纸牌）时，类型提示可能会变得相当隐晦。`List[Tuple[str, str]]` 在弄清楚它与我们对一副牌的表示相匹配之前，您可能需要仔细观察一下。
+
+```py
+def deal_hands(
+    deck: List[Tuple[str, str]]
+) -> Tuple[
+    List[Tuple[str, str]],
+    List[Tuple[str, str]],
+    List[Tuple[str, str]],
+    List[Tuple[str, str]],
+]:
+    """将这副牌中的牌分给四个人"""
+    return (deck[0::4], deck[1::4], deck[2::4], deck[3::4])
+```
+
+您可以通过将类型别名分配给新变量来定义自己的类型别名。例如，您可以创建 `Card` 和 `Deck` 类型别名：
+
+::: code-group
+
+```py [3.8+]
+from typing import List, Tuple
+
+Card = Tuple[str, str]
+Deck = List[Card]
+```
+
+```py [3.10+]
+Card = tuple[str, str]
+Deck = list[Card]
+```
+
+类型别名非常适合让您的代码及其意图更加清晰。同时，可以检查这些别名以了解它们所代表的含义：
+
+<v-termynal forward-button restart-button lazy>
+  <vt-input prompt=">>>">from typing import List, Tuple</vt-input>
+  <vt-input prompt=">>>">Card = Tuple[str, str]</vt-input>
+  <vt-input prompt=">>>">Deck = List[Card]</vt-input>
+
+<vt-input prompt=">>>">Deck</vt-input>
+<vt-text>typing.List[typing.Tuple[str, str]]</vt-text>
+</v-termynal>
+
+请注意，在打印 `Deck` 时，它显示它是字符串二元组列表的别名。
 
 [嵌套类型]: ./hello_types#嵌套类型
 [序列]: https://docs.python.org/3/glossary.html#term-sequence

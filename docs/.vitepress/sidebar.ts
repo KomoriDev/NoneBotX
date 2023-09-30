@@ -74,7 +74,7 @@ const develop = [
   },
   {
     text: 'Alconna',
-    items: [{ text: 'Alconna 的安装与配置', link: '/develop/alconna/base' }]
+    items: [{ text: '安装', link: '/develop/alconna/base' }]
   }
 ]
 

@@ -17,6 +17,8 @@
 - 类型提示会对启动时间造成轻微的影响。如果您需要使用 `typing` 模块，导入时间可能会很长，尤其是在短脚本中。
 
 ::: details 计算导入时间
+**使用 typing**
+
 稍后您将了解该 `typing` 模块，以及在大多数情况下添加类型提示时它的必要性。导入模块必然需要一些时间，但是需要多少时间呢？
 
 要了解这一点，请创建两个文件：`empty_file.py` 应该是一个空文件，而 `import_typing.py` 应该包含以下行：
@@ -65,7 +67,7 @@ $ perf stat -r 1000 python3.7 empty_file.py
 
 事实上，总体启动时间减少了约 8 毫秒，导入 `typing` 的时间从 17 毫秒减少到约 6 毫秒，几乎快了 3 倍。
 
-### 使用 timeit
+**使用 timeit**
 
 其他平台上也有类似的工具。Python 本身附带了 `timeit` 标准库中的模块。通常，我们会直接使用 `timeit` 上面的计时。然而，`timeit` 很难可靠地计时导入，因为 Python 很聪明，只导入模块一次。考虑以下示例：
 
@@ -85,7 +87,7 @@ $ perf stat -r 1000 python3.7 empty_file.py
   <vt-text>1 loop, best of 1: 1.97 msec per loop</vt-text>
 </v-termynal>
 
-### 使用 importtime
+**使用 importtime**
 
 Python 3.7 中还有一个新的命令行选项，可用于计算导入需要多长时间。使用 `-X importtime` 您将获得有关所有导入的报告：
 

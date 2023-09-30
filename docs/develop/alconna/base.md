@@ -6,45 +6,31 @@
 
 基于 `Alconna` 的特性，该插件同时提供了一系列便捷的消息段标注。用于在 `Alconna` 中匹配所有除 `text` 外的其他消息段，也可用于快速创建各适配器下的消息段。所有标注位于 `nonebot_plugin_alconna.adapters` 中。
 
-## 安装插件
+## 凡事都要先安装
 
 在使用前请先安装 `nonebot-plugin-alconna` 插件至项目环境中，可参考获取商店插件来了解并选择安装插件的方式。如：
 
 在**项目目录**下执行以下命令：
 
-:::: code-group
-::: code-group-item nb-cli
+::: code-group
 
-```bash :no-line-numbers
+```bash [nb-cli]
 nb plugin install nonebot-plugin-alconna
 ```
 
-:::
-
-::: code-group-item pdm
-
-```bash :no-line-numbers
+```bash [pdm]
 pdm add nonebot-plugin-alconna
 ```
 
-:::
-
-::: code-group-item poetry
-
-```bash :no-line-numbers
+```bash [poetry]
 poetry add nonebot-plugin-alconna
 ```
 
-:::
-
-::: code-group-item pip
-
-```bash :no-line-numbers
+```bash [pip]
 pip install nonebot-plugin-alconna
 ```
 
 :::
-::::
 
 ## 导入插件
 
