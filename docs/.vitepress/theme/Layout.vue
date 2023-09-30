@@ -70,10 +70,10 @@ const { Layout } = DefaultTheme
   <Layout>
     <template #doc-after>
       <div class="doc-after">
-        <p class="tips">
+        <div class="tips">
           <strong>Tip: </strong>
           <span>{{ random }}</span>
-        </p>
+        </div>
         <div class="ccbyncsa">
           本文档使用
           <a href="https://opensource.org/license/mit/" target="_blank"> MIT License </a>
