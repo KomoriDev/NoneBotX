@@ -45,30 +45,22 @@ Python 满足要求，就不用单独安装 Python 了。~~ 当然我们还是�
 而假如系统自带的 Python 版本较低或不自带 Python，那么你可以尝试在系统的软件包管理器中搜索有没有新版
 Python。
 
-::::code-group
-:::code-group-item Ubuntu (apt)
+:::code-group
 
-```bash :no-line-numbers
+```bash :no-line-numbers [Ubuntu (apt)]
 sudo apt search "python3\."
 sudo apt install python3.10 python-is-python3
 ```
 
-:::
-:::code-group-item Arch Linux (pacman)
-
-```bash :no-line-numbers
+```bash :no-line-numbers [Arch Linux (pacman)]
 sudo pacman -S python
 ```
 
-:::
-:::code-group-item Fedora (dnf)
-
-```bash :no-line-numbers
+```bash :no-line-numbers [Fedora (dnf)]
 sudo dnf install python
 ```
 
 :::
-::::
 
 :::tsukkomi 版本太新的烦恼 <curtain>新啊，很新啊</curtain>
 部分 Linux 发行版默认只提供尽可能新的 Python 版本（如 Fedora, Arch<curtain>~~, Termux

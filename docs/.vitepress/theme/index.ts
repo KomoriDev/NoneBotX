@@ -62,8 +62,8 @@ const theme: Theme = {
     app.component('VolumeBar', VolumeBar)
     app.component('Comment', Comment)
 
-    app.component('CodeGroup', CodeGroup)
-    app.component('CodeGroupItem', CodeGroupItem)
+    // app.component('CodeGroup', CodeGroup)
+    // app.component('CodeGroupItem', CodeGroupItem)
     app.component('Mermaid', Mermaid)
     app.component('NameByPlatform', NameByPlatform)
     app.use(VueTermynalPlugin as any)

@@ -8,16 +8,25 @@
 }
 
 :root {
-  --vp-c-brand: #ea5252;
-  --vp-c-brand-light: #f76560;
-  --vp-c-brand-lighter: #f98981;
-  --vp-c-brand-dark: #f53f3f;
-  --vp-c-brand-darker: #cb2e34;
-  --vp-custom-block-tip-border: var(--vp-c-green);
-  --vp-custom-block-tip-text: var(--vp-c-green-dark);
+  --vp-c-indigo-1: #ea5353;
+  --vp-c-indigo-2: #ea5353;
+
+  --vp-home-hero-name-color: #ea5353;
+  --vp-button-brand-bg: #ea5353;
+  --vp-button-brand-hover-bg: #e63333;
+
+  --vp-custom-block-tip-heimu: #646cff;
+  --vp-custom-block-warning-heimu: #eab208;
+  --vp-custom-block-danger-heimu: #f43f5d;
+  --vp-custom-block-tsukkomi-heimu: #de22ff;
+  --vp-custom-block-tsukkomi-bg: #de22ff24;
   --vp-font-family-base: 'HarmonyOSHans', 'HarmonyOS Sans SC', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Oxygen, Ubuntu, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Microsoft YaHei,
     sans-serif;
+}
+
+.vp-doc a {
+  text-decoration: none;
 }
 
 html {

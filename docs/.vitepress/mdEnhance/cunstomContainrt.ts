@@ -9,10 +9,11 @@ import type { RenderRule } from 'markdown-it/lib/renderer'
 import container from 'markdown-it-container'
 
 export const containerPlugin = (md: MarkdownIt) => {
-  md.use(...createContainer('interlink', '相关链接', md))
-    .use(...createContainer('tsukkomi', '吐槽', md))
-    .use(...createContainer('code-group', 'code-group', md))
-    .use(...createContainer('code-group-item', 'code-group-item', md))
+  md.use(...createContainer('interlink', '相关链接', md)).use(
+    ...createContainer('tsukkomi', '吐槽', md)
+  )
+  // .use(...createContainer('code-group', 'code-group', md))
+  // .use(...createContainer('code-group-item', 'code-group-item', md))
 }
 
 type ContainerArgs = [typeof container, string, { render: RenderRule }]
