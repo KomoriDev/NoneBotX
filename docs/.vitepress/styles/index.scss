@@ -127,7 +127,7 @@ li {
 
 h2,
 h3 {
-  background: linear-gradient(90deg, black, transparent);
+  background: linear-gradient(90deg, var(--vp-c-text-1), transparent);
   background-size: 200%;
   animation: reveal both linear;
   animation-timeline: view();
