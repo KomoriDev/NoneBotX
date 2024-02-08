@@ -130,8 +130,7 @@ pkg i python
 
 ### 多用 `pip`
 
-<curtain>我不惮以最大的恶意揣测，</curtain>可能为了节省软件仓库的维护成本，Termux 包管理器并不管理绝大多数
-Python 包，而是直接让 pip 进行管理。
+<curtain>我不惮以最大的恶意揣测，</curtain>可能为了节省软件仓库的维护成本，Termux 包管理器并不管理绝大多数 Python 包，而是直接让 pip 进行管理。
 
 ### 装不上包.jpg
 
