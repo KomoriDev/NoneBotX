@@ -74,7 +74,7 @@ const appendix = [
     text: '写代码的小贴士',
     items: [
       { text: '终端复用', link: '/appendix/tips/terminal_multiplexer' },
-      { text: 'Termux 安装 Uvicorn 出错', link: '/appendix/tips/termux-install-uvicon' },
+      { text: 'Termux 下进行部署/开发', link: '/appendix/tips/termux-guide' },
       { text: 'pathlib 为什么是神？路径解析推荐', link: '/appendix/tips/pathlib' }
     ]
   },
@@ -86,4 +86,4 @@ const appendix = [
 
 const comment = [{ text: '论坛', link: '/comment' }]
 
-export { before, guide, appendix, comment }
+export { appendix, before, comment, guide }
