@@ -36,7 +36,7 @@ termux-change-repo  # 运行镜像源切换助手
 
 助手程序提供了一套易读的 TUI 界面，可以使用方向键、空格键、Tab 键、回车键以及屏幕点击进行选择操作。
 
-```plain :no-line-numbers
+```txt :no-line-numbers
     termux-change-repo
 Do you want to choose a mirror group or a single mirror? Select with space.
 # 你要选镜像组（同一地区的一批镜像站）还是单个镜像站？按空格键选择。
@@ -47,7 +47,7 @@ Do you want to choose a mirror group or a single mirror? Select with space.
 
 这里直接回车/点击 `OK` 选择，进入镜像组选择界面：
 
-```plain :no-line-numbers
+```txt :no-line-numbers
     termux-change-repo
 Which group of mirrors do you want to use? Select with space.
 # 你想用哪个镜像组？按空格键选择。
@@ -68,7 +68,7 @@ Which group of mirrors do you want to use? Select with space.
 :::tsukkomi 小声哔哔
 （截至 2024.2.8）写到这里的时候还有点担心会不会出现某些不正确问题，结果看完镜像组内容才发现多虑了（
 
-~~笑死，根本没有<curtain>台湾省</curtain>的镜像（~~
+<curtain>笑死，根本没有台湾省的镜像（</curtain>
 :::
 
 ### 包管理器
@@ -98,7 +98,9 @@ Termux 官方也提供了基于 Arch 系的 `pacman/libalpm` 包管理程序的�
 
 ### Kono 滚动更新 da！
 
-<Loading />
+尽管 Termux 的默认包管理器是基于 Debian 系的 `apt/dpkg` 的，然而软件仓库使用滚动更新的策略，使得其拥有接近
+Fedora/Arch 的新潮软件，而代价则是无法使用许多没有跟上更新的第三方包（这种情况在 Termux 软件仓库引入 `numpy`
+等难以本地编译的包后有所改善）。
 
 ## Rust 构建工具的安装
 
@@ -124,15 +126,39 @@ pkg i binutils rust
 pkg i python
 ```
 
-`pip` 会随 `python` 一起安装。
+`pip` 会随 `python` 一起安装，且默认 `python` 就是 `python3`，`pip` 就是 `pip3`。
 
 ### 多用 `pip`
 
-<Loading />
+<curtain>我不惮以最大的恶意揣测，</curtain>可能为了节省软件仓库的维护成本，Termux 包管理器并不管理绝大多数
+Python 包，而是直接让 pip 进行管理。
 
 ### 装不上包.jpg
 
-<Loading />
+:::info 隋唐小测
+下列预构建包可以在 Termux 基本环境使用的有哪些？
+
+```txt :line-numbers
+aiohttp-3.9.3-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+aiohttp-3.9.3-cp311-cp311-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl
+aiohttp-3.9.3-cp311-cp311-manylinux_2_17_s390x.manylinux2014_s390x.whl
+aiohttp-3.9.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+aiohttp-3.9.3-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl
+aiohttp-3.9.3-cp311-cp311-musllinux_1_1_aarch64.whl
+aiohttp-3.9.3-cp311-cp311-musllinux_1_1_i686.whl
+aiohttp-3.9.3-cp311-cp311-musllinux_1_1_ppc64le.whl
+aiohttp-3.9.3-cp311-cp311-musllinux_1_1_s390x.whl
+```
+
+答案是——<curtain>『一 个 没 有』！！！</curtain>
+:::
+
+Termux 上动态链接的可执行文件使用了 Android 系统内置的 Bionic C 库——既不是 `glibc`（对应
+`manylinux`），也不是 `musl`（对应 `musllinux`），加上各种平台差异导致 Termux
+上只能使用通用包安装或者通过源码包编译安装。
+
+编译安装的成功率取决于 Termux 版与原版有多大区别，区别越小，往往越容易安装。对于无法本地编译的 Python
+包，可见[附录](#附录-部分-python-第三方包无法通过-pip-安装或安装后运行不正常的解决方案)。
 
 ## NB-CLI 与 NoneBot2 的安装
 
@@ -182,7 +208,7 @@ python -m venv --upgrade --system-site-packages .venv
 - `uvloop`（被 `nonebot2` 依赖）
 
   0. 进入项目的虚拟环境（如果有）；
-  1. 通过 `pkg install libuv` 安装 Termux 的 libuv 库；
+  1. 通过 `pkg i libuv` 安装 Termux 的 libuv 库；
   2. 通过 `pip download uvloop` 下载 uvloop 的安装包，并解压和 cd 进去；
   3. 编辑 `setup.py`，将 `self.use_system_libuv` 的值从 `False` 改成 `True`；
   4. 在 uvloop 文件夹中使用 `pip install .` 安装（**不要忘记最后的点**）。
