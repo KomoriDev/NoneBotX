@@ -28,8 +28,8 @@ const before = [
           }
         ]
       },
-      { text: 'Go-CQHTTP 的安装与配置', link: '/before/install_go-cqhttp' },
       { text: 'Lagrange 的安装与配置', link: '/before/install_lagrange' },
+      { text: 'Go-CQHTTP 的安装与配置', link: '/before/install_go-cqhttp' },
       { text: '名词解释', link: '/before/terms' }
     ]
   },
