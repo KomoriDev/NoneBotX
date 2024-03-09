@@ -22,7 +22,7 @@
 <curtain>虚假的</curtain>太长不看版（假定你不知道需要的架构）：
 
 - 一定要看清是 **amd64** 还是 **arm64**！！！
-- 如果你要在一般的个人电脑或者装有 Windows Server 的服务器上运行，请优先尝试 `windows_amd64` 版本；
+- 如果你要在一般的个人电脑或者装有 Windows Server 的服务器上运行，请优先尝试 `windows-amd64` 版本；
 - 如果你要在装有 Linux 发行版的个人电脑/服务器上运行，请优先尝试 `linux-x64` 版本；
 - 如果你要在“树莓派”或智能手机等 ARM 设备上运行，请优先尝试 `linux-arm64` 版本，若无法运行则再尝试 `linux-arm` 版本；
 - 如果你要在 Apple M 系列芯片的电脑上运行，请选择 `osx-arm64` 版本，否则请选择 `osx-amd64` 版本。
@@ -62,7 +62,7 @@ Lagrange 的 CI 产物命名大致如下：
 :::tip 准备工作
 对于 Windows 用户，如果不在命令行中运行，请先双击 `Lagrange.OneBot.exe`（即你实际获取到的程序文件），生成配置文件，之后再次运行；
 
-对于非 Windows 用户，直接使用程序本体（不带后缀），如果出现 `Permission denied` 请 `chmod +x [程序文件名]`。
+对于非 Windows 用户，直接使用程序本体（不带后缀），如果出现 `Permission denied`，请 `chmod +x [程序文件名]` 添加执行权限后重试。
 :::
 
 ## 配置
