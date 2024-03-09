@@ -1,6 +1,15 @@
 # Lagrange 使用教程
 
-[![Lagrange](https://img.shields.io/badge/Github-black?logo=Github)](https://github.com/LagrangeDev/Lagrange.Core)
+<p style="display: inline-flex">
+  <a href="https://github.com/LagrangeDev/Lagrange.Core">
+    <img src="https://img.shields.io/badge/Github-black?logo=Github" style="margin-right: 5px" alt="Telegram" />
+  </a>
+  <a href="https://t.me/+6HNTeJO0JqtlNmRl">
+    <img src="https://img.shields.io/badge/Telegram-blue?logo=Telegram" alt="Telegram" />
+  </a>
+</p>
+
+<img src="/images/before/lagrange.jpg" width=600 alt="感觉至上"/>
 
 ## 下载
 
