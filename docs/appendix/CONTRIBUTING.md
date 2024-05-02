@@ -81,8 +81,11 @@ NoneBotX 社区文档并没有具体的行文风格规范，但我们建议你�
 <Curtain>这是一个黑幕</Curtain>
 
 ::: tip
+
 <Curtain>这是 TIP 下的黑幕</Curtain>
-更多用法自行探索（ :::
+更多用法自行探索（ 
+
+:::
 ```
 
 输出
@@ -160,10 +163,12 @@ This is a tsukkomi
     src="/avatar/nanniang.webp"
   ></chat-img>
 
-  <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp"
-    ><chat-quote><img src="/avatar/nanniang.webp" alt="男娘身材照" /></chat-quote
-    >这是男娘的照片</chat-msg
-  >
+  <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">
+    <chat-quote>
+      <img src="/avatar/nanniang.webp" alt="男娘身材照" />
+    </chat-quote>
+    这是男娘的照片
+  </chat-msg>
 
   <chat-toast>男娘撤回了一条消息</chat-toast>
 
@@ -204,32 +209,36 @@ This is a tsukkomi
 
 <chat-window title="QQ 聊天">
 
-<chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>这是一条消息</chat-msg>
+  <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>这是一条消息</chat-msg>
 
-<chat-msg name="NCBM" avatar="/avatar/ncbm.webp">这是一条消息</chat-msg>
+  <chat-msg name="NCBM" avatar="/avatar/ncbm.webp">这是一条消息</chat-msg>
 
-<chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">这是一位南梁</chat-msg>
+  <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">这是一位南梁</chat-msg>
 
-<chat-img name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp" src="/avatar/nanniang.webp"></chat-img>
+  <chat-img name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp" src="/avatar/nanniang.webp"></chat-img>
 
-<chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp"><chat-quote><img src="/avatar/nanniang.webp" alt="男娘身材照"/></chat-quote>这是男娘的照片</chat-msg>
+  <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">
+    <chat-quote>
+      <img src="/avatar/nanniang.webp" alt="男娘身材照"/>
+    </chat-quote>
+    这是男娘的照片
+  </chat-msg>
 
-<chat-toast>男娘撤回了一条消息</chat-toast>
+  <chat-toast>男娘撤回了一条消息</chat-toast>
 
-<chat-voice
-name="男娘"
-tag="小男娘"
-avatar="/avatar/nanniang.webp"
-audioSrc="http://music.163.com/song/media/outer/url?id=5221167.mp3"
-@click="cheated = true"
+  <chat-voice
+    name="男娘"
+    tag="小男娘"
+    avatar="/avatar/nanniang.webp"
+    audioSrc="http://music.163.com/song/media/outer/url?id=5221167.mp3"
+    @click="cheated = true"
+  ></chat-voice>
 
-> </chat-voice>
+  <chat-toast v-if="cheated == true" >你被骗了</chat-toast>
 
-<chat-toast v-if="cheated == true" >你被骗了</chat-toast>
+  <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>看看男娘</chat-msg>
 
-<chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>看看男娘</chat-msg>
-
-<forward-chat
+  <forward-chat
     name="男娘"
     title="男娘"
     tag="小男娘"
@@ -239,7 +248,8 @@ audioSrc="http://music.163.com/song/media/outer/url?id=5221167.mp3"
       '小男娘: [图片]',
       '小男娘: [图片]',
       '小男娘: [图片]'
-    ]" />
+    ]"
+  />
 
   <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">
    <chat-file
