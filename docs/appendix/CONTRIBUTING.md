@@ -189,7 +189,7 @@ This is a tsukkomi
       filename="secret.zip"
       filesize="6.33MB"
       fileicon="/images/guide/compressed_file.webp"
-      href="https://www.bilibili.com/vidBV1GJ411x7h7"
+      href="https://www.bilibili.com/video/BV1GJ411x7h7"
     />
   </chat-msg>
 </chat-window>
@@ -235,7 +235,7 @@ This is a tsukkomi
       filename="secret.zip"
       filesize="6.33MB"
       fileicon="/images/guide/compressed_file.webp"
-      href="https://www.bilibili.com/vidBV1GJ411x7h7"
+      href="https://www.bilibili.com/video/BV1GJ411x7h7"
     />
   </chat-msg>
 </chat-window>
