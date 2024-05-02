@@ -6,7 +6,7 @@
 
 - 在本章节中，我们假设你已了解计算机和命令行的初级知识；
 - 本文档将会使用 `PDM` 作为依赖和虚拟环境管理工具；
-- 请确保你的 Python 版本 >= 3.8；
+- 请确保你的 Python 版本 >= 3.9；
 - **我们强烈建议使用虚拟环境进行开发**，如果没有使用虚拟环境，请确保已经卸载可能存在的 NoneBot v1！！！
 
 ```shell :no-line-numbers
@@ -17,7 +17,7 @@ pip uninstall nonebot
 
 ## 安装脚手架
 
-确保你已经安装了 Python 3.8 及以上版本，然后在命令行中执行以下命令：
+确保你已经安装了 Python 3.9 及以上版本，然后在命令行中执行以下命令：
 
 1. 安装 [pipx](https://pypa.github.io/pipx/)
 
@@ -270,7 +270,7 @@ nb create
    License(SPDX name) (MIT):                               # 项目的开源协议
    Author name (Komorebi):                                 # 作者名称。请尽量不要使用中文
    Author email (mute231010@gmail.com):                    # 作者邮箱
-   Python requires('*' to allow any) (>=3.8): >=3.8        # 项目的 Python 版本
+   Python requires('*' to allow any) (>=3.8): >=3.9        # 项目的 Python 版本
    Project is initialized successfully
    ```
 
