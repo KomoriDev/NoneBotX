@@ -68,7 +68,8 @@ const appendix = [
     text: '附录',
     items: [
       { text: '鸣谢', link: '/appendix/credit' },
-      { text: 'Q&A', link: '/appendix/QA' }
+      { text: 'Q&A', link: '/appendix/QA' },
+      { text: '贡献指南', link: '/appendix/CONTRIBUTING' }
     ]
   },
   {
