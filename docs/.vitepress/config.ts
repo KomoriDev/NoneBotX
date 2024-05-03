@@ -15,7 +15,16 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'shortcut icon', href: './favicon.ico' }],
-    ['script', { src: 'https://cdn.bootcdn.net/ajax/libs/mermaid/10.3.0/mermaid.min.js' }]
+    ['script', { src: 'https://cdn.bootcdn.net/ajax/libs/mermaid/10.3.0/mermaid.min.js' }],
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-DCQWK40LG3' }],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DCQWK40LG3');`
+    ]
   ],
 
   themeConfig: {
