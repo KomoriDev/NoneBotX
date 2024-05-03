@@ -1,3 +1,12 @@
+---
+prev:
+  text: '代码编辑器的安装与配置'
+  link: '/before/configure_workspace/install_editor/'
+next:
+  text: 'Git 的安装与配置'
+  link: './git.md'
+---
+
 # 虚拟环境 & 包管理器
 
 在 Python 开发中，**虚拟环境**和**包管理器**是两个至关重要的工具，它们都用于管理项目依赖项并保持项目环境的隔离性。
