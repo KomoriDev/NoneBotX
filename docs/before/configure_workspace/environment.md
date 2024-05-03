@@ -30,7 +30,7 @@ PDM 和 Poetry 同时兼备虚拟环境和包管理器所具备的功能，建�
 
 ```bash
 python -m pip install --user pipx
-python -m pipx ensurepath   # 将 pipx 加入虚拟环境
+python -m pipx ensurepath   # 将 pipx 添加到环境变量
 pipx install pdm  # pipx install poetry
 pipx upgrade-all  # 更新所有使用 pipx 安装的包
 ```
