@@ -20,5 +20,5 @@
 
 - [Python 环境搭建](./python.md)
 - [代码编辑器的安装及配置](./install_editor/index.md)
-- [虚拟环境 & 包管理器](./package_manager.md)
+- [虚拟环境 & 包管理器](./environment.md)
 - [Git 的安装及配置](./git.md)
