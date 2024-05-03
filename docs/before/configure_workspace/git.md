@@ -41,7 +41,7 @@ Commit 的更改内容，以及通过命令查看已更改但**未 Commit** 的�
 ## 安装 Git
 
 :::tsukkomi 小建议
-建议在阅读完前面的[IDE 的选择](./select_ide)后再阅读本节，
+建议在阅读完前面的[编辑器的选择](./install_editor/select.md)后再阅读本节，
 假如你打算使用 VS Code 的话，在 Git 的安装过程中需要更改一项配置，
 假如你不打算使用 VS Code 的话，你可以直接阅读本节忽略这项配置。
 :::
