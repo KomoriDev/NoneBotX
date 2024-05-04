@@ -9,23 +9,31 @@ const before = [
         link: '/before/configure_workspace/',
         collapsed: true,
         items: [
-          { text: 'Python 版本的选择', link: '/before/configure_workspace/select_python' },
-          { text: 'IDE 的选择', link: '/before/configure_workspace/select_ide' },
-          { text: '了解虚拟环境', link: '/before/configure_workspace/learn_virtualenv' },
-          { text: '包管理器的选择', link: '/before/configure_workspace/select_package_manager' },
-          { text: 'Git 的安装与配置', link: '/before/configure_workspace/git' },
+          { text: 'Python 环境搭建', link: '/before/configure_workspace/python' },
           {
-            text: 'Python 及包管理器的安装',
-            link: '/before/configure_workspace/install_package_manager'
+            text: '代码编辑器的安装及配置',
+            link: '/before/configure_workspace/install_editor/',
+            collapsed: true,
+            items: [
+              {
+                text: '编辑器的选择',
+                link: '/before/configure_workspace/install_editor/select'
+              },
+              {
+                text: 'PyCharm 的安装与配置',
+                link: '/before/configure_workspace/install_editor/pyc'
+              },
+              {
+                text: 'VS Code 的安装与配置',
+                link: '/before/configure_workspace/install_editor/vsc'
+              }
+            ]
           },
           {
-            text: 'IDE 的安装与配置',
-            link: '/before/configure_workspace/install_ide/',
-            items: [
-              { text: 'PyCharm 的安装与配置', link: '/before/configure_workspace/install_ide/pyc' },
-              { text: 'VS Code 的安装与配置', link: '/before/configure_workspace/install_ide/vsc' }
-            ]
-          }
+            text: '虚拟环境 & 包管理器',
+            link: 'before/configure_workspace/environment'
+          },
+          { text: 'Git 的安装与配置', link: '/before/configure_workspace/git' }
         ]
       },
       { text: 'Lagrange 的安装与配置', link: '/before/install_lagrange' },

@@ -30,7 +30,7 @@ PyCharm 里 Git 位于 VCS 相关的按钮或面板中。
 如下图为通过 VS Code 查看本文档的 Commit 历史记录、已更改但未提交（**Commit**）的文件列表、某次
 Commit 的更改内容，以及通过命令查看已更改但**未 Commit** 的文件列表和某次 Commit 的更改内容。
 
-![Git图例](/images/before/git/vcs.webp)
+![Git图例](/images/before/python/git/vcs.webp)
 
 :::tsukkomi
 嗯，**Commit** 并没有一个规定的翻译，通常可能会称为**提交**，建议一个 commit 尽量只有一个意图。
@@ -41,7 +41,7 @@ Commit 的更改内容，以及通过命令查看已更改但**未 Commit** 的�
 ## 安装 Git
 
 :::tsukkomi 小建议
-建议在阅读完前面的[IDE 的选择](./select_ide)后再阅读本节，
+建议在阅读完前面的[编辑器的选择](./install_editor/select.md)后再阅读本节，
 假如你打算使用 VS Code 的话，在 Git 的安装过程中需要更改一项配置，
 假如你不打算使用 VS Code 的话，你可以直接阅读本节忽略这项配置。
 :::
@@ -66,18 +66,18 @@ sudo pacman -S git    // Arch Linux / 其它使用 'pacman' 进行包管理的�
 以 Windows 为例，运行安装包，同意用户协议并点击 Next，安装程序会询问 Git
 要使用的默认编辑器，假如你使用的是 VS Code，你可以修改此处设置（如图）。
 
-![使用 VSC 作为默认编辑器](/images/before/git/vsc.webp)
+![使用 VSC 作为默认编辑器](/images/before/python/git/vsc.webp)
 
 点击几次 Next 之后，安装程序会询问你文件行尾要使用的换行符（EOL），建议选择第二个“Checkout
 as-is, commit Unix-style line endings”，即从远端拉取文件时保持文件设置，提交时如果文件中行尾使用的
 **\r\n** 那么 Git 会自动帮你转换为 **\n**
 
-![使用 VSC 作为默认编辑器](/images/before/git/eol.webp)
+![使用 VSC 作为默认编辑器](/images/before/python/git/eol.webp)
 
 再点击一两次 Next 之后，安装程序会询问你对于 `git pull` 的行为，**强烈建议**选择第二个“Rebase”（如图），
 至于原因嘛，实在不好解释，有需要可以去网上搜索，之后一直 Next 就可以安装了。
 
-![使用 VSC 作为默认编辑器](/images/before/git/pull.webp)
+![使用 VSC 作为默认编辑器](/images/before/python/git/pull.webp)
 
 ## How?
 
@@ -93,7 +93,7 @@ as-is, commit Unix-style line endings”，即从远端拉取文件时保持文�
 
 - 使用 VSCode 只提交特定的片段
 
-  ![使用 VSCode 只提交特定的片段](/images/before/git/vsc_partial_stage.webp)
+  ![使用 VSCode 只提交特定的片段](/images/before/python/git/vsc_partial_stage.webp)
 
   点击编辑界面上行号旁边指示文件更改的颜色条，下面展开的就是当前部分的更改。
   你可以在此处选择暂存/取消暂存、丢弃或者什么都不管。

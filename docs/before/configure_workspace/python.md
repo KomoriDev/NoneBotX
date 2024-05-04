@@ -1,6 +1,27 @@
-# Python 及包管理器的安装
+# Python 环境搭建
 
-## 安装 Python
+## 版本选择
+
+对于一个新创建的项目，理论上应使用较新的 Python 版本（毕竟你以后可能都不会想升级版本了）。
+
+对于面对 NoneBot 的项目，应尽可能使用 3.10 及以上的 Python 版本，目前 Python 最新版本为 3.12.x。
+
+再不济（比如用的是 Windows 7 系统）也请务必保证所使用的 Python 版本大于 3.9
+（NoneBot 对 Python 版本的最低要求是 Python 3.9）
+
+### 关于 Windows 7
+
+虽然 Python 3.9+ 停止了对 Windows 7 的支持，
+但如果真的要运行，也不是没有办法。比如
+[这里](https://github.com/adang1345/PythonWin7)
+就提供了能在 Windows 7 上运行的 Python 3.9+ 安装包/可运行文件。
+（不过运行的时候会不会出现其他 bug 什么的就不知道了）
+
+## 配置解释器
+
+- [Windows](#windows)
+- [Linux](#linux)
+- [MacOS](#macos)
 
 ### Windows
 
@@ -21,7 +42,8 @@ winget install Python.Python.3.10
 微软商店版 Python 的存储目录与官网版本区别**很大**，即便通常情况下几乎没有查看 Python
 存储目录的需求，部分程序也会因为无法适应这种特殊环境而运作异常。
 
-[相关文章](https://shuhari.dev/blog/2019/11/win10-store-python)
+> [相关文章 -《迷惑行为：Win10 中的 Python》](https://shuhari.dev/blog/2019/11/win10-store-python)
+
 :::
 
 假如你用的是 Windows 7（与 Windows Server 2012 等效）或者 Windows XP
@@ -94,23 +116,10 @@ sudo dnf install python
 brew install python3
 ```
 
-## PDM / Poetry 的安装
+## 测试 Python 安装
 
-前面提到了我们选择使用 PDM 或 Poetry 进行 Python 包管理，所以接下来要安装 PDM 或 Poetry。
+1. 打开命令提示符（Windows）或终端（Linux/macOS）。
+2. 输入 `python --version` 命令。
+3. 如果 Python 安装成功，将会显示当前安装的 Python 版本号。
 
-为了避免污染系统的 `site-packages`<curtain>（这玩意也需要一篇文章专门描述）</curtain>，我们可以先安装 `pipx` 再使用 `pipx` 安装 PDM 或 Poetry。
-
-:::info
-自 Ubuntu 23.04 起，系统的 Python 禁止使用 pip 安装任何库了，仅支持
-`apt install python3-xxx` 或 `apt install python-xxx`，可喜可贺可喜可贺~
-:::
-
-```bash :no-line-numbers
-python -m pip install --user pipx
-pipx install pdm  # pipx install poetry
-pipx upgrade-all  # 更新所有使用 pipx 安装的包
-```
-
-:::tsukkomi
-因为实在太简单了，只能在安装 Python 的部分大水特水了。
-:::
+![screenshot](/images/before/python/pyenv_test.webp)
