@@ -7,14 +7,14 @@ ci:
   autoupdate_commit_msg: ':arrow_up: auto update by pre-commit hooks'
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
       - id: end-of-file-fixer
 
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: 'v3.0.3'
+    rev: 'v4.0.0-alpha.8'
     hooks:
       - id: prettier
         types_or: [scss, css, javascript, jsx, ts, tsx, vue, html, json, yaml, markdown]
