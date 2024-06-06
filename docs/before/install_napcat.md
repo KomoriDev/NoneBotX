@@ -114,6 +114,7 @@ chmod u+x ./napcat.sh
 - `reverseWs`：反向Websocket服务
 
 ::: details 示例
+
 ```
 {
   "httpHost": "",
@@ -139,6 +140,7 @@ chmod u+x ./napcat.sh
   "musicSignUrl": ""
 }
 ```
+
 :::
 ::: tip
 详细的配置请前往 [官方文档](https://napneko.github.io/zh-CN/guide/config) 查看
