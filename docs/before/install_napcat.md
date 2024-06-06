@@ -114,29 +114,31 @@ chmod u+x ./napcat.sh
 - `reverseWs`：反向Websocket服务
 
 ::: details 示例
+```
 {
-"httpHost": "",
-"enableHttp": false,
-"httpPort": 3000,
-"wsHost": "",
-"enableWs": false,
-"wsPort": 3001,
-"enableWsReverse": true,
-"wsReverseUrls": [
-"ws://127.0.0.1:8080/onebot/v11/ws"
-],
-"enableHttpPost": false,
-"httpPostUrls": [],
-"enableHttpHeart": false,
-"httpSecret": "",
-"messagePostFormat": "array",
-"reportSelfMessage": false,
-"debug": false,
-"enableLocalFile2Url": true,
-"heartInterval": 30000,
-"token": "",
-"musicSignUrl": ""
+  "httpHost": "",
+  "enableHttp": false,
+  "httpPort": 3000,
+  "wsHost": "",
+  "enableWs": false,
+  "wsPort": 3001,
+  "enableWsReverse": true,
+  "wsReverseUrls": [
+  "ws://127.0.0.1:8080/onebot/v11/ws"
+  ],
+  "enableHttpPost": false,
+  "httpPostUrls": [],
+  "enableHttpHeart": false,
+  "httpSecret": "",
+  "messagePostFormat": "array",
+  "reportSelfMessage": false,
+  "debug": false,
+  "enableLocalFile2Url": true,
+  "heartInterval": 30000,
+  "token": "",
+  "musicSignUrl": ""
 }
+```
 :::
 ::: tip
 详细的配置请前往 [官方文档](https://napneko.github.io/zh-CN/guide/config) 查看
