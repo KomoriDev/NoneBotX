@@ -59,7 +59,7 @@ NapCat 不同于协议实现，是基于 QQ 客户端，QQ 客户端上干不了
 
 Linux下无桌面环境安装 QQ 使用以下命令（以 debian 系为例）
 
-```
+```bash
 sudo apt install libgbm1 libasound2
 sudo apt install ./qq.deb
 ```
@@ -81,6 +81,7 @@ sudo apt install ./qq.deb
 **推荐直接点击 bat 运行，因为 PowerShell 自身会占用 20 MB 左右的内存。**
 
 :::
+
 ::: details Linux 一键脚本
 
 墙裂推荐！
@@ -90,6 +91,7 @@ curl -o napcat.sh https://fastly.jsdelivr.net/gh/NapNeko/NapCat-Installer@master
 ```
 
 :::
+
 ::: details Linux 非 Docker
 终端运行
 
@@ -100,6 +102,7 @@ chmod u+x ./napcat.sh
 
 请勿用 `sh napcat.sh` 启动，否则可能会出现路径问题而无法启动。
 :::
+
 ::: details 快速登录（无需扫码）
 如果你已经成功登录过官方 QQ 或者 NapCatQQ，可以加参数 `-q <你的QQ>` 进行快速登录而无需扫码，如 `napcat.bat -q 1234567` 或者 `napcat.sh -q 1234567`。
 :::
@@ -109,9 +112,10 @@ chmod u+x ./napcat.sh
 ::: tip
 在登录过后，将会在 `config` 目录下找到名为 `onebot11_<你的QQ号>.json` 的文件，如 `onebot11_1234567.json`；如果没有此文件可以复制 `onebot11.json` 重命名为 `onebot11_<你的QQ号>.json`。
 :::
-如果是对接 Nonebot 的话，配置这个项目即可（别忘了创建 Nonebot 时选择 `Onebot V11`适配器）
 
-- `reverseWs`：反向Websocket服务
+如果是对接 NoneBot 的话，配置这个项目即可（别忘了创建 NoneBot 时选择 `OneBot V11`适配器）
+
+- `reverseWs`：反向 WebSocket 服务
 
 ::: details 示例
 
@@ -142,6 +146,7 @@ chmod u+x ./napcat.sh
 ```
 
 :::
+
 ::: tip
 详细的配置请前往 [官方文档](https://napneko.github.io/zh-CN/guide/config) 查看
 :::
