@@ -98,7 +98,7 @@ chmod u+x ./napcat.sh
 ./napcat.sh
 ```
 
-请勿用`sh napcat.sh`启动，可能会出现路径问题而无法启动。
+请勿用 `sh napcat.sh` 启动，否则可能会出现路径问题而无法启动。
 :::
 ::: details 快速登录（无需扫码）
 如果你已经成功登录过官方 QQ 或者 NapCatQQ，可以加参数 `-q <你的QQ>` 进行快速登录而无需扫码，如 `napcat.bat -q 1234567` 或者 `napcat.sh -q 1234567`。
