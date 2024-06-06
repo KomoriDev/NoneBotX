@@ -55,7 +55,7 @@ const before = [
           { text: 'KiramiBot', link: '/before/introduction/project/kirami' },
           { text: 'SoraBot', link: '/before/introduction/project/sora' },
           { text: 'Novelai', link: '/before/introduction/project/novelai' },
-          { text: 'Nonebot Flutter GUI', link: '/before/introduction/project/nbgui' },
+          { text: 'Nonebot Flutter GUI', link: '/before/introduction/project/nbgui' }
         ]
       }
     ]

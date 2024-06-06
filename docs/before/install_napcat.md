@@ -7,7 +7,6 @@
 </p>
   <img src="https://socialify.git.ci/NapNeko/NapCatQQ/image?description=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FNapNeko%2FNapCatQQ%2Fmain%2Flogo.png&name=1&stargazers=1&theme=Auto" alt="NapCatQQ" width="640" height="320" />
 
-
 ## 下载
 
 前往 [Github Releases](https://github.com/NapNeko/NapCatQQ/releases/latest) 下载最新版 NapCatQQ
@@ -35,7 +34,6 @@
 
 ::::
 
-
 ## 解压
 
 从 GitHub 下载的产物文件是 zip 压缩包。
@@ -45,7 +43,6 @@
 
 ---
 
-
 # 启动前需要了解的三两事 （来自 NapCat 官方文档）
 
 ::: warning
@@ -53,22 +50,19 @@ NapCat 是基于 PC NTQQ 客户端本体实现的 QQ Bot 框架，所以说需�
 
 NapCat 在线时，你不能使用 PC QQ 客户端实现人机合一，但是可以选择同步登录移动客户端，如果想要在 PC 上人机合一请使用 LLOneBot
 
-NapCat 不同于协议实现，是基于 QQ 客户端，QQ 客户端上干不了的事，NapCat >_< 当然也是不行的!
+NapCat 不同于协议实现，是基于 QQ 客户端，QQ 客户端上干不了的事，NapCat >\_< 当然也是不行的!
 :::
-
-
-
 
 ## 安装QQ
 
 由于 NapCat 是基于 QQ 客户端实现，所以需要先安装 QQ 客户端
 
 Linux下无桌面环境安装 QQ 使用以下命令（ 以 debian 系为例）
+
 ```
 sudo apt install libgbm1 libasound2
 sudo apt install ./qq.deb
 ```
-
 
 ## 启动！
 
@@ -96,46 +90,50 @@ curl -o napcat.sh https://fastly.jsdelivr.net/gh/NapNeko/NapCat-Installer@master
 :::
 ::: details Linux 非 Docker
 终端运行
+
 ```
 chmod u+x ./napcat.sh
 ./napcat.sh
 ```
+
 请勿用`sh napcat.sh`启动，可能会出现路径问题而无法启动。
 :::
 ::: details 快速登录（无需扫码）
 如果你已经成功登录过官方 QQ 或者 NapCatQQ，可以加参数 `-q <你的QQ>` 进行快速登录而无需扫码，如 `napcat.bat -q 1234567` 或者 `napcat.sh -q 1234567`。
 :::
 
-##  ~~你先别急，还有~~配置
+## ~~你先别急，还有~~配置
+
 ::: tip
 在登录过后，将会在 `config` 目录下找到名为 `onebot11_<你的QQ号>.json` 的文件，如 `onebot11_1234567.json`；如果没有此文件可以复制 `onebot11.json` 重命名为 `onebot11_<你的QQ号>.json`。
 :::
 如果是对接 Nonebot 的话，配置这个项目即可（别忘了创建 Nonebot 时选择 `Onebot V11`适配器）
+
 - `reverseWs`：反向Websocket服务
 
 ::: details 示例
 {
-  "httpHost": "",
-  "enableHttp": false,
-  "httpPort": 3000,
-  "wsHost": "",
-  "enableWs": false,
-  "wsPort": 3001,
-  "enableWsReverse": true,
-  "wsReverseUrls": [
-    "ws://127.0.0.1:8080/onebot/v11/ws"
-  ],
-  "enableHttpPost": false,
-  "httpPostUrls": [],
-  "enableHttpHeart": false,
-  "httpSecret": "",
-  "messagePostFormat": "array",
-  "reportSelfMessage": false,
-  "debug": false,
-  "enableLocalFile2Url": true,
-  "heartInterval": 30000,
-  "token": "",
-  "musicSignUrl": ""
+"httpHost": "",
+"enableHttp": false,
+"httpPort": 3000,
+"wsHost": "",
+"enableWs": false,
+"wsPort": 3001,
+"enableWsReverse": true,
+"wsReverseUrls": [
+"ws://127.0.0.1:8080/onebot/v11/ws"
+],
+"enableHttpPost": false,
+"httpPostUrls": [],
+"enableHttpHeart": false,
+"httpSecret": "",
+"messagePostFormat": "array",
+"reportSelfMessage": false,
+"debug": false,
+"enableLocalFile2Url": true,
+"heartInterval": 30000,
+"token": "",
+"musicSignUrl": ""
 }
 :::
 ::: tip
@@ -143,4 +141,5 @@ chmod u+x ./napcat.sh
 :::
 
 ## 连接
+
 同时启动 Nonebot 和 NapCatQQ，当Nonebot控制台出现`Connection Opened`字样时即代表连接成功， Enjoy it！
