@@ -36,6 +36,7 @@ const before = [
           { text: 'Git 的安装与配置', link: '/before/configure_workspace/git' }
         ]
       },
+      { text: 'NapCat 的安装与配置', link: '/before/install_napcat' },
       { text: 'Lagrange 的安装与配置', link: '/before/install_lagrange' },
       { text: 'Go-CQHTTP 的安装与配置', link: '/before/install_go-cqhttp' },
       { text: '名词解释', link: '/before/terms' }
@@ -53,7 +54,8 @@ const before = [
           { text: 'Alconna', link: '/before/introduction/project/alconna' },
           { text: 'KiramiBot', link: '/before/introduction/project/kirami' },
           { text: 'SoraBot', link: '/before/introduction/project/sora' },
-          { text: 'Novelai', link: '/before/introduction/project/novelai' }
+          { text: 'Novelai', link: '/before/introduction/project/novelai' },
+          { text: 'Nonebot Flutter GUI', link: '/before/introduction/project/nbgui' },
         ]
       }
     ]
