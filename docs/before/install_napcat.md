@@ -144,4 +144,4 @@ chmod u+x ./napcat.sh
 
 ## 连接
 
-同时启动 Nonebot 和 NapCatQQ，当Nonebot控制台出现`Connection Opened`字样时即代表连接成功， Enjoy it！
+同时启动 NoneBot 和 NapCatQQ，当 NoneBot 控制台出现 `Connection Opened` 字样时即代表连接成功，Enjoy it！
