@@ -128,9 +128,7 @@ chmod u+x ./napcat.sh
   "enableWs": false,
   "wsPort": 3001,
   "enableWsReverse": true,
-  "wsReverseUrls": [
-      "ws://127.0.0.1:8080/onebot/v11/ws"
-  ],
+  "wsReverseUrls": ["ws://127.0.0.1:8080/onebot/v11/ws"],
   "enableHttpPost": false,
   "httpPostUrls": [],
   "enableHttpHeart": false,
