@@ -13,6 +13,10 @@
 - [SoraBot](https://github.com/netsora/SoraBot)
 - [Novelai](https://github.com/sena-nana/nonebot-plugin-novelai)
   最新版本：![PyPI](https://img.shields.io/pypi/v/nonebot-plugin-novelai)
+- [Nonebot Flutter GUI](https://github.com/NonebotGUI/nonebot-flutter-gui)
+  最新版本：![GitHub Release](https://img.shields.io/github/v/release/NonebotGUI/nonebot-flutter-gui)
+
+
 
 :::tip
 相关文档请看左侧侧边栏（若有）
