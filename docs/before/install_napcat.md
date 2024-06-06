@@ -119,7 +119,7 @@ chmod u+x ./napcat.sh
 
 ::: details 示例
 
-```
+```json
 {
   "httpHost": "",
   "enableHttp": false,
@@ -129,7 +129,7 @@ chmod u+x ./napcat.sh
   "wsPort": 3001,
   "enableWsReverse": true,
   "wsReverseUrls": [
-  "ws://127.0.0.1:8080/onebot/v11/ws"
+      "ws://127.0.0.1:8080/onebot/v11/ws"
   ],
   "enableHttpPost": false,
   "httpPostUrls": [],
