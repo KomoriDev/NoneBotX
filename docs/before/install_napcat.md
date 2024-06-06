@@ -68,15 +68,15 @@ sudo apt install ./qq.deb
 
 ::: details Windows
 
-我们安装好对应版本 QQ 后，大多数情况下，只需要解压 NapCat，并将其放到你想的的任何地方。但注意，路径不能包含空格。然后，双击 napcat.bat 就可以运行啦！
+我们安装好对应版本 QQ 后，大多数情况下，只需要解压 NapCat，并将其放到你想的的任何地方。但注意，路径不能包含空格。然后，双击 `napcat.bat` 就可以运行啦！
 
-等等! 如果你出现乱码可以尝试双击 napcat-utf8.bat 启动。
+等等! 如果你出现乱码可以尝试双击 `napcat-utf8.bat` 启动。
 
-如果上面的方法还是不行，可以尝试用 Powershell 启动：
+如果上面的方法还是不行，可以尝试用 PowerShell 启动：
 
-启动 PowerShell，运行 powershell ./napcat.ps1 或者 napcat.bat，如果出现乱码，可以尝试运行 napcat-utf8.ps1 或 napcat-utf8.bat。
+启动 PowerShell，运行 `powershell ./napcat.ps1` 或者 `napcat.bat`，如果出现乱码，可以尝试运行 `napcat-utf8.ps1` 或 `napcat-utf8.bat`。
 
-如果运行不了，可以尝试 powershell.exe -ExecutionPolicy Bypass -File ".\napcat.ps1"。
+如果运行不了，可以尝试 `powershell.exe -ExecutionPolicy Bypass -File ".\napcat.ps1"`。
 
 **推荐直接点击 bat 运行，因为 PowerShell 自身会占用 20 MB 左右的内存。**
 
