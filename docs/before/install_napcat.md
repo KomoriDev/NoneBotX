@@ -113,27 +113,27 @@ chmod u+x ./napcat.sh
 
 ::: details 示例
 {
-    "httpHost": "",
-    "enableHttp": false,
-    "httpPort": 3000,
-    "wsHost": "",
-    "enableWs": false,
-    "wsPort": 3001,
-    "enableWsReverse": true,
-    "wsReverseUrls": [
-        "ws://127.0.0.1:8080/onebot/v11/ws"
-    ],
-    "enableHttpPost": false,
-    "httpPostUrls": [],
-    "enableHttpHeart": false,
-    "httpSecret": "",
-    "messagePostFormat": "array",
-    "reportSelfMessage": false,
-    "debug": false,
-    "enableLocalFile2Url": true,
-    "heartInterval": 30000,
-    "token": "",
-    "musicSignUrl": ""
+"httpHost": "",
+"enableHttp": false,
+"httpPort": 3000,
+"wsHost": "",
+"enableWs": false,
+"wsPort": 3001,
+"enableWsReverse": true,
+"wsReverseUrls": [
+"ws://127.0.0.1:8080/onebot/v11/ws"
+],
+"enableHttpPost": false,
+"httpPostUrls": [],
+"enableHttpHeart": false,
+"httpSecret": "",
+"messagePostFormat": "array",
+"reportSelfMessage": false,
+"debug": false,
+"enableLocalFile2Url": true,
+"heartInterval": 30000,
+"token": "",
+"musicSignUrl": ""
 }
 :::
 ::: tip
