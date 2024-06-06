@@ -93,7 +93,7 @@ curl -o napcat.sh https://fastly.jsdelivr.net/gh/NapNeko/NapCat-Installer@master
 ::: details Linux 非 Docker
 终端运行
 
-```
+```bash
 chmod u+x ./napcat.sh
 ./napcat.sh
 ```
