@@ -57,7 +57,7 @@ NapCat 不同于协议实现，是基于 QQ 客户端，QQ 客户端上干不了
 
 由于 NapCat 是基于 QQ 客户端实现，所以需要先安装 QQ 客户端
 
-Linux下无桌面环境安装 QQ 使用以下命令（ 以 debian 系为例）
+Linux下无桌面环境安装 QQ 使用以下命令（以 debian 系为例）
 
 ```
 sudo apt install libgbm1 libasound2
