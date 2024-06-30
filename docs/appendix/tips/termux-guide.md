@@ -53,23 +53,19 @@ Which group of mirrors do you want to use? Select with space.
 # 你想用哪个镜像组？按空格键选择。
 
 (*) All mirrors                 # 全球的镜像站点
-( ) Mirrors in Asia             # 全亚洲（不含中国和俄罗斯）的镜像站点
-( ) Mirrors in China            # 全中国的镜像站点
+( ) Mirrors in Asia             # 全亚洲（不含中国大陆和俄罗斯）的镜像站点
+( ) Mirrors in Chinese Mainland # 全中国大陆的镜像站点
 ( ) Mirrors in Europe           # 全欧洲的镜像站点
 ( ) Mirrors in North America    # 全北美的镜像站点
+( ) Mirrors in Oceania          # 全大洋洲的镜像站点
 ( ) Mirrors in South America    # 全南美的镜像站点
 ( ) Mirrors in Russia           # 全俄罗斯的镜像站点
 ```
 
-这里光标移到 `Mirrors in China` 一项，按空格键/点击屏幕选中（以项首括号内出现 `*` 为准），回车/点击 `OK` 确认。
+这里光标移到 `Mirrors in Chinese Mainland` 一项，按空格键/点击屏幕选中（以项首指示括号内出现
+`*` 为准），回车/点击 `OK` 确认。
 
 等待程序运行结束后，包管理器就可以使用设置的镜像源进行下载了。
-
-:::tsukkomi 小声哔哔
-（截至 2024.2.8）写到这里的时候还有点担心会不会出现某些不正确问题，结果看完镜像组内容才发现多虑了（
-
-<curtain>笑死，根本没有台湾省的镜像（</curtain>
-:::
 
 ### 包管理器
 
@@ -92,15 +88,29 @@ pkg se 包子 猫不理  # 搜索“包子”“猫不理”这俩关键词，�
 如果你想安装某个东西，首先用 `pkg search` 搜一下有没有现成的包，如果没有再考虑其它途径。
 :::
 
-:::tsukkomi 小声哔哔
-Termux 官方也提供了基于 Arch 系的 `pacman/libalpm` 包管理程序的环境底包 ~~，不过看这个教程的应该都用不上（（（~~
-:::
-
 ### Kono 滚动更新 da！
 
 尽管 Termux 的默认包管理器是基于 Debian 系的 `apt/dpkg` 的，然而软件仓库使用滚动更新的策略，使得其拥有接近
 Fedora/Arch 的新潮软件，而代价则是无法使用许多没有跟上更新的第三方包（这种情况在 Termux 软件仓库引入 `numpy`
 等难以本地编译的包后有所改善）。
+
+### LibC 相关说明
+
+:::warning 警告，这不是新手区！
+如果你看不懂这个部分，建议直接跳过<curtain>，免得人菜瘾大照这个整没整好还反过来怪教程有问题（（（</curtain>。
+:::
+
+Termux 基本环境上动态链接的可执行文件使用了 Android 系统内置的 Bionic C 库——既不是 `glibc`，也不是
+`musl libc`，各种平台差异导致 Termux 上的二进制程序往往需要专门编译。
+
+:::tip 高级技巧
+Termux 也提供了可选的 GLibC 支持，其 GLibC 环境与基本环境相对独立，详见 [termux/glibc-packages](https://github.com/termux/glibc-packages/)。
+
+Termux GLibC 环境的体验更接近 PRoot/ChRoot 容器，基本可以直接使用动态链接 GLibC 的二进制程序。<curtain>如果你~~有幸~~配置好并能成功使用
+GLibC 环境，后面的内容你也不用看了（</curtain>
+
+截至 2024.06.29，目前尚无 GLibC 软件仓库的镜像源，因此下载软件包时可能速度缓慢。
+:::
 
 ## Rust 构建工具的安装
 
@@ -130,7 +140,8 @@ pkg i python
 
 ### 多用 `pip`
 
-<curtain>我不惮以最大的恶意揣测，</curtain>可能为了节省软件仓库的维护成本，Termux 包管理器并不管理绝大多数 Python 包，而是直接让 pip 进行管理。
+与一般的发行版不同的是，<curtain>我不惮以最大的恶意揣测，可能为了节省软件仓库的维护成本，</curtain>Termux
+包管理器并不管理绝大多数 Python 包，而是直接让 pip 进行管理。
 
 ### 装不上包.jpg
 
@@ -153,11 +164,9 @@ aiohttp-3.9.3-cp311-cp311-musllinux_1_1_s390x.whl
 :::
 
 Termux 上动态链接的可执行文件使用了 Android 系统内置的 Bionic C 库——既不是 `glibc`（对应
-`manylinux`），也不是 `musl`（对应 `musllinux`），加上各种平台差异导致 Termux
-上只能使用通用包安装或者通过源码包编译安装。
+`manylinux`），也不是 `musl libc`（对应 `musllinux`），详见 [LibC 相关说明](#libc-相关说明)。
 
-编译安装的成功率取决于 Termux 版与原版有多大区别，区别越小，往往越容易安装。对于无法本地编译的 Python
-包，可见[附录](#附录-部分-python-第三方包无法通过-pip-安装或安装后运行不正常的解决方案)。
+对于无法本地编译的 Python 包，可见[附录](#附录-部分-python-第三方包无法通过-pip-安装或安装后运行不正常的解决方案)。
 
 ## NB-CLI 与 NoneBot2 的安装
 
@@ -192,6 +201,10 @@ python -m venv --upgrade --system-site-packages .venv
 - `pillow`: `pkg i python-pillow`
 - `scipy`: `pkg i python-scipy`
 - `torch`: `pkg i python-torch python-torchaudio python-torchvision`
+- `pycairo`: `pkg i pycairo`
+- `grpcio`: `pkg i python-grpcio`
+- `arrow`: `pkg i python-pyarrow`
+- `msgpack`: `pkg i python-msgpack`
 
 ### 不在 Termux 官方源中的包
 
