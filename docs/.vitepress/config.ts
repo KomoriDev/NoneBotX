@@ -56,7 +56,7 @@ export default defineConfig({
     sidebarMenuLabel: '目录',
     returnToTopLabel: '回到顶部 ▲',
     search: {
-      provider: "local"
+      provider: 'local'
     }
   },
 
