@@ -42,6 +42,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "zty012",
+      "name": "ZTY",
+      "avatar_url": "https://avatars.githubusercontent.com/u/89395757?v=4",
+      "profile": "http://shikukuya.github.io",
+      "contributions": [
+        "doc",
+        "infra"
+      ]
     }
   ],
   "commitType": "docs"
