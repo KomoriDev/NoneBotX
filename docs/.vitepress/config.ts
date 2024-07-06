@@ -54,7 +54,10 @@ export default defineConfig({
     },
     darkModeSwitchLabel: '黑暗模式',
     sidebarMenuLabel: '目录',
-    returnToTopLabel: '回到顶部 ▲'
+    returnToTopLabel: '回到顶部 ▲',
+    search: {
+      provider: 'local'
+    }
   },
 
   transformHead({ assets }) {
