@@ -44,7 +44,7 @@ export default defineConfig({
     socialLinks: [{ icon: 'github', link: 'https://github.com/KomoriDev/NoneBotX' }],
     footer: {
       message: 'MIT License',
-      copyright: 'Copyright © 2023 Komorebi'
+      copyright: 'Copyright © 2024 Komorebi'
     },
     lastUpdatedText: '上次更新',
     outlineTitle: 'On this page',
