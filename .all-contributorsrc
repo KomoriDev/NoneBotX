@@ -52,6 +52,16 @@
         "doc",
         "infra"
       ]
+    },
+    {
+      "login": "XTxiaoting14332",
+      "name": "XTxiaoting14332",
+      "avatar_url": "https://avatars.githubusercontent.com/u/96647974?v=4",
+      "profile": "https://github.com/XTxiaoting14332",
+      "contributions": [
+        "doc",
+        "tutorial"
+      ]
     }
   ],
   "commitType": "docs"
