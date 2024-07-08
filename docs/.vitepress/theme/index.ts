@@ -32,7 +32,6 @@ import AsideAd from '../components/AsideAd.vue'
 
 import Mark from '../components/Mark.vue'
 
-
 import VueTermynalPlugin from '@lehoczky/vue-termynal'
 
 import '../styles/index.scss'
