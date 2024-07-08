@@ -30,6 +30,9 @@ import NameByPlatform from '../components/NameByPlatform.vue'
 
 import AsideAd from '../components/AsideAd.vue'
 
+import Mark from '../components/Mark.vue'
+
+
 import VueTermynalPlugin from '@lehoczky/vue-termynal'
 
 import '../styles/index.scss'
@@ -73,6 +76,7 @@ const theme: Theme = {
     // app.component('CodeGroupItem', CodeGroupItem)
     app.component('Mermaid', Mermaid)
     app.component('NameByPlatform', NameByPlatform)
+    app.component('Mark', Mark)
     app.use(VueTermynalPlugin as any)
   }
 }
