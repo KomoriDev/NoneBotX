@@ -1,3 +1,4 @@
+import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
@@ -27,6 +28,8 @@ import Comment from '../components/Comment.vue'
 
 import NameByPlatform from '../components/NameByPlatform.vue'
 
+import AsideAd from '../components/AsideAd.vue'
+
 import Mark from '../components/Mark.vue'
 
 import VueTermynalPlugin from '@lehoczky/vue-termynal'
@@ -37,7 +40,11 @@ const theme: Theme = {
   ...DefaultTheme,
 
   // root component to wrap each page
-  Layout,
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      'aside-ads-before': () => h(AsideAd)
+    })
+  },
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   enhanceApp({ app, router, siteData }) {
