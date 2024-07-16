@@ -14,7 +14,7 @@
 ## 下载
 
 ::: warning
-从 Actions 下载的 Lagrange.OneBot 需要手动安装 .Net, 你应当自行安装对应版本的 [.Net SDK](https://dotnet.microsoft.com/zh-cn/download)
+从 Actions 下载的 Lagrange.OneBot 需要手动安装 .NET, 你应当自行安装对应版本的 [.NET SDK](https://dotnet.microsoft.com/zh-cn/download)
 :::
 
 前往 [Github Action](https://github.com/LagrangeDev/Lagrange.Core/actions) 下载最新 Lagrange.OneBot 的构建
