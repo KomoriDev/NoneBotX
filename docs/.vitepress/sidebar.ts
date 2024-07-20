@@ -68,7 +68,8 @@ const guide = [
     items: [
       { text: '要致富，先撸树', link: '/guide/create_env' },
       { text: '东西要分类好', link: '/guide/create_plugin' },
-      { text: '快速上手', link: '/guide/hello_hibiscus' }
+      { text: '快速上手', link: '/guide/hello_hibiscus' },
+      { text: '可不是什么人都能看涩图', link: '/guide/event_data' }
     ]
   }
 ]
