@@ -29,13 +29,15 @@ async def _(event: Event):
 ```
 
 ```py [NoneBot Alconna]
-from nonebot_plugin_alconna import Command, MsgTarget, UniMessage
+from nonebot.internal.adapter import Event
+from nonebot_plugin_alconna import Command, UniMessage
 
 matcher = Command("来张涩图").build(use_cmd_start=True)
 
 @matcher.handle()
-async def _(msg_target: MsgTarget):
-    if msg_target.id == "1234567890":
+async def _(event: Event):
+    user_id = event.get_user_id()
+    if user_id == "1234567890":
         await UniMessage("你太坏了，不给你看").finish()
     await UniMessage.image("xxx.jpg").finish()
 ```
