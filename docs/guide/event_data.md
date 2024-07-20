@@ -54,7 +54,9 @@ async def _(msg_target: MsgTarget):
     avatar="/avatar/hibiscus.webp"
     src="/images/guide/shining-1.png"
     @click="cheated = true"
+    v-if="cheated == false"
   ></chat-img>
+  <chat-toast v-if="cheated == true">Hibiscus 撤回了一张涩图</chat-toast>
   <chat-msg v-if="cheated == true" name="Hibiscus" tag="机器人" avatar="/avatar/hibiscus.webp">你被骗了（
     <!-- <chat-img src="/images/guide/cheated.jpg"></chat-img> -->
     <img src="/images/guide/cheated.jpg" style="margin-top: 10px" alt="你被骗了.jpg"/>
