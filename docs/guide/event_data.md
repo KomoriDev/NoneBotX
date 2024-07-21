@@ -124,7 +124,7 @@ matcher = Command("来张涩图").build(use_cmd_start=True)
 @matcher.handle()
 async def _(user_info: UserInfo = EventUserInfo()):
     username = user_info.user_name
-    await UniMessage(f"用户：{username}")
+    await UniMessage(f"用户：{username}").finish()
 ```
 
 :::
