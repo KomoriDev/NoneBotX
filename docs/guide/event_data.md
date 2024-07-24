@@ -76,7 +76,7 @@ async def _(event: Event):
 ::: code-group
 
 ```py [NoneBot Native]
-from nonebot improt on_command
+from nonebot import on_command
 from nonebot.adapter.onebot.v11 import MessageEvent as OneBotMessageEvent
 from nonebot.adapter.telegram import MessageEvent as TelegramMessageEvent
 
