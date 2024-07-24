@@ -67,7 +67,7 @@ async def _(event: Event):
 
 ## 更多信息
 
-不同的平台有不同的事件，比如：在 [onebot-v11](https://github.com/botuniverse/onebot-11) 规范中，消息事件（[`MessageEvent`](https://github.com/botuniverse/onebot-11/blob/master/event/message.md)）的 `sender` 字段提供了发送者信息。而 Telegram 消息的 [`MessageEvent`](https://core.telegram.org/bots/api#chat) 提供了 `chat` 字段。因此，我们可以通过注入各个平台的 `MessageEvent`来获取用户信息
+不同的平台有不同的事件，比如：在 [Onebot V11](https://github.com/botuniverse/onebot-11) 规范中，消息事件（[`MessageEvent`](https://github.com/botuniverse/onebot-11/blob/master/event/message.md)）的 `sender` 字段提供了发送者信息。而 Telegram 消息的 [`MessageEvent`](https://core.telegram.org/bots/api#chat) 提供了 `chat` 字段。因此，我们可以通过注入各个平台的 `MessageEvent`来获取用户信息
 
 ::: tip
 对于 Bot 的跨平台适配，我们可以使用 [NoneBot Plugin UserInfo](https://github.com/noneplugin/nonebot-plugin-userinfo) 插件来跨平台获取用户信息
