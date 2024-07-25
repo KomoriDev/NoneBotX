@@ -48,7 +48,7 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev
 
 ![alt](/images/before/nbgui_fastdeploy3.png)
 
-下载完成后点击 `部署` 按钮，并等待部署完成，其中请确保网络正常连接
+下载完成后点击 `部署` 按钮，并等待部署完成，期间请确保网络正常连接
 
 等待控制台内显示 `部署完成` 后即可
 
