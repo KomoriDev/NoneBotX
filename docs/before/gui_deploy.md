@@ -35,7 +35,7 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev
 ---
 
 # 部署
-启动软件，在侧边栏中找到 `快速部署` 并选择 `Lagrange.Onebot`
+启动软件，在侧边栏中找到 `快速部署` 并选择 `Lagrange.OneBot`
 
 ![alt](/images/before/nbgui_fastdeploy.png)
 
