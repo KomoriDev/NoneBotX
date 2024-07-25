@@ -44,7 +44,7 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev
 
 ![alt](/images/before/nbgui_fastdeploy2.png)
 
-在下拉框中选择时候当前系统的 release 并下载
+在下拉框中选择当前系统的版本并下载
 
 ![alt](/images/before/nbgui_fastdeploy3.png)
 
