@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.3.0",
-    "fflate": "^0.8.0"
+    "fflate": "^0.8.0",
+    "pnpm": "^9.2.0"
   }
 }
