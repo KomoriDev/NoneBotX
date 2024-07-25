@@ -40,7 +40,7 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev
 ![alt](/images/before/nbgui_fastdeploy.png)
 
 
-填好相关配置并选择存放 Bot 的目录，如果您的网络环境无法访问 github 可以使用镜像站下载，完成后点击下方按钮进入下一步
+填好相关配置并选择存放 Bot 的目录，如果您的网络环境无法访问 Github 可以使用镜像站下载，完成后点击下方按钮进入下一步
 
 ![alt](/images/before/nbgui_fastdeploy2.png)
 
