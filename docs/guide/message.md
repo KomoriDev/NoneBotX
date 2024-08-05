@@ -155,5 +155,5 @@ async def _():
     标签: Koishi；画师：<Curtain>某不知名内鬼</Curtain>
   </chat-msg>
   <chat-msg name="ddl" avatar="/avatar/ddl.webp" tag="群主" tagType="owner" tagBgColor="#48301e" tagColor="#f98a3f">？</chat-msg>
-  <!-- <chat-toast>ddl 已将 Komorebi 移出群聊</chat-toast> -->
+  <chat-toast>ddl 已将 Komorebi 禁言 12 小时</chat-toast>
 </chat-window>
