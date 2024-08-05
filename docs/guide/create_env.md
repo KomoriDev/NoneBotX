@@ -304,7 +304,7 @@ nb create
 
 <chat-window title="NoneBot">
   <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>/echo hello world</chat-msg>
-  <chat-msg name="Hibiscus" tag="机器人" avatar="/avatar/hibiscus.webp">hello world</chat-msg>
+  <chat-msg name="Hibiscus" tag="机器人" tagType="bot" avatar="/avatar/hibiscus.webp">hello world</chat-msg>
 </chat-window>
 
 按一次 `Ctrl+C` 可退出 `Console` 交互界面，再按一次即可结束运行机器人。

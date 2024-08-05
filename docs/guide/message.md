@@ -149,11 +149,11 @@ async def _():
 
 <chat-window title="NoneBot Console">
   <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>/来张涩图</chat-msg>
-  <chat-msg name="Hibiscus" tag="机器人" avatar="/avatar/hibiscus.webp">
+  <chat-msg name="Hibiscus" tag="机器人" tagType="bot" avatar="/avatar/hibiscus.webp">
     你要的涩图
     <img src="https://koishi.chat/logo.png" style="margin: 10px" alt="涩图.png"/>
     标签: Koishi；画师：<Curtain>某不知名内鬼</Curtain>
   </chat-msg>
-  <chat-msg name="ddl" avatar="/avatar/ddl.webp" tag="群主" tagBgColor="#48301e" tagColor="#f98a3f">？</chat-msg>
+  <chat-msg name="ddl" avatar="/avatar/ddl.webp" tag="群主" tagType="owner" tagBgColor="#48301e" tagColor="#f98a3f">？</chat-msg>
   <!-- <chat-toast>ddl 已将 Komorebi 移出群聊</chat-toast> -->
 </chat-window>
