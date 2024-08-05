@@ -49,175 +49,111 @@ await UniMessage.image("xxx.jpg").finish()
 
 你也觉得很麻烦对吧，没关系，我们有 Alconna
 
-## 玩转消息序列
+## 如果你要发涩图，就不能只发涩图
 
-### 构造消息
+一张好的涩图，不仅仅是一张图，它还需要有文字描述，那么，我们如何构造这样的消息呢？
+
+### 直接构造
 
 ::: code-group
 
-```python [NoneBot Native]
-from nonebot.adapters.onebot.v11 import Message, MessageSegment
+```py [NoneBot Native]
+from nonebot import on_command
+from nonebot.adapter.onebot.v11 import Message, MessageSegment
 
-# Message
-msg1 = Message("正在准备涩图...")
-# MessageSegment
-msg2 = Message(MessageSegment.text("正在准备涩图..."))
-# List[MessageSegment]
-msg2 = Message([MessageSegment.at("123"), MessageSegment.text("正在准备涩图...")])
+matcher = on_command("来张涩图")
+
+@matcher.handle()
+async def _():
+    message = Message([
+        "你要的涩图",
+        MessageSegment.image("https://xxx.chat/logo.png"),
+        "标签: ？；画师：？"
+    ])
+    await matcher.finish(message)
 ```
 
-```python [NoneBot Alconna]
-from nonebot_plugin_alconna import At, UniMessage
+```py [NoneBot Alconna]
+from nonebot_plugin_alconna import Command
+from nonebot_plugin_alconna.uniseg import Image, UniMessage
 
-msg1 = UniMessage("正在准备涩图...")
-msg2 = UniMessage([At("user", "123"), "正在准备涩图..."])
+matcher = Command("来张涩图").build(use_cmd_start=True)
 
-# UniMessage 上同时存在便捷方法，令其可以链式地添加消息段：
-msg = UniMessage.text("正在准备涩图...").at("124")
-assert msg == UniMessage(["正在准备涩图...", At("user", "124")])
+@matcher.handle()
+async def _():
+    message = UniMessage([
+        "你要的涩图",
+        Image(url="https://xxx.chat/logo.png"),
+        "标签: ？；画师：？"
+    ])
+    await UniMessage(message).finish()
+
+    # 或者使用 链式 发送
+    await (
+        UniMessage.text("你要的涩图")
+        .image("https://xxx.chat/logo.png")
+        .text("标签: ？；画师：？")
+        .finish()
+    )
 ```
 
 :::
 
-### 拼接消息
-
-`str`、`Message`、`MessageSegment` 对象之间可以直接相加，相加均会返回一个新的 `Message` 对象。
+### 使用消息模板
 
 ::: code-group
 
-```python [NoneBot Native]
-# 消息序列与消息段相加
-Message([MessageSegment.text("text")]) + MessageSegment.text("text")
-# 消息序列与字符串相加
-Message([MessageSegment.text("text")]) + "text"
-# 消息序列与消息序列相加
-Message([MessageSegment.text("text")]) + Message([MessageSegment.text("text")])
-# 字符串与消息序列相加
-"text" + Message([MessageSegment.text("text")])
-# 消息段与消息段相加
-MessageSegment.text("text") + MessageSegment.text("text")
-# 消息段与字符串相加
-MessageSegment.text("text") + "text"
-# 消息段与消息序列相加
-MessageSegment.text("text") + Message([MessageSegment.text("text")])
-# 字符串与消息段相加
-"text" + MessageSegment.text("text")
+```py [NoneBot Native]
+from nonebot import on_command
+from nonebot.adapter.onebot.v11 import Message, MessageSegment
+
+matcher = on_command("来张涩图")
+
+@matcher.handle()
+async def _():
+
+    message = Message.template("你要的涩图 {} 标签: {}；画师：{}").format(
+        MessageSegment.image("https://xxx.chat/logo.png"),
+        "?", "?"
+    )
+    await matcher.finish(message)
+
 ```
 
-```python [NoneBot Alconna]
-# 消息序列与消息段相加
-UniMessage("text") + Text("text")
-# 消息序列与字符串相加
-UniMessage([Text("text")]) + "text"
-# 消息序列与消息序列相加
-UniMessage("text") + UniMessage([Text("text")])
-# 字符串与消息序列相加
-"text" + UniMessage([Text("text")])
-# 消息段与消息段相加
-Text("text") + Text("text")
-# 消息段与字符串相加
-Text("text") + "text"
-# 消息段与消息序列相加
-Text("text") + UniMessage([Text("text")])
-# 字符串与消息段相加
-"text" + Text("text")
+```py [NoneBot Alconna]
+from nonbot_plugin_alconna import Command
+from nonebot_plugin_alconna.uniseg import Image, UniMessage
+
+matcher = Command("来张涩图").build(use_cmd_start=True)
+
+@matcher.handle()
+async def _():
+    message = UniMessage.template("你要的涩图 {} 标签: {}；画师: {}").format(
+        Image(url="https://xxx.chat/logo.png"),
+        "?", "?"
+    )
+    await UniMessage(message).finish()
+
+    # 或者使用 链式 发送
+    await (
+        UniMessage.text("你要的涩图")
+        .image("https://xxx.chat/logo.png")
+        .text("标签: ？；画师：？")
+        .finish()
+    )
 ```
 
 :::
 
-### 消息模板
+这样，当用户输入 `/来张涩图` ， Bot 便会发送一张 ~~精美的~~ 涩图以及关于它的详细信息
 
-::: code-group
-
-```python [NoneBot Native]
-from nonebot.adapters.onebot.v11 import Message, MessageSegment
-
-msg = Message.template("{} {}").format(MessageSegment.at(123), "这是你要的涩图")
-assert msg == Message(MessageSegment.at(123), MessageSegment.text(" "), "这是你要的涩图")
-```
-
-```python [NoneBot Alconna]
-# UniMessage.template 同样类似于 Message.template。
-# 这里额外说明 UniMessage.template 的拓展控制符
-from nonebot_plugin_alconna import At, Text, UniMessage
-
-msg1 = UniMessage.template("{:At(user, target)} 这是你要的涩图").format(target="123")
-assert msg1 == UniMessage([At("user", "123")], Text("这是你要的涩图"))
-msg2 = UniMessage.template("{:At(type=user, target=id)} 这是你要的涩图").format(id="123")
-assert msg1 == UniMessage([At("user", "123")], Text("这是你要的涩图"))
-msg3 = UniMessage.template("{:At(type=user, target=123)} 这是你要的涩图").format()
-assert msg1 == UniMessage([At("user", "123")], Text("这是你要的涩图"))
-```
-
-:::
-
-### 检查消息段
-
-我们可以通过 `in` 运算符或消息序列的 `has` 方法来：
-
-::: code-group
-
-```python [NoneBot Native]
-# 是否存在消息段
-MessageSegment.text("text") in message
-# 是否存在指定类型的消息段
-"text" in message
-```
-
-```python [NoneBot Alconna]
-# 是否存在消息段
-Text("text") in message
-# 是否存在指定类型的消息段
-Text in message
-```
-
-:::
-
-我们还可以使用消息序列的 only 方法来检查消息中是否仅包含指定的消息段：
-
-::: code-group
-
-```python [NoneBot Native]
-# 是否都为 "test"
-message.only(MessageSegment.text("test"))
-# 是否仅包含指定类型的消息段
-message.only("text")
-```
-
-```python [NoneBot Alconna]
-# 是否都为 "test"
-message.only("test")
-# 是否仅包含指定类型的消息段
-message.only(Text)
-```
-
-:::
-
-### 获取消息纯文本
-
-::: code-group
-
-```python [NoneBot Native]
-from nonebot.adapters.onebot.v11 import Message, MessageSegment
-
-# 判断消息段是否为纯文本
-MessageSegment.text("text").is_text()
->>> True
-
-# 提取消息纯文本字符串
-Message(
-  [
-    MessageSegment.at(123)
-    MessageSegment.text("纯文本消息")
-  ]
-).extract_plain_text()
->>> "纯文本消息"
-```
-
-```python [NoneBot Alconna]
-# 提取消息纯文本字符串
-UniMessage([At("user", "1234"), "纯文本消息"]).extract_plain_text()
->>> "纯文本消息"
-```
-
-:::
+<chat-window title="NoneBot Console">
+  <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>/来张涩图</chat-msg>
+  <chat-msg name="Hibiscus" tag="机器人" avatar="/avatar/hibiscus.webp">
+    你要的涩图
+    <img src="https://koishi.chat/logo.png" style="margin: 10px" alt="涩图.png"/>
+    标签: Koishi；画师：<Curtain>某不知名内鬼</Curtain>
+  </chat-msg>
+  <chat-msg name="ddl" avatar="/avatar/ddl.webp" tag="群主" tagBgColor="#48301e" tagColor="#f98a3f">？</chat-msg>
+  <!-- <chat-toast>ddl 已将 Komorebi 移出群聊</chat-toast> -->
+</chat-window>
