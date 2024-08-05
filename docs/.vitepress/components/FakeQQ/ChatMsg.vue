@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import Bot from '../icons/Bot.vue'
+
 interface Props {
   name: string
   avatar?: string
   tag?: string
-  tagBgColor?: string
-  tagColor?: string
+  tagType?: 'owner' | 'admin' | 'member' | 'bot' | 'customization'
   onright?: boolean
 }
 
@@ -12,8 +13,7 @@ withDefaults(defineProps<Props>(), {
   name: '',
   avatar: undefined,
   tag: undefined,
-  tagBgColor: undefined,
-  tagColor: undefined,
+  tagType: 'customization',
   onright: false
 })
 </script>
@@ -37,12 +37,13 @@ withDefaults(defineProps<Props>(), {
         </span>
         <div class="user-name text-ellipsis">
           <span class="text-ellipsis">{{ name }}</span>
-          <div
-            class="q-tag member-role-tag"
-            v-if="tag"
-            :style="{ backgroundColor: tagBgColor, color: tagColor }"
-          >
-            {{ tag }}
+          <div class="member-role-tag" :class="`q-${tagType}-tag`" v-if="tag">
+            <template v-if="tagType === 'bot'">
+              <Bot />
+            </template>
+            <template v-else>
+              {{ tag }}
+            </template>
           </div>
         </div>
         <div class="message-content__wrapper">
