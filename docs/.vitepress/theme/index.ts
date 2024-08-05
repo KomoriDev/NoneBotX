@@ -29,8 +29,10 @@ import Comment from '../components/Comment.vue'
 import NameByPlatform from '../components/NameByPlatform.vue'
 
 import AsideAd from '../components/AsideAd.vue'
+import PreferenceSwitch from '../components/PreferenceSwitch.vue'
 
 import Mark from '../components/Mark.vue'
+import { preferClassic } from './preferences'
 
 import VueTermynalPlugin from '@lehoczky/vue-termynal'
 
@@ -42,6 +44,7 @@ const theme: Theme = {
   // root component to wrap each page
   Layout() {
     return h(DefaultTheme.Layout, null, {
+      'sidebar-nav-before': () => h(PreferenceSwitch),
       'aside-ads-before': () => h(AsideAd)
     })
   },
@@ -53,6 +56,7 @@ const theme: Theme = {
     // app is the Vue 3 app instance from `createApp()`.
     // router is VitePress' custom router. `siteData` is
     // a `ref` of current site-level metadata.
+    app.provide('prefer-classic', preferClassic)
     app.component('ChatFile', ChatFile)
     app.component('ChatImg', ChatImg)
     app.component('ChatMsg', ChatMsg)

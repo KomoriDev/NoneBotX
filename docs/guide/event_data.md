@@ -4,7 +4,17 @@ import { ref } from 'vue'
 let cheated = ref(false)
 </script>
 
+<div class="origin">
+
 # 你还看上涩图了.jpg
+
+</div>
+
+<div class="classic">
+
+# 获取事件信息
+
+</div>
 
 在 NoneBot 事件处理流程中，获取事件信息并做出对应的操作是非常常见的场景。本章节中我们将介绍<Mark>如何通过依赖注入获取事件信息</Mark>
 
