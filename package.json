@@ -25,6 +25,7 @@
     "@types/markdown-it": "^13.0.0",
     "@types/markdown-it-container": "^2.0.6",
     "@types/markdown-it-footnote": "^3.0.0",
+    "@types/node": "^22.1.0",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/tsconfig": "^0.4.0",

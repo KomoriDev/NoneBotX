@@ -1,8 +1,9 @@
+import fs from 'fs'
+import path from 'path'
 import { defineConfig } from 'vitepress'
 
-import { before, guide, appendix, comment } from './sidebar'
-
 import mdEnhance from './mdEnhance/index'
+import { before, origin_guide, classic_guide, appendix, comment } from './sidebar'
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -24,6 +25,11 @@ export default defineConfig({
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-DCQWK40LG3');`
+    ],
+    [
+      'script',
+      {},
+      fs.readFileSync(path.resolve(__dirname, './inlined-scripts/restorePreference.js'), 'utf-8')
     ]
   ],
 
@@ -33,7 +39,7 @@ export default defineConfig({
     nav: nav(),
     sidebar: {
       '/before/': before,
-      '/guide/': guide,
+      '/guide/': origin_guide,
       '/appendix/': appendix,
       '/comment': comment
     },

@@ -62,7 +62,7 @@ const before = [
   }
 ]
 
-const guide = [
+const origin_guide = [
   {
     text: '手把手教你写机器人',
     items: [
@@ -71,6 +71,19 @@ const guide = [
       { text: '快速上手', link: '/guide/hello_hibiscus' },
       { text: '可不是什么人都能看涩图', link: '/guide/event_data' },
       { text: '涩图 の 加工', link: '/guide/message' }
+    ]
+  }
+]
+
+const classic_guide = [
+  {
+    text: '手把手教你写机器人',
+    items: [
+      { text: '创建项目', link: '/guide/create_env' },
+      { text: '配置', link: '/guide/create_plugin' },
+      { text: '事件响应器', link: '/guide/hello_hibiscus' },
+      { text: '获取事件信息', link: '/guide/event_data' },
+      { text: '处理消息', link: '/guide/message' }
     ]
   }
 ]
@@ -100,4 +113,4 @@ const appendix = [
 
 const comment = [{ text: '论坛', link: '/comment' }]
 
-export { appendix, before, comment, guide }
+export { appendix, before, comment, origin_guide, classic_guide }
