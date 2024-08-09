@@ -72,6 +72,10 @@ const guide = [
       { text: '可不是什么人都能看涩图', link: '/guide/event_data' },
       { text: '涩图 の 加工', link: '/guide/message' }
     ]
+  },
+  {
+    text: '常见案例',
+    items: [{ text: '用户系统', link: '/guide/cases/user' }]
   }
 ]
 
