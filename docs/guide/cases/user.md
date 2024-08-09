@@ -139,9 +139,9 @@ print(CreateTable(MyUser.__table__))
 
 ```sql
 CREATE TABLE nonebot_plugin_test_myuser (
-        id INTEGER NOT NULL, 
-        user_id VARCHAR NOT NULL, 
-        last_use DATETIME NOT NULL, 
+        id INTEGER NOT NULL,
+        user_id VARCHAR NOT NULL,
+        last_use DATETIME NOT NULL,
         CONSTRAINT pk_nonebot_plugin_test_myuser PRIMARY KEY (id)
 )
 ```
