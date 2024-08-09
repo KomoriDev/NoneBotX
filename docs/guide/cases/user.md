@@ -1,21 +1,21 @@
 # 兄弟别冲了呀
 
-在我们编写插件的时候, 难免会碰到一些需要针对用户个体做出响应的情况, 比如: 好感系统, 游戏账户绑定, 或者限制使用频率之类。
+在我们编写插件的时候，难免会碰到一些需要针对用户个体做出响应的情况，比如: 好感系统，游戏账户绑定，或者限制使用频率之类。
 
-所以, 本章会手把手教你构建一个你自己的<ruby>用户<rp>(</rp><rt>~~涩涩~~</rt><rp>)</rp></ruby>系统。<Curtain>~~防止你的群友冲死~~</Curtain>
+所以，本章会手把手教你构建一个你自己的<ruby>用户<rp>(</rp><rt>~~涩涩~~</rt><rp>)</rp></ruby>系统，用于限制用户使用命令的频率。<Curtain>~~防止你的群友冲死~~</Curtain>
 
 ## 认识 ORM
 
-> 对象关系映射 (英语: Object Relational Mapping, 简称ORM, 或O/RM, 或O/R mapping), 是一种程序设计技术, 用于实现面向对象编程语言里不同类型系统的资料之间的转换。从效果上说, 它其实是创建了一个可在编程语言里使用的"虚拟对象数据库"。  
+> 对象关系映射 (英语: Object Relational Mapping，简称ORM，或O/RM，或O/R mapping)，是一种程序设计技术，用于实现面向对象编程语言里不同类型系统的资料之间的转换。从效果上说，它其实是创建了一个可在编程语言里使用的"虚拟对象数据库"。  
 > —— 维基百科
 
-简单来说, orm 就是对数据库的封装, 使得我们可以像操作对象一样操作数据库。
+简单来说，orm 就是对数据库的封装，使得我们可以像操作对象一样操作数据库。
 
-而在 NoneBot 中, 官方提供了一个插件 [plugin-orm](https://github.com/nonebot/plugin-orm) 它以 [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) 为基础, 为我们提供了数据库支持。
+而在 NoneBot 中，官方提供了一个插件 [plugin-orm](https://github.com/nonebot/plugin-orm) 它以 [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) 和 [alembic](https://github.com/sqlalchemy/alembic) 为基础，为我们提供了完善的数据库支持。
 
 ## 安装 ORM 插件
 
-首先, 让我们为插件声明依赖项
+首先，让我们为插件声明依赖项
 
 ```shell
 pdm add nonebot-plugin-orm
@@ -29,7 +29,7 @@ from nonebot import require
 require('nonebot_plugin_orm')
 ```
 
-嗯! 让我们来运行一下试试吧!
+嗯！让我们来运行一下试试吧！
 
 ::: danger 哎呀
 好像出错了呢
@@ -43,38 +43,163 @@ ValueError: 必须指定一个默认数据库 (SQLALCHEMY_DATABASE_URL 或 SQLAL
 
 ```shell {18}
 08-09 21:19:27 [ERROR] uvicorn | Traceback (most recent call last):
-  File "/venv/python3.9/site-packages/starlette/routing.py", line 732, in lifespan
+  File "/venv/lib/python3.9/site-packages/starlette/routing.py", line 732, in lifespan
     async with self.lifespan_context(app) as maybe_state:
-  File "/venv/python3.9/lib/python3.9/contextlib.py", line 181, in __aenter__
+  File "/venv/lib/python3.9/contextlib.py", line 181, in __aenter__
     return await self.gen.__anext__()
-  File "/venv/python3.9/site-packages/nonebot/drivers/fastapi.py", line 153, in _lifespan_manager
+  File "/venv/lib/python3.9/site-packages/nonebot/drivers/fastapi.py", line 153, in _lifespan_manager
     await self._lifespan.startup()
-  File "/venv/python3.9/site-packages/nonebot/internal/driver/_lifespan.py", line 42, in startup
+  File "/venv/lib/python3.9/site-packages/nonebot/internal/driver/_lifespan.py", line 42, in startup
     await self._run_lifespan_func(self._startup_funcs)
-  File "/venv/python3.9/site-packages/nonebot/internal/driver/_lifespan.py", line 36, in _run_lifespan_func
+  File "/venv/lib/python3.9/site-packages/nonebot/internal/driver/_lifespan.py", line 36, in _run_lifespan_func
     await cast(ASYNC_LIFESPAN_FUNC, func)()
-  File "/venv/python3.9/site-packages/nonebot_plugin_orm/__init__.py", line 75, in init_orm
+  File "/venv/lib/python3.9/site-packages/nonebot_plugin_orm/__init__.py", line 75, in init_orm
     _init_orm()
-  File "/venv/python3.9/site-packages/nonebot_plugin_orm/__init__.py", line 102, in _init_orm
+  File "/venv/lib/python3.9/site-packages/nonebot_plugin_orm/__init__.py", line 102, in _init_orm
     _init_engines()
-  File "/venv/python3.9/site-packages/nonebot_plugin_orm/__init__.py", line 182, in _init_engines
+  File "/venv/lib/python3.9/site-packages/nonebot_plugin_orm/__init__.py", line 182, in _init_engines
     raise ValueError(
 ValueError: 必须指定一个默认数据库 (SQLALCHEMY_DATABASE_URL 或 SQLALCHEMY_BINDS[""]). 可以通过 `pip install nonebot-plugin-orm[default]` 获得开箱即用的数据库配置.
-
-08-09 21:19:27 [ERROR] uvicorn | Application startup failed. Exiting.
 ```
 
 :::
-哦! 这是因为我们还没有配置数据库! 但是不用担心, [plugin-orm](https://github.com/nonebot/plugin-orm) 为我们提供了一种可以开箱即用的配置 `nonebot-plugin-orm[default]`。  
-不过我们不希望用户都强制使用这个配置, 所以我们要将这个依赖项声明在`dev`依赖里。
+哦！这是因为我们还没有配置数据库！但是不用担心，[plugin-orm](https://github.com/nonebot/plugin-orm) 为我们提供了一种可以开箱即用的配置 `nonebot-plugin-orm[default]`。  
+不过我们不希望用户都强制使用这个配置，所以我们要将这个依赖项声明在`dev`依赖里。
 ::: tip
-上文中的报错里也有提示, 不过我们不使用 `pip`, 我们使用 `pdm`
+上文中的报错里也有提示，不过我们不使用 `pip`，我们使用 `pdm`
 :::
 
 ```shell
 pdm add nonebot-plugin-orm[default] -d
 ```
 
-很好! 现在我们的插件可以正常加载了!
+很好！现在我们的插件可以正常加载了！
 
-不过我们还没有正式的开始构建我们的用户系统。在下一节中, 我们来学习定义一个数据库模型 `Models`。
+不过我们还没有正式的开始构建我们的用户系统。在下一节中，我们来学习定义一个数据库模型 `Models`。
+
+## 定义数据库模型
+
+要定义一个我们自己的数据库模型，我们首先需要导入 Model 基类
+
+```python
+from nonebot_plugin_orm import Model
+```
+
+然后我们需要继承这个类，并且在类中声明我们需要的字段。
+
+```python
+from datetime import datetime
+
+from nonebot_plugin_orm import Model
+from sqlalchemy.orm import Mapped, mapped_column
+
+class MyUser(Model):
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[str]
+    last_use: Mapped[datetime]
+```
+
+在上面的代码中，我们定义了一个名为 `MyUser` 的类，然后我们定义了 `id`、`user_id`、`last_use`这三个字段。
+
+首先，让我们关注 `id` 字段，它被声明为一个整数类型，并且被设置为主键。
+
+```python {2}
+class MyUser(Model):
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[str]
+    last_use: Mapped[datetime]
+```
+
+其中 `Mapped` 是 [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) 提供的用于将 `Python` 类型映射到数据库类型的特殊类型标注。
+::: tip
+`Mapped` 不是万能的，有时我们需要手动告知 [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) 应该将 `Python` 类型映射到什么数据库类型。  
+比如 `dict` 类型，我们需要手动使用 `JSON` 类进行映射。
+
+```python
+from sqlalchemy import JSON
+
+example: Mapped[dict] = mapped_column(JSON)
+```
+
+:::
+`mapped_column` 是 [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) 提供的用于更加自定义定义列的方法。比如在上面的代码中，我们设置了 `primary_key=True`，这将告知 [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) 这个字段为主键。
+::: tip
+`mapped_column` 有很多功能，比如设置字段类型，默认值，是否索引，是否唯一等等。详细可以去查看 [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) 的 [文档](https://docs.sqlalchemy.org/en/20/orm/mapping_api.html#sqlalchemy.orm.mapped_column)。
+:::
+
+然后根据刚才介绍的 `Mapped` 的功能，我们可以得知 `user_id` 和 `last_use` 分别被映射到数据库的字符串和时间类型。
+
+让我们来验证一下吧！
+
+```python
+from sqlalchemy.schema import CreateTable
+
+print(CreateTable(MyUser.__table__))
+```
+
+```sql
+CREATE TABLE nonebot_plugin_test_myuser (
+        id INTEGER NOT NULL, 
+        user_id VARCHAR NOT NULL, 
+        last_use DATETIME NOT NULL, 
+        CONSTRAINT pk_nonebot_plugin_test_myuser PRIMARY KEY (id)
+)
+```
+
+嗯！看起来不错！
+
+不过似乎又有什么报错？
+
+```shell
+nonebot_plugin_orm.exception.AutogenerateDiffsDetected: 检测到新的升级操作:
+[('add_table',
+  Table('nonebot_plugin_test_myuser', MetaData(), Column('id', Integer(), table=<nonebot_plugin_test_myuser>, primary_key=True, nullable=False), Column('user_id', String(), table=<nonebot_plugin_test_myuser>, nullable=False), Column('last_use', DateTime(), table=<nonebot_plugin_test_myuser>, nullable=False), schema=None))]
+```
+
+::: details 详细日志
+
+```shell {30-32}
+08-09 22:56:51 [ERROR] nonebot | Application startup failed. Exiting.
+Traceback (most recent call last):
+  File "<string>", line 11, in <module>
+  File "/venv/lib/python3.9/site-packages/nonebot/__init__.py", line 335, in run
+    get_driver().run(*args, **kwargs)
+  File "/venv/lib/python3.9/site-packages/nonebot/drivers/none.py", line 56, in run
+    loop.run_until_complete(self._serve())
+  File "/venv/lib/python3.9/asyncio/base_events.py", line 634, in run_until_complete
+    self.run_forever()
+  File "/venv/lib/python3.9/asyncio/base_events.py", line 601, in run_forever
+    self._run_once()
+  File "/venv/lib/python3.9/asyncio/base_events.py", line 1905, in _run_once
+    handle._run()
+  File "/venv/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/venv/lib/python3.9/site-packages/nonebot/drivers/none.py", line 60, in _serve
+    await self._startup()
+> File "/venv/lib/python3.9/site-packages/nonebot/drivers/none.py", line 68, in _startup
+    await self._lifespan.startup()
+  File "/venv/lib/python3.9/site-packages/nonebot/internal/driver/_lifespan.py", line 42, in startup
+    await self._run_lifespan_func(self._startup_funcs)
+  File "/venv/lib/python3.9/site-packages/nonebot/internal/driver/_lifespan.py", line 36, in _run_lifespan_func
+    await cast(ASYNC_LIFESPAN_FUNC, func)()
+  File "/venv/lib/python3.9/site-packages/nonebot_plugin_orm/__init__.py", line 84, in init_orm
+    await greenlet_spawn(migrate.check, alembic_config)
+  File "/venv/lib/python3.9/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+  File "/venv/lib/python3.9/site-packages/nonebot_plugin_orm/migrate.py", line 572, in check
+    raise AutogenerateDiffsDetected(f"检测到新的升级操作:\n{pformat(diffs)}")
+nonebot_plugin_orm.exception.AutogenerateDiffsDetected: 检测到新的升级操作:
+[('add_table',
+  Table('nonebot_plugin_test_myuser', MetaData(), Column('id', Integer(), table=<nonebot_plugin_test_myuser>, primary_key=True, nullable=False), Column('user_id', String(), table=<nonebot_plugin_test_myuser>, nullable=False), Column('last_use', DateTime(), table=<nonebot_plugin_test_myuser>, nullable=False), schema=None))]
+```
+
+:::
+
+哦！这是因为我们只定义了数据库模型，还没有为它创建迁移脚本 `Migration Script`！  
+我们的数据库现在空空如也，和我们定义的数据库模型并不一致。所以 [plugin-orm](https://github.com/nonebot/plugin-orm) 阻止了我们启动机器人。
+::: tip
+在上面的报错中，我们可以看到 `检测到新的升级操作` 这个提示，这是因为 [plugin-orm](https://github.com/nonebot/plugin-orm) 集成了 [alembic](https://github.com/sqlalchemy/alembic)。  
+[alembic](https://github.com/sqlalchemy/alembic) 是一个 SQLAlchemy 的数据库迁移工具。它可以帮助开发者在数据库模型发生改变时，自动生成相应的迁移脚本。  
+不过它也不是万能的<Curtain>~~我为什么要说也~~</Curtain>，所以在它生成完后，请一定要认真检查它生成的迁移脚本，以防数据丢失。
+:::
+不过不用担心，在下一节中，我们就来学习创建迁移脚本。
