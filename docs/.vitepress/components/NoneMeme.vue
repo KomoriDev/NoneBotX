@@ -102,7 +102,7 @@ const getNoneMeme = async () => {
 }
 
 .modal-container {
-  width: 300px;
+  width: 400px;
   margin: auto;
   padding: 20px 30px;
   max-width: 90%;
