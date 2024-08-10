@@ -29,6 +29,7 @@ import Comment from '../components/Comment.vue'
 import NameByPlatform from '../components/NameByPlatform.vue'
 
 import AsideAd from '../components/AsideAd.vue'
+import NoneMeme from '../components/NoneMeme.vue'
 
 import Mark from '../components/Mark.vue'
 
@@ -42,6 +43,7 @@ const theme: Theme = {
   // root component to wrap each page
   Layout() {
     return h(DefaultTheme.Layout, null, {
+      'sidebar-nav-after': () => h(NoneMeme),
       'aside-ads-before': () => h(AsideAd)
     })
   },
