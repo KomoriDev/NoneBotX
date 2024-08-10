@@ -35,7 +35,7 @@ const extractItems = (fileContent: string): string[] | null => {
 }
 
 const getItems = async () => {
-  const url = 'https://raw.githubusercontent.com/NoneMeme/NoneMeme/main/static/scripts/config.js'
+  const url = 'https://nonememe.icu/static/scripts/config.js'
   const fileContent = await fetchGitHubFile(url)
 
   if (fileContent) {
