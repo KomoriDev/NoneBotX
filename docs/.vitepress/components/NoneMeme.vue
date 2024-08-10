@@ -62,7 +62,7 @@ const getNoneMeme = async () => {
     const randomItem = getRandomItem(items)
     const filename = randomItem.split('/')[1]
     nonememeName.value = filename.substring(0, filename.lastIndexOf('.'))
-    nonememeUrl.value = `https://raw.githubusercontent.com/NoneMeme/NoneMeme/main/${randomItem}?raw=true`
+    nonememeUrl.value = `https://nonememe.icu/${randomItem}?raw=true`
   }
   showModal.value = true
 }
