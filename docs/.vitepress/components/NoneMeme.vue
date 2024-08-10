@@ -56,8 +56,8 @@ function getRandomItem<T>(list: T[]): T {
 const getNoneMeme = async () => {
   const items = await getItems()
   if (!items) {
-    nonememeName.value = 'Opps'
-    nonememeUrl.value = ''
+    nonememeName.value = 'Oops'
+    nonememeUrl.value = '/avatar/404.webp'
   } else {
     const randomItem = getRandomItem(items)
     const filename = randomItem.split('/')[1]
