@@ -77,7 +77,9 @@ const getNoneMeme = async () => {
         <div class="modal-container">
           <img :src="nonememeUrl" />
           <div class="model-footer">
-            <p># {{ nonememeName }}</p>
+            <a :href="`https://nonememe.icu/#${nonememeName}`" target="_blank"
+              ># {{ nonememeName }}</a
+            >
             <button class="modal-close-button" @click="showModal = false">Close</button>
           </div>
         </div>
