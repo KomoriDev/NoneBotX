@@ -116,8 +116,8 @@ const getNoneMeme = async () => {
 
 .model-footer {
   display: flex;
+  gap: 10px;
   margin-top: 8px;
-  text-align: right;
   align-items: center;
   justify-content: space-between;
 }
@@ -156,7 +156,6 @@ const getNoneMeme = async () => {
 
 .modal-close-button {
   padding: 0.3rem 1rem;
-  margin-bottom: 5px;
   border-radius: 10px;
   background-color: #f6f6f7;
 
