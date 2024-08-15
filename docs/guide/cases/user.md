@@ -6,19 +6,123 @@
 
 ## 认识 ORM
 
-> 对象关系映射 (英语: Object Relational Mapping，简称ORM，或O/RM，或O/R mapping)，是一种程序设计技术，用于实现面向对象编程语言里不同类型系统的资料之间的转换。从效果上说，它其实是创建了一个可在编程语言里使用的"虚拟对象数据库"。  
-> —— 维基百科
-
-简单来说，orm 就是对数据库的封装，使得我们可以像操作对象一样操作数据库。
+简单来说，ORM 就是对数据库的封装，使得我们可以像操作对象一样操作数据库。
 
 而在 NoneBot 中，官方提供了一个插件 [plugin-orm](https://github.com/nonebot/plugin-orm) 它以 [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) 和 [alembic](https://github.com/sqlalchemy/alembic) 为基础，为我们提供了完善的数据库支持。
 
+### 我为什么使用 ORM？
+
+~~不想说废话，直接举例子~~
+
+假设我们有一个用户管理系统，其中包含一个 `User` 表，结构包含 `id`，`username`，`email`，`age` 四个字段
+
+任务是：让 Bot 输出所有年龄大于30岁的用户。
+
+:::code-group
+
+```python [Plugin ORM]
+from nonebot import on_command
+
+from sqlalchemy.orm import Mapped, mapped_column, select
+from nonebot_plugin_orm import Model, async_scoped_session
+
+class User(Model):
+
+    __tablename__ = 'User'
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    username: Mapped[str] = mapped_column(String(50))
+    email: Mapped[str] = mapped_column(String(100))
+    age: Mapped[int]
+
+cmd = on_command("查询")
+
+@cmd.handle()
+async def _(session: async_scoped_session):
+    stmt = select(User).where(User.age > 30)
+    users = session.execute(stmt).scalars().all()
+    for user in users:
+        await cmd.send(user.username, user.email)
+    await cmd.finish()
+
+```
+
+```python [手搓 SQL]
+import aiosqlite
+from nonebot import get_driver, on_command
+
+driver = get_driver()
+
+# 先写个类
+class DBManager():
+
+  async def connect(self):
+    # 手动连接数据库
+    self.conn = await aiosqlite.connect(':memory:')   # 这里使用内存数据库作为例子
+    self.cursor = await self.conn.cursor()
+    self.create_table()
+
+  async def disconnect(self):
+    # 手动断开数据库
+    await self.conn.close()
+
+  async def create_table(self):
+    await self.cursor.execute('''
+    SELECT name FROM sqlite_master WHERE type='table' AND name='User'
+    ''')
+    result = await self.cursor.fetchone()
+
+    # 如果表不存在，则创建表
+    if not result:
+        await self.cursor.execute('''
+        CREATE TABLE User (
+            id INTEGER PRIMARY KEY,
+            username VARCHAR(50),
+            email VARCHAR(100),
+            age INTEGER
+        )
+        ''')
+    else:
+        pass
+
+db = DBManager()
+
+@driver.on_startup
+async def open_database():
+  db.connect()
+
+@driver.on_shutdown
+async def close_database():
+  db.close_connect()
+
+
+cmd = on_command("查询")
+
+@cmd.handle()
+async def _():
+    cursor.execute('SELECT username, email FROM User WHERE age > 30')
+    users = cursor.fetchall()
+    for user in users:
+        await cmd.send(user[0], user[1])
+    await cmd.finish()
+```
+
+:::
+
+~~哪个省时省力相信你还是分得清的~~
+
 ## 安装 ORM 插件
 
-首先，让我们为插件声明依赖项
+首先，经典的安装环节
+
+::: tip
+
+[plugin-orm](https://github.com/nonebot/plugin-orm) 只提供了 ORM 功能，我们需要在安装命令后面加上 `sqlite` 另行安装数据库后端
+
+:::
 
 ```shell
-pdm add nonebot-plugin-orm
+pdm add nonebot-plugin-orm[sqlite]
 ```
 
 然后让我们在插件代码中向 NoneBot 声明插件依赖
@@ -27,50 +131,6 @@ pdm add nonebot-plugin-orm
 from nonebot import require
 
 require('nonebot_plugin_orm')
-```
-
-嗯！让我们来运行一下试试吧！
-
-::: danger 哎呀
-好像出错了呢
-
-```shell
-ValueError: 必须指定一个默认数据库 (SQLALCHEMY_DATABASE_URL 或 SQLALCHEMY_BINDS[""]). 可以通过 `pip install nonebot-plugin-orm[default]` 获得开箱即用的数据库配置.
-```
-
-:::
-::: details 详细日志
-
-```shell {18}
-08-09 21:19:27 [ERROR] uvicorn | Traceback (most recent call last):
-  File "/venv/lib/python3.9/site-packages/starlette/routing.py", line 732, in lifespan
-    async with self.lifespan_context(app) as maybe_state:
-  File "/venv/lib/python3.9/contextlib.py", line 181, in __aenter__
-    return await self.gen.__anext__()
-  File "/venv/lib/python3.9/site-packages/nonebot/drivers/fastapi.py", line 153, in _lifespan_manager
-    await self._lifespan.startup()
-  File "/venv/lib/python3.9/site-packages/nonebot/internal/driver/_lifespan.py", line 42, in startup
-    await self._run_lifespan_func(self._startup_funcs)
-  File "/venv/lib/python3.9/site-packages/nonebot/internal/driver/_lifespan.py", line 36, in _run_lifespan_func
-    await cast(ASYNC_LIFESPAN_FUNC, func)()
-  File "/venv/lib/python3.9/site-packages/nonebot_plugin_orm/__init__.py", line 75, in init_orm
-    _init_orm()
-  File "/venv/lib/python3.9/site-packages/nonebot_plugin_orm/__init__.py", line 102, in _init_orm
-    _init_engines()
-  File "/venv/lib/python3.9/site-packages/nonebot_plugin_orm/__init__.py", line 182, in _init_engines
-    raise ValueError(
-ValueError: 必须指定一个默认数据库 (SQLALCHEMY_DATABASE_URL 或 SQLALCHEMY_BINDS[""]). 可以通过 `pip install nonebot-plugin-orm[default]` 获得开箱即用的数据库配置.
-```
-
-:::
-哦！这是因为我们还没有配置数据库！但是不用担心，[plugin-orm](https://github.com/nonebot/plugin-orm) 为我们提供了一种可以开箱即用的配置 `nonebot-plugin-orm[default]`。  
-不过我们不希望用户都强制使用这个配置，所以我们要将这个依赖项声明在`dev`依赖里。
-::: tip
-上文中的报错里也有提示，不过我们不使用 `pip`，我们使用 `pdm`
-:::
-
-```shell
-pdm add nonebot-plugin-orm[default] -d
 ```
 
 很好！现在我们的插件可以正常加载了！
@@ -87,28 +147,41 @@ from nonebot_plugin_orm import Model
 
 然后我们需要继承这个类，并且在类中声明我们需要的字段。
 
+::: tip
+在 MySQL 中，需要为 String 类型字段指定长度
+
+```py
+user_id: Mapped[str] = mapped_column(String(32))
+```
+
+:::
+
 ```python
 from datetime import datetime
 
 from nonebot_plugin_orm import Model
 from sqlalchemy.orm import Mapped, mapped_column
 
-class MyUser(Model):
+class User(Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[str]
     last_use: Mapped[datetime]
+    created_at: Mapped[datetime] = mapped_column(default=datetime.now())
 ```
 
-在上面的代码中，我们定义了一个名为 `MyUser` 的类，然后我们定义了 `id`、`user_id`、`last_use`这三个字段。
+在上面的代码中，我们定义了一个名为 `User` 的类，然后我们定义了 `id`、`user_id`、`last_use` `created_at` 这四个字段。
 
 首先，让我们关注 `id` 字段，它被声明为一个整数类型，并且被设置为主键。
 
-```python {2}
-class MyUser(Model):
-    id: Mapped[int] = mapped_column(primary_key=True)
+```python
+class User(Model):
+    id: Mapped[int] = mapped_column(primary_key=True) # [!code focus]
     user_id: Mapped[str]
     last_use: Mapped[datetime]
+    created_at: Mapped[datetime] = mapped_column(default=datetime.now())  # [!code focus]
 ```
+
+`created_at` 字段被声明为 `datetime` 类型，并且将当前时间设置为默认值。
 
 其中 `Mapped` 是 [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy) 提供的用于将 `Python` 类型映射到数据库类型的特殊类型标注。
 ::: tip
@@ -195,11 +268,6 @@ nonebot_plugin_orm.exception.AutogenerateDiffsDetected: 检测到新的升级操
 
 :::
 
-哦！这是因为我们只定义了数据库模型，还没有为它创建迁移脚本 `Migration Script`！  
-我们的数据库现在空空如也，和我们定义的数据库模型并不一致。所以 [plugin-orm](https://github.com/nonebot/plugin-orm) 阻止了我们启动机器人。
-::: tip
-在上面的报错中，我们可以看到 `检测到新的升级操作` 这个提示，这是因为 [plugin-orm](https://github.com/nonebot/plugin-orm) 集成了 [alembic](https://github.com/sqlalchemy/alembic)。  
-[alembic](https://github.com/sqlalchemy/alembic) 是一个 SQLAlchemy 的数据库迁移工具。它可以帮助开发者在数据库模型发生改变时，自动生成相应的迁移脚本。  
-不过它也不是万能的<Curtain>~~我为什么要说也~~</Curtain>，所以在它生成完后，请一定要认真检查它生成的迁移脚本，以防数据丢失。
-:::
-不过不用担心，在下一节中，我们就来学习创建迁移脚本。
+哦！这是因为我们只定义了数据库模型，还没有为它创建迁移脚本！导致我们的数据库现在空空如也，和我们定义的数据库模型并不一致。所以 [plugin-orm](https://github.com/nonebot/plugin-orm) 阻止了我们启动机器人。
+
+## 即刻迁移
