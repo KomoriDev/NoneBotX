@@ -38,7 +38,7 @@ cmd = on_command("查询")
 async def _(session: async_scoped_session):
     users = await session.scalars(select(User).where(User.age > 30))
     for user in users:
-        await cmd.send(f"{user.username}, {user.email}") 
+        await cmd.send(f"{user.username}, {user.email}")
     await cmd.finish()
 ```
 
