@@ -9,16 +9,19 @@
 
 ---
 
-
 ## 安装依赖
+
 ::: tip
 Re:NoneBot GUI 并不提供 `nb-cli` 的安装，请在使用前先安装 `nb-cli`
 :::
+
 ### Windows
+
 本软件运行需要安装 Microsoft Visual C++ Redistributable 依赖，如无法打开请尝试从此处下载安装运行后使用。
 [https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)
 
 ### Linux
+
 请使用以下命令安装依赖(以 Debian 系为例)
 
 ```bash
@@ -28,6 +31,7 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev libnotify-dev
 ---
 
 ## 下载
+
 前往 [Github Releases](https://github.com/NonebotGUI/nonebot-flutter-gui/releases) 下载 `v1.1.0` 或者更新版的 Re:NoneBot GUI
 
 ![alt](/images/before/nfg_releases.png)
@@ -35,10 +39,10 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev libnotify-dev
 ---
 
 ## 部署
+
 启动软件，在侧边栏中找到 `快速部署` 并选择 `Lagrange.Onebot`
 
 ![alt](/images/before/nbgui_fastdeploy.png)
-
 
 填好相关配置并选择存放 Bot 的目录，如果您的网络环境无法访问 github 可以使用镜像站下载，完成后点击下方按钮进入下一步
 
@@ -54,10 +58,10 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev libnotify-dev
 
 ![alt](/images/before/nbgui_fastdeploy4.png)
 
-
 ---
 
 ## 启动
+
 回到主页并点击你刚才部署完成的 Bot 即可跳转到 Bot 控制台,点击下方的启动按钮即可启动你的 Bot 本体
 
 ![alt](/images/before/nbgui_fastdeploy5.png)
@@ -69,6 +73,7 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev libnotify-dev
 ---
 
 ## 安装插件
+
 Re:NoneBot GUI 内置了插件商店，能够一键安装插件
 
 位于 `Bot控制台-管理CLI-插件商店` 下
