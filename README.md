@@ -53,7 +53,7 @@
 
 <!-- prettier-ignore-start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- prettier-ignore-end -->
 
@@ -68,6 +68,8 @@
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/KomoriDev"><img src="https://avatars.githubusercontent.com/u/110453675?v=4?s=80" width="80px;" alt="Komorebi"/><br /><sub><b>Komorebi</b></sub></a><br /><a href="https://github.com/KomoriDev/NoneBotX/commits?author=KomoriDev" title="Documentation">📖</a> <a href="#content-KomoriDev" title="Content">🖋</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/NCBM"><img src="https://avatars.githubusercontent.com/u/37037264?v=4?s=80" width="80px;" alt="worldmozara"/><br /><sub><b>worldmozara</b></sub></a><br /><a href="https://github.com/KomoriDev/NoneBotX/commits?author=NCBM" title="Documentation">📖</a> <a href="#content-NCBM" title="Content">🖋</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://eya46.com"><img src="https://avatars.githubusercontent.com/u/61458340?v=4?s=80" width="80px;" alt="eya46"/><br /><sub><b>eya46</b></sub></a><br /><a href="https://github.com/KomoriDev/NoneBotX/issues?q=author%3Aeya46" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://shikukuya.github.io"><img src="https://avatars.githubusercontent.com/u/89395757?v=4?s=80" width="80px;" alt="ZTY"/><br /><sub><b>ZTY</b></sub></a><br /><a href="https://github.com/KomoriDev/NoneBotX/commits?author=zty012" title="Documentation">📖</a> <a href="#infra-zty012" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/XTxiaoting14332"><img src="https://avatars.githubusercontent.com/u/96647974?v=4?s=80" width="80px;" alt="XTxiaoting14332"/><br /><sub><b>XTxiaoting14332</b></sub></a><br /><a href="https://github.com/KomoriDev/NoneBotX/commits?author=XTxiaoting14332" title="Documentation">📖</a> <a href="#tutorial-XTxiaoting14332" title="Tutorials">✅</a></td>
     </tr>
   </tbody>
 </table>

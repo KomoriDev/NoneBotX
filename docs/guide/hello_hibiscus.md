@@ -21,7 +21,7 @@ async def hello_handle(event: Event):
 
 <chat-window title="NoneBot Console">
   <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>你好</chat-msg>
-  <chat-msg name="Hibiscus" tag="机器人" avatar="/avatar/hibiscus.webp">不要说你好，来张涩图</chat-msg>
+  <chat-msg name="Hibiscus" tag="机器人" tagType="bot" avatar="/avatar/hibiscus.webp">不要说你好，来张涩图</chat-msg>
 </chat-window>
 
 值得注意的是，在执行 `finish` 方法时，NoneBot 会在向机器人用户发送消息内容后**抛出异常来结束事件响应流程**。也就是说，在

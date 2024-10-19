@@ -13,7 +13,11 @@
 
 ## 下载
 
-前往 [Github Action](https://github.com/LagrangeDev/Lagrange.Core/actions) 下载最新版 Lagrange.OneBot
+::: warning
+从 Actions 下载的 Lagrange.OneBot 需要手动安装 .NET, 你应当自行安装对应版本的 [.NET SDK](https://dotnet.microsoft.com/zh-cn/download)
+:::
+
+前往 [Github Action](https://github.com/LagrangeDev/Lagrange.Core/actions) 下载最新 Lagrange.OneBot 的构建
 
 ![alt](/images/before/lagrange.webp)
 ![ci-list](/images/before/lagrange_ci_list.webp)
@@ -78,57 +82,63 @@ Lagrange 的 CI 产物命名大致如下：
 
 现在需要修改你的配置文件，标明部分作为提示。
 
-- `SignServerUrl`：新的 Sign 地址，~~你需要在一个 神秘地方 自行取用~~
-- `Implementations`：通信方式，分 `Reverse` 和 `Forward` 两种，选择自己需要的方式配置
+- `Implementations`：通信方式，分 `ReverseWebSocket` `ForwardWebSocket` `HttpPost` 和 `Http` 四种，选择自己需要的方式配置（推荐使用 `ReverseWebSocket`）
 
-::: details appsettings.json Example
+:::: details appsettings.json Example
 
-```json{9,20}
+::: tip
+以 `//` 开头的为注释, 试图复制粘贴到实际的配置文件中时务必删除
+:::
+
+```json{25-44}
 {
   "Logging": {
     "LogLevel": {
       "Default": "Information",
       "Microsoft": "Warning",
-      "Microsoft.Hosting.Lifetime": "Information"
-    }
+      "Microsoft.Hosting.Lifetime": "Information",
+    },
   },
-  "SignServerUrl": "",
+  "SignServerUrl": "https://sign.lagrangecore.org/api/sign",
+  "MusicSignServerUrl": "",
   "Account": {
-    "Uin": 0,
-    "Password": "",
+    "Uin": 0,           // 此处 Uin 为 0，表示使用二维码登录
+    "Password": "",     // 不填写密码以使用扫码连接
     "Protocol": "Linux",
     "AutoReconnect": true,
-    "GetOptimumServer": true
+    "GetOptimumServer": true,
   },
   "Message": {
-    "IgnoreSelf": true
+    "IgnoreSelf": true,
+    "StringPost": false,
+  },
+  "QrCode": {
+    "ConsoleCompatibilityMode": false,
   },
   "Implementations": [
     {
       "Type": "ReverseWebSocket",
       "Host": "127.0.0.1",
-      "Port": 8080,
+      "Port": 8080,    // 请注意与 NoneBot 的 PORT 配置一致
       "Suffix": "/onebot/v11/ws",
       "ReconnectInterval": 5000,
       "HeartBeatInterval": 5000,
-      "AccessToken": ""
+      "HeartBeatEnable": true,
+      "AccessToken": "",
     },
     {
       "Type": "ForwardWebSocket",
       "Host": "127.0.0.1",
       "Port": 8081,
       "HeartBeatInterval": 5000,
-      "AccessToken": ""
-    }
-  ]
+      "HeartBeatEnable": true,
+      "AccessToken": "",
+    },
+  ],
 }
 ```
 
-:::
-
-:::tip
-由于此处密码为空，表示使用二维码登录，二维码登录后，回写 `Uin` 和 `Password` 即可登录
-:::
+::::
 
 ## 拉格兰，启动！
 

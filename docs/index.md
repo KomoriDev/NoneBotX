@@ -29,5 +29,5 @@ features:
     title: 依赖注入
     details: 简单清晰的依赖注入系统，内置依赖函数减少用户代码.
 
-footer: MIT Licensed | Copyright © 2023 Komorebi
+footer: MIT Licensed | Copyright © 2024 Komorebi
 ---

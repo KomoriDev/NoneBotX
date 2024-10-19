@@ -1,3 +1,4 @@
+import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
@@ -27,6 +28,11 @@ import Comment from '../components/Comment.vue'
 
 import NameByPlatform from '../components/NameByPlatform.vue'
 
+import AsideAd from '../components/AsideAd.vue'
+import NoneMeme from '../components/NoneMeme.vue'
+
+import Mark from '../components/Mark.vue'
+
 import VueTermynalPlugin from '@lehoczky/vue-termynal'
 
 import '../styles/index.scss'
@@ -35,7 +41,12 @@ const theme: Theme = {
   ...DefaultTheme,
 
   // root component to wrap each page
-  Layout,
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      'sidebar-nav-after': () => h(NoneMeme),
+      'aside-ads-before': () => h(AsideAd)
+    })
+  },
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   enhanceApp({ app, router, siteData }) {
@@ -66,6 +77,7 @@ const theme: Theme = {
     // app.component('CodeGroupItem', CodeGroupItem)
     app.component('Mermaid', Mermaid)
     app.component('NameByPlatform', NameByPlatform)
+    app.component('Mark', Mark)
     app.use(VueTermynalPlugin as any)
   }
 }

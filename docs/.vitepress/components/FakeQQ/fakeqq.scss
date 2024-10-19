@@ -697,7 +697,15 @@ html.dark {
     -moz-user-select: none;
     user-select: none;
   }
-  .q-tag {
+  .q-owner-tag {
+    background-color: #ff801f37;
+    border-radius: 4px;
+    color: #fd9e5d;
+    display: inline-block;
+    font-size: var(--font_size_1);
+    padding: 1px 4px;
+  }
+  .q-admin-tag {
     background-color: #09f3;
     border-radius: 4px;
     color: #09f;
@@ -705,13 +713,31 @@ html.dark {
     font-size: var(--font_size_1);
     padding: 1px 4px;
   }
-  @media (prefers-color-scheme: dark) {
-    .q-tag {
-      background-color: #0099ff40;
-    }
-    .q-tag.primary {
-      background-color: #ff8d4040;
-    }
+  .q-member-tag {
+    background-color: rgba(140, 140, 140, 20%);
+    border-radius: 4px;
+    color: #9e9e9e;
+    display: inline-block;
+    font-size: var(--font_size_1);
+    padding: 1px 4px;
+  }
+  .q-bot-tag {
+    width: 14px;
+    height: 14px;
+    background-color: #0a64ff;
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: var(--font_size_1);
+    padding: 1.7px 1.7px;
+  }
+  .q-customization-tag {
+    background-color: rgba(155, 111, 222, 30%);
+    border-radius: 4px;
+    color: #a372ec;
+    display: inline-block;
+    font-size: var(--font_size_1);
+    padding: 1px 4px;
   }
   .message-container .message-content__wrapper {
     color: var(--bubble_guest_text);
