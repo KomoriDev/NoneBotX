@@ -1,4 +1,4 @@
-# 通过 NoneBot Flutter GUI 一键部署 （以 Lagrange.Onebot 为例）
+# 通过 Re:NoneBot GUI 一键部署 （以 Lagrange.Onebot 为例）
 
 <p style="display: inline-flex">
   <a href="https://github.com/NonebotGUI/nonebot-flutter-gui">
@@ -10,9 +10,9 @@
 ---
 
 
-# 安装依赖
+## 安装依赖
 ::: tip
-NoneBot Flutter GUI 并不提供 `nb-cli` 的安装，请在使用前先安装 `nb-cli`
+Re:NoneBot GUI 并不提供 `nb-cli` 的安装，请在使用前先安装 `nb-cli`
 :::
 ### Windows
 本软件运行需要安装 Microsoft Visual C++ Redistributable 依赖，如无法打开请尝试从此处下载安装运行后使用。
@@ -22,19 +22,19 @@ NoneBot Flutter GUI 并不提供 `nb-cli` 的安装，请在使用前先安装 `
 请使用以下命令安装依赖(以 Debian 系为例)
 
 ```bash
-sudo apt-get install appindicator3-0.1 libappindicator3-dev
+sudo apt-get install appindicator3-0.1 libappindicator3-dev libnotify-dev
 ```
 
 ---
 
-# 下载
-前往 [Github Releases](https://github.com/NonebotGUI/nonebot-flutter-gui/releases) 下载 `v0.2.0` 或者更新版的 NoneBot Flutter GUI
+## 下载
+前往 [Github Releases](https://github.com/NonebotGUI/nonebot-flutter-gui/releases) 下载 `v1.1.0` 或者更新版的 Re:NoneBot GUI
 
 ![alt](/images/before/nfg_releases.png)
 
 ---
 
-# 部署
+## 部署
 启动软件，在侧边栏中找到 `快速部署` 并选择 `Lagrange.Onebot`
 
 ![alt](/images/before/nbgui_fastdeploy.png)
@@ -55,13 +55,9 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev
 ![alt](/images/before/nbgui_fastdeploy4.png)
 
 
-::: warning
-如果你选择了 NapCat 的话，那么请注意， NoneBot Flutter GUI目前无法完全停止 NapCat 进程，即停止后拉起的 QQ 进程仍在运行，你可能需要手动结束 QQ 进程
-:::
-
 ---
 
-# 启动
+## 启动
 回到主页并点击你刚才部署完成的 Bot 即可跳转到 Bot 控制台,点击下方的启动按钮即可启动你的 Bot 本体
 
 ![alt](/images/before/nbgui_fastdeploy5.png)
@@ -72,8 +68,8 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev
 
 ---
 
-# 安装插件
-NoneBot Flutter GUI 内置了插件商店，能够一键安装插件
+## 安装插件
+Re:NoneBot GUI 内置了插件商店，能够一键安装插件
 
 位于 `Bot控制台-管理CLI-插件商店` 下
 
