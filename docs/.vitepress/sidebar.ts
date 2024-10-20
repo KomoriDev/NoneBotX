@@ -39,6 +39,7 @@ const before = [
       { text: 'NapCat 的安装与配置', link: '/before/install_napcat' },
       { text: 'Lagrange 的安装与配置', link: '/before/install_lagrange' },
       { text: 'Go-CQHTTP 的安装与配置', link: '/before/install_go-cqhttp' },
+      { text: '通过 NoneBot GUI 一键部署', link: '/before/gui_deploy' },
       { text: '名词解释', link: '/before/terms' }
     ]
   },
