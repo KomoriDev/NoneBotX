@@ -32,9 +32,7 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev libnotify-dev
 
 ## 下载
 
-前往 [Github Releases](https://github.com/NonebotGUI/nonebot-flutter-gui/releases) 下载 `v1.1.0` 或者更新版的 Re:NoneBot GUI
-
-![alt](/images/before/nfg_releases.png)
+前往 [Github Releases](https://github.com/NonebotGUI/nonebot-flutter-gui/releases) 下载 `v1.1.1+fix3` 或者更新版的 Re:NoneBot GUI
 
 ---
 
