@@ -7,7 +7,6 @@
 </p>
   <img src="https://socialify.git.ci/NoneBotGUI/nonebot-flutter-gui/image?description=1&descriptionEditable=%E2%9C%A8%E6%96%B0%E4%B8%80%E4%BB%A3Nonebot%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2%E2%9C%A8&font=Jost&language=1&logo=https%3A%2F%2Fnbgui.top%2Fimage%2Ficon.png&name=1&owner=1&pattern=Plus&stargazers=1&theme=Auto" alt="nonebot-flutter-gui" width="640" height="320" />
 
-
 ## 安装依赖
 
 ::: tip
@@ -27,11 +26,9 @@ Re:NoneBot GUI 并不提供 `nb-cli` 的安装，请在使用前先安装 `nb-cl
 sudo apt-get install appindicator3-0.1 libappindicator3-dev libnotify-dev
 ```
 
-
 ## 下载
 
 前往 [Github Releases](https://github.com/NonebotGUI/nonebot-flutter-gui/releases) 下载 `v1.1.1+fix3` 或者更新版的 Re:NoneBot GUI
-
 
 ## 部署
 
@@ -53,7 +50,6 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev libnotify-dev
 
 ![alt](/images/before/nbgui_fastdeploy4.png)
 
-
 ## 启动
 
 回到主页并点击你刚才部署完成的 Bot 即可跳转到 Bot 控制台,点击下方的启动按钮即可启动你的 Bot 本体
@@ -63,7 +59,6 @@ sudo apt-get install appindicator3-0.1 libappindicator3-dev libnotify-dev
 来到协议端控制台，启动后扫描控制台中的登录二维码，即可连接至 NoneBot
 
 ![alt](/images/before/nbgui_fastdeploy6.png)
-
 
 ## 安装插件
 
