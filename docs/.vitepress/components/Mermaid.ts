@@ -1,17 +1,43 @@
-/* 修改自 vuepress-plugin-md-enhance (MIT)
-  @src https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance/src/node/markdown-it/mermaid.ts
-  @last-updated 2022-8-13
-  @author MrHope
+/* 修改自 vuepress-plugin-md-enhance
+ * @src https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance/src/node/markdown-it/mermaid.ts
+ * @last-updated 2024-10-01
+ * @last-updated-by @Redlnn
  */
 
-import { computed, defineComponent, h, onMounted, ref, shallowRef, watch } from 'vue'
-import { useMutationObserver, useDark } from '@vueuse/core'
-import { LoadingIcon } from './Icons'
-import { unzlibSync, strToU8, strFromU8 } from 'fflate'
+/* The MIT License (MIT)
+ *
+ * Copyright (c) 2018, PRESENT by MrHope
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @author MrHope
+ * @website https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance
+ *
+ */
+
+import { LoadingIcon } from './utils/Icons'
 import type { VNode } from 'vue'
 import mermaid from 'mermaid'
+import { computed, defineComponent, h, onMounted, ref, shallowRef, watch } from 'vue'
+import { useDark, useMutationObserver } from '@vueuse/core'
 
-const DEFAULT_CHART_OPTIONS = { useMaxWidth: false }
+const DEFAULT_CHART_OPTIONS = { useMaxWidth: false, htmlLabels: false }
 const isDark = useDark()
 
 const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
@@ -246,33 +272,34 @@ const getThemeVariables = (isDarkMode: boolean): Record<string, unknown> => {
   }
 }
 
-function atou(base64: string): string {
-  const binary = atob(base64)
-
-  // zlib header (x78), level 9 (xDA)
-  if (binary.startsWith('\x78\xDA')) {
-    const buffer = strToU8(binary, true)
-    const unzipped = unzlibSync(buffer)
-    return strFromU8(unzipped)
-  }
-
-  // old unicode hacks for backward compatibility
-  // https://base64.guru/developers/javascript/examples/unicode-strings
-  return decodeURIComponent(escape(binary))
-}
-
 export default defineComponent({
-  // eslint-disable-next-line vue/multi-word-component-names
   name: 'Mermaid',
 
   props: {
+    /**
+     * Mermaid id
+     */
     id: { type: String, required: true },
-    code: { type: String, required: true }
+
+    /**
+     * Mermaid config
+     *
+     * Mermaid 配置
+     */
+    code: { type: String, required: true },
+
+    /**
+     * Mermaid title
+     *
+     * Mermaid 标题
+     */
+    title: { type: String, default: '' }
   },
 
   setup(props) {
     const mermaidElement = shallowRef<HTMLElement>()
-    const code = computed(() => atou(props.code))
+
+    const code = computed(() => props.code)
 
     const svgCode = ref('')
 
@@ -291,7 +318,6 @@ export default defineComponent({
         startOnLoad: false
       })
 
-      // eslint-disable-next-line
       svgCode.value = (await mermaid.render(props.id, code.value)).svg
     }
 
@@ -325,7 +351,7 @@ export default defineComponent({
       const a = document.createElement('a')
 
       a.setAttribute('href', dataURI)
-      a.setAttribute('download', `${props.id}.svg`)
+      a.setAttribute('download', `${props.title || props.id}.svg`)
       a.click()
     }
 
@@ -356,34 +382,36 @@ export default defineComponent({
     })
 
     return (): VNode[] => [
-      h('div', { class: 'mermaid-actions' }, [
-        h('button', {
-          class: 'preview-button',
-          onClick: () => preview(),
-          title: 'preview',
-          innerHTML:
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1316 1024" fill="currentColor"><path d="M658.286 0C415.89 0 0 297.106 0 512c0 214.82 415.89 512 658.286 512 242.322 0 658.285-294.839 658.285-512S900.608 0 658.286 0zm0 877.714c-161.573 0-512-221.769-512-365.714 0-144.018 350.427-365.714 512-365.714 161.572 0 512 217.16 512 365.714s-350.428 365.714-512 365.714z"/><path d="M658.286 292.571a219.429 219.429 0 1 0 0 438.858 219.429 219.429 0 0 0 0-438.858zm0 292.572a73.143 73.143 0 1 1 0-146.286 73.143 73.143 0 0 1 0 146.286z"/></svg>'
-        }),
-        h('button', {
-          class: 'download-button',
-          onClick: () => download(),
-          title: 'download',
-          innerHTML:
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M828.976 894.125H190.189c-70.55 0-127.754-57.185-127.754-127.753V606.674c0-17.634 14.31-31.933 31.933-31.933h63.889c17.634 0 31.932 14.299 31.932 31.933v95.822c0 35.282 28.596 63.877 63.877 63.877h511.033c35.281 0 63.877-28.595 63.877-63.877v-95.822c0-17.634 14.298-31.933 31.943-31.933h63.878c17.635 0 31.933 14.299 31.933 31.933v159.7c0 70.566-57.191 127.751-127.754 127.751zM249.939 267.51c12.921-12.92 33.885-12.92 46.807 0l148.97 148.972V94.893c0-17.634 14.302-31.947 31.934-31.947h63.876c17.638 0 31.946 14.313 31.946 31.947v321.589l148.97-148.972c12.922-12.92 33.876-12.92 46.797 0l46.814 46.818c12.922 12.922 12.922 33.874 0 46.807L552.261 624.93c-1.14 1.138-21.664 13.684-42.315 13.693-20.877.01-41.88-12.542-43.021-13.693L203.122 361.135c-12.923-12.934-12.923-33.885 0-46.807l46.817-46.818z"/></svg>'
-        })
-      ]),
-      h(
-        'div',
-        {
-          ref: mermaidElement,
-          class: 'mermaid-wrapper'
-        },
-        svgCode.value
-          ? // mermaid
-            h('div', { class: 'mermaid-content', innerHTML: svgCode.value })
-          : // loading
-            h(LoadingIcon, { class: 'mermaid-loading', height: 96 })
-      )
+      h('div', { class: 'mermaid-contianer' }, [
+        h('div', { class: 'mermaid-actions' }, [
+          h('button', {
+            class: 'preview-button',
+            onClick: () => preview(),
+            title: 'preview',
+            innerHTML:
+              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1316 1024" fill="currentColor"><path d="M658.286 0C415.89 0 0 297.106 0 512c0 214.82 415.89 512 658.286 512 242.322 0 658.285-294.839 658.285-512S900.608 0 658.286 0zm0 877.714c-161.573 0-512-221.769-512-365.714 0-144.018 350.427-365.714 512-365.714 161.572 0 512 217.16 512 365.714s-350.428 365.714-512 365.714z"/><path d="M658.286 292.571a219.429 219.429 0 1 0 0 438.858 219.429 219.429 0 0 0 0-438.858zm0 292.572a73.143 73.143 0 1 1 0-146.286 73.143 73.143 0 0 1 0 146.286z"/></svg>'
+          }),
+          h('button', {
+            class: 'download-button',
+            onClick: () => download(),
+            title: 'download',
+            innerHTML:
+              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="currentColor"><path d="M828.976 894.125H190.189c-70.55 0-127.754-57.185-127.754-127.753V606.674c0-17.634 14.31-31.933 31.933-31.933h63.889c17.634 0 31.932 14.299 31.932 31.933v95.822c0 35.282 28.596 63.877 63.877 63.877h511.033c35.281 0 63.877-28.595 63.877-63.877v-95.822c0-17.634 14.298-31.933 31.943-31.933h63.878c17.635 0 31.933 14.299 31.933 31.933v159.7c0 70.566-57.191 127.751-127.754 127.751zM249.939 267.51c12.921-12.92 33.885-12.92 46.807 0l148.97 148.972V94.893c0-17.634 14.302-31.947 31.934-31.947h63.876c17.638 0 31.946 14.313 31.946 31.947v321.589l148.97-148.972c12.922-12.92 33.876-12.92 46.797 0l46.814 46.818c12.922 12.922 12.922 33.874 0 46.807L552.261 624.93c-1.14 1.138-21.664 13.684-42.315 13.693-20.877.01-41.88-12.542-43.021-13.693L203.122 361.135c-12.923-12.934-12.923-33.885 0-46.807l46.817-46.818z"/></svg>'
+          })
+        ]),
+        h(
+          'div',
+          {
+            ref: mermaidElement,
+            class: 'mermaid-wrapper'
+          },
+          svgCode.value
+            ? // mermaid
+              h('div', { class: 'mermaid-content', innerHTML: svgCode.value })
+            : // loading
+              h(LoadingIcon, { class: 'mermaid-loading', height: 96 })
+        )
+      ])
     ]
   }
 })

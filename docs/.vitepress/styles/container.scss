@@ -1,0 +1,49 @@
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+// :root {
+//   --vp-custom-block-tip-border: transparent;
+//   --vp-custom-block-tip-text: var(--vp-c-text-1);
+//   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+//   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+// }
+
+.custom-block.interlink {
+  color: var(--vp-c-text-1);
+  background-color: rgba(100, 108, 255, 0.14);
+
+  & .heimu {
+    a {
+      color: var(--vp-c-text-1);
+    }
+  }
+
+  code,
+  a {
+    color: var(--vp-c-indigo-1);
+  }
+}
+
+.custom-block.tsukkomi {
+  color: var(--vp-c-text-1);
+  background-color: rgba(rgb(232, 99, 255), 0.14);
+
+  & .heimu {
+    a {
+      color: var(--vp-c-text-1);
+    }
+  }
+
+  code,
+  a {
+    color: rgb(137, 0, 155);
+    html.dark & {
+      color: rgb(232, 99, 255);
+    }
+  }
+
+  html.dark & .heimu a {
+    color: inherit;
+  }
+}

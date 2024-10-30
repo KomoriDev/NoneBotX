@@ -1,5 +1,5 @@
 /* 修改自 vuepress-plugin-md-enhance
- * @src https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance/src/client/styles/tasklist.scss
+ * @src https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance/src/client/components/icons.ts
  * @last-updated 2022-8-13
  */
 
@@ -30,71 +30,46 @@
  *
  */
 
- input[type='checkbox'].task-list-item-checkbox {
-  position: relative;
-  width: 0;
-  margin-right: 1.5em;
-  cursor: pointer;
+import { IconBase } from './IconBase'
+import { h } from 'vue'
 
-  html:not(.no-touch) & {
-    margin-right: 1.4em;
-    vertical-align: middle;
-  }
+import type { FunctionalComponent } from 'vue'
 
-  &::after {
-    content: ' ';
-
-    position: absolute;
-    top: 0;
-
-    display: inline-block;
-
-    box-sizing: border-box;
-
-    width: 1em;
-    height: 1em;
-    padding-left: 0;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-
-    background-color: #fff;
-
-    text-align: center;
-
-    visibility: visible;
-
-    html.dark & {
-      border-color: #666;
-      background-color: #333;
-    }
-  }
-
-  &:checked {
-    &::after {
-      content: '';
-      border-color: var(--vp-c-brand);
-      background-color: var(--vp-c-brand);
-
-      html.dark & {
-        border-color: var(--vp-c-brand);
-        background-color: var(--vp-c-brand);
-      }
-    }
-
-    &::before {
-      content: '';
-
-      position: absolute;
-      top: 0.1em;
-      left: 0.35em;
-      z-index: 1;
-
-      width: 0.3em;
-      height: 0.7em;
-      border: solid var(--vp-c-white-soft);
-      border-width: 0 0.15em 0.15em 0;
-
-      transform: rotate(45deg);
-    }
-  }
-}
+export const LoadingIcon: FunctionalComponent = () =>
+  h(IconBase, { name: 'loading' }, () =>
+    ['0s', '-0.333s', '-0.667s'].map((item) =>
+      h(
+        'circle',
+        {
+          cx: 50,
+          cy: 50,
+          r: 0,
+          fill: 'none',
+          stroke: 'currentColor',
+          strokeWidth: '2'
+        },
+        [
+          h('animate', {
+            attributeName: 'r',
+            repeatCount: 'indefinite',
+            dur: '1s',
+            values: '0;40',
+            keyTimes: '0;1',
+            keySplines: '0 0.2 0.8 1',
+            calcMode: 'spline',
+            begin: item
+          }),
+          h('animate', {
+            attributeName: 'opacity',
+            repeatCount: 'indefinite',
+            dur: '1s',
+            values: '1;0',
+            keyTimes: '0;1',
+            keySplines: '0.2 0 0.8 1',
+            calcMode: 'spline',
+            begin: item
+          })
+        ]
+      )
+    )
+  )

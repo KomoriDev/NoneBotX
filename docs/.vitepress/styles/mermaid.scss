@@ -1,9 +1,138 @@
-/*
-修改自 vuepress-plugin-md-enhance (MIT)
-@src https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance/src/client/styles/mermaid.scss
-@last-updated 2022-8-13
-@author MrHope
+/* 修改自 vuepress-plugin-md-enhance
+ * @src https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance/src/client/styles/mermaid.scss
+ * @last-updated 2024-10-01
+ * @last-updated-by @Redlnn
  */
+
+/* The MIT License (MIT)
+ *
+ * Copyright (c) 2018, PRESENT by MrHope
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @author MrHope
+ * @website https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/md-enhance
+ *
+ */
+
+ .mermaid-contianer {
+  position: relative;
+}
+
+.mermaid-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  button {
+    display: inline-block;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    transition:
+      color 0.25s,
+      border-color 0.25s,
+      background-color 0.25s;
+    border-radius: 10px;
+    padding: 5px 15px;
+
+    &:active {
+      transition:
+        color 0.1s,
+        border-color 0.1s,
+        background-color 0.1s;
+    }
+  }
+  .preview-button {
+    margin-right: 10px;
+    border-color: var(--vp-button-brand-border);
+    color: var(--vp-button-brand-text);
+    background-color: var(--vp-button-brand-bg);
+    &:hover {
+      border-color: var(--vp-button-brand-hover-border);
+      color: var(--vp-button-brand-hover-text);
+      background-color: var(--vp-button-brand-hover-bg);
+    }
+    &:active {
+      border-color: var(--vp-button-brand-active-border);
+      color: var(--vp-button-brand-active-text);
+      background-color: var(--vp-button-brand-active-bg);
+    }
+  }
+  .download-button {
+    border-color: var(--vp-button-alt-border);
+    color: var(--vp-button-alt-text);
+    background-color: var(--vp-button-alt-bg);
+    &:hover {
+      border-color: var(--vp-button-alt-hover-border);
+      color: var(--vp-button-alt-hover-text);
+      background-color: var(--vp-button-alt-hover-bg);
+    }
+    &:active {
+      border-color: var(--vp-button-alt-active-border);
+      color: var(--vp-button-alt-active-text);
+      background-color: var(--vp-button-alt-active-bg);
+    }
+  }
+  svg {
+    height: 1rem;
+  }
+}
+
+.mermaid-preview {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background-color: var(--vp-backdrop-bg-color);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0;
+}
+
+.mermaid-preview-window {
+  display: flex;
+  max-height: calc(100% - 40px);
+  background-color: var(--vp-c-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  padding: 10px 10px;
+}
+
+.mermaid-preview-content {
+  max-height: calc(100% - 20px);
+  padding: 0 30px;
+  overflow-y: scroll; // 兼容性
+  overflow-y: overlay;
+  overflow-x: scroll; // 兼容性
+  overflow-x: overlay;
+}
+.mermaid-content {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  height: fit-content;
+}
 
 .md-enhance-mermaid {
   overflow-x: auto;
@@ -26,7 +155,7 @@
       width: 4em;
       height: 4em;
       margin: 2.5em auto;
-      color: var(--vp-c-brand, #e3e3e3);
+      color: var(--vp-c-brand, #3eaf7c);
     }
   }
 
