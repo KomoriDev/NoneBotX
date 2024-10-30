@@ -16,7 +16,7 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'shortcut icon', href: './favicon.ico' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/mermaid@11.2.1/dist/mermaid.min.js' }],
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/mermaid@11.3.0/dist/mermaid.min.js' }],
     ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-DCQWK40LG3' }],
     [
       'script',
