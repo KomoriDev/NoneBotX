@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import viteCompression from 'vite-plugin-compression'
 import externalGlobals from 'rollup-plugin-external-globals'
@@ -34,8 +35,21 @@ export default defineConfig({
     port: 3000,
     host: '0.0.0.0'
   },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('../../.vitepress', import.meta.url))
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler'
+      }
+    }
+  },
   build: {
     rollupOptions: {
+      external: ['mermaid'],
       plugins: [externalGlobals({ mermaid: 'mermaid' })]
     }
   }

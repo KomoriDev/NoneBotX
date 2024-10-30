@@ -2,7 +2,8 @@ import { defineConfig } from 'vitepress'
 
 import { before, guide, appendix, comment } from './sidebar'
 
-import mdEnhance from './mdEnhance/index'
+import mdPlugin from './plugins'
+import viteConfig from './vite'
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -15,7 +16,7 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'shortcut icon', href: './favicon.ico' }],
-    ['script', { src: 'https://cdn.bootcdn.net/ajax/libs/mermaid/10.3.0/mermaid.min.js' }],
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/mermaid@11.2.1/dist/mermaid.min.js' }],
     ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-DCQWK40LG3' }],
     [
       'script',
@@ -38,7 +39,7 @@ export default defineConfig({
       '/comment': comment
     },
     editLink: {
-      pattern: 'https://github.com/KomoriDev/NoneBotX/edit/remake/docs/:path',
+      pattern: 'https://github.com/KomoriDev/NoneBotX/edit/master/docs/:path',
       text: '在 GitHub 上编辑此页'
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/KomoriDev/NoneBotX' }],
@@ -60,28 +61,18 @@ export default defineConfig({
     }
   },
 
-  transformHead({ assets }) {
-    // adjust the regex accordingly to match your font
-    const HarmonySansFile = assets.find(() => /HarmonyOS_Sans_SC\.woff2/)
-    if (HarmonySansFile) {
-      return [
-        [
-          'link',
-          {
-            rel: 'preload',
-            href: HarmonySansFile,
-            as: 'font',
-            type: 'font/woff2',
-            crossorigin: ''
-          }
-        ]
-      ]
-    }
-  },
+  vite: viteConfig,
 
   markdown: {
-    theme: 'one-dark-pro',
-    config: mdEnhance
+    theme: {
+      light: 'min-light',
+      dark: 'one-dark-pro'
+    },
+    image: {
+      lazyLoading: true
+    },
+    lineNumbers: true,
+    config: mdPlugin
   }
 })
 
