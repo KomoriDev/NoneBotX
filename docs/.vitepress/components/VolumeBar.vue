@@ -1,10 +1,12 @@
 <!--
  Author: I Love Study <1450069615@qq.com>
- Co-Author: Redlnn <w731347477@gmail.com>
+ Author: Redlnn <w731347477@gmail.com>
 -->
 
 <script setup lang="ts">
 import { ref } from 'vue'
+
+const model = defineModel<number>()
 
 const volume = ref<number>(100)
 const input = ref<HTMLInputElement>()
@@ -14,10 +16,8 @@ function onInput() {
   if (!input.value) return
   if (!volumeNum.value) return
   volume.value = parseInt(input.value.value)
-  for (const i of document.getElementsByTagName('audio')) {
-    i.volume = volume.value / 100
-  }
-  volumeNum.value.innerHTML = `${input.value.value}%`
+  model.value = volume.value / 100
+  volumeNum.value.innerHTML = `${volume.value}%`
 }
 </script>
 
@@ -33,7 +33,7 @@ function onInput() {
       :style="{ '--volume': volume + '%' }"
       :oninput="onInput"
     />
-    <p ref="volumeNum" class="volume-num">100%</p>
+    <p ref="volumeNum" class="volume-num">{{ volume }}%</p>
   </div>
 </template>
 

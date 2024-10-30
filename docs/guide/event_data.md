@@ -1,7 +1,5 @@
-<script setup>
-import { ref } from 'vue'
-
-let cheated = ref(false)
+<script setup lang="ts">
+import eventDataChat from '@/chatComponents/guide/eventDataChat.vue'
 </script>
 
 # 你还看上涩图了.jpg
@@ -46,26 +44,7 @@ async def _(event: Event):
 
 这样，我们便可以实现：
 
-<chat-window title="NoneBot Console">
-  <chat-msg name="Komorebi（ID:1234567890）" avatar="/avatar/komorebi.webp" onright>/来张涩图</chat-msg>
-  <chat-msg name="Hibiscus" tag="机器人" tagType="bot" avatar="/avatar/hibiscus.webp">你太坏了，不给你看</chat-msg>
-  <chat-msg name="NCBM" avatar="/avatar/ncbm.webp">/来张涩图</chat-msg>
-  <chat-img
-    name="Hibiscus"
-    tag="机器人"
-    tagType="bot"
-    avatar="/avatar/hibiscus.webp"
-    src="/images/guide/shining-1.png"
-    @click="cheated = true"
-    v-if="cheated == false"
-  ></chat-img>
-  <chat-toast v-if="cheated == true">Hibiscus 撤回了一张涩图</chat-toast>
-  <chat-msg v-if="cheated == true" name="Hibiscus" tag="机器人" tagType="bot" avatar="/avatar/hibiscus.webp">
-    你被骗了（
-      <!-- <chat-img src="/images/guide/cheated.jpg"></chat-img> -->
-    <img src="/images/guide/cheated.jpg" style="margin-top: 10px" alt="你被骗了.jpg"/>
-  </chat-msg>
-</chat-window>
+<event-data-chat />
 
 ## 更多信息
 

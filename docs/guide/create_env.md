@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import createEnvChat from '@/chatComponents/guide/createEnvChat.vue'
+</script>
+
 # 要致富，先撸树
 
 > 罗马不是一夜建成，机器人也不是一日造好。—— :older_man:
@@ -302,9 +306,6 @@ nb create
 
 你可以直接在输入框中输入 `/echo hello world` 来测试你的机器人是否正常运行。
 
-<chat-window title="NoneBot">
-  <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>/echo hello world</chat-msg>
-  <chat-msg name="Hibiscus" tag="机器人" tagType="bot" avatar="/avatar/hibiscus.webp">hello world</chat-msg>
-</chat-window>
+<create-env-chat />
 
 按一次 `Ctrl+C` 可退出 `Console` 交互界面，再按一次即可结束运行机器人。

@@ -1,8 +1,8 @@
-<!-- markdownlint-disable MD034 -->
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
+import contributingChat from '@/chatComponents/appendix/contributingChat.vue'
 
-let cheated = ref(false)
+const volume = ref(100)
 </script>
 
 # NoneBotX 贡献指南
@@ -75,17 +75,19 @@ NoneBotX 社区文档并没有具体的行文风格规范，但我们建议你�
 
 ### 黑幕
 
-**输入**
+#### 输入
 
-```html
+```markdown
 <Curtain>这是一个黑幕</Curtain>
 
 ::: tip
 <Curtain>这是 TIP 下的黑幕</Curtain>
-~~更多用法自行探索~~ :::
+~~更多用法自行探索~~
+:::
 ```
 
-输出
+#### 输出
+
 <Curtain>这是一个黑幕</Curtain>
 
 ::: tip
@@ -101,7 +103,7 @@ NoneBotX 社区文档并没有具体的行文风格规范，但我们建议你�
 
 除了 vitepress 提供的之外，NoneBotX 还提供了额外的告示
 
-**输入**
+#### 输入
 
 ```md
 ::: tsukkomi
@@ -109,7 +111,7 @@ This is a tsukkomi
 :::
 ```
 
-**输出**
+#### 输出
 
 ::: tsukkomi
 This is a tsukkomi
@@ -117,125 +119,98 @@ This is a tsukkomi
 
 ### 加载
 
-**输入**
+#### 输入
 
-```html
+```markdown
 <p align="center" style="font-size: 25px"><strong>前面的区域，以后再来探索吧</strong></p>
 <loading />
 ```
 
-**输出**
+#### 输出
 
 <p align="center" style="font-size: 25px"><strong>前面的区域，以后再来探索吧</strong></p>
 <loading />
 
 ### 音量条
 
-**输入**
+#### 作者：
 
-```html
-<volume-bar>贴心的音量条：</volume-bar>
+#### 输入
+
+```markdown
+<script setup lang="ts">
+const volume = ref(100)
+</script>
+
+<volume-bar v-model=volume>贴心的音量条：</volume-bar>
 ```
 
-**输出**
+#### 输出
 
-<volume-bar>贴心的音量条：</volume-bar>
+<volume-bar v-model=volume>贴心的音量条：</volume-bar>
 
 ### QQ 聊天框
 
-**输入**
+#### 输入
 
-```html
-<chat-window title="QQ 聊天">
-  <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>这是一条消息</chat-msg>
-  <chat-msg name="NCBM" avatar="/avatar/ncbm.webp">这是一条消息</chat-msg>
-  <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">这是一位南梁</chat-msg>
-  <chat-img
+```markdown
+<q-window title="QQ 聊天">
+  <q-text self name="Komorebi" avatar="/avatar/komorebi.webp">这是一条消息</q-text>
+  <q-text name="NCBM" avatar="/avatar/ncbm.webp">这是一条消息</q-text>
+  <q-text is-bot name="男娘" tag-content="小男娘" avatar="/avatar/nanniang.webp"
+    >这是一位南梁</q-text
+  >
+  <q-image
+    is-bot
     name="男娘"
-    tag="小男娘"
+    tag-content="小男娘"
     avatar="/avatar/nanniang.webp"
     src="/avatar/nanniang.webp"
-  ></chat-img>
-  <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">
-    <chat-quote>
-      <img src="/avatar/nanniang.webp" alt="男娘身材照" />
-    </chat-quote>
-    这是男娘的照片
-  </chat-msg>
-  <chat-toast>男娘撤回了一条消息</chat-toast>
-  <chat-voice
+  ></q-image>
+  <q-reply
+    is-bot
     name="男娘"
-    tag="小男娘"
+    tag-content="小男娘"
     avatar="/avatar/nanniang.webp"
-    audioSrc="http://music.163.com/song/media/outer/url?id=5221167.mp3"
+    target="男娘"
+    reply-text="test"
+    reply-image-url="/avatar/nanniang.webp"
+    reply-image-alt="男娘身材照"
+  >
+    这是男娘的照片
+  </q-reply>
+  <q-tip><a>男娘</a>撤回了一条消息</q-tip>
+  <q-voice
+    is-bot
+    name="男娘"
+    tag-content="小男娘"
+    avatar="/avatar/nanniang.webp"
+    src="http://music.163.com/song/media/outer/url?id=5221167.mp3"
     @click="cheated = true"
-  ></chat-voice>
-  <chat-toast v-if="cheated == true">你被骗了</chat-toast>
-  <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>看看男娘</chat-msg>
-  <forward-chat
+  ></q-voice>
+  <q-tip v-if="cheated == true">你被骗了</q-tip>
+  <q-text name="Komorebi" avatar="/avatar/komorebi.webp" onright>看看男娘</q-text>
+  <q-forward
+    is-bot
     name="男娘"
     title="男娘"
-    tag="小男娘"
+    tag-content="小男娘"
     avatar="/avatar/nanniang.webp"
-    :contents="[
-      '小男娘：男娘身材照',
-      '小男娘: [图片]',
-      '小男娘: [图片]',
-      '小男娘: [图片]'
-    ]"
+    :contents="['小男娘：男娘身材照', '小男娘: [图片]', '小男娘: [图片]', '小男娘: [图片]']"
   />
-  <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">
-    <chat-file
-      filename="secret.zip"
-      filesize="6.33MB"
-      fileicon="/images/guide/compressed_file.webp"
-      href="https://www.bilibili.com/video/BV1GJ411x7h7"
-    />
-  </chat-msg>
-</chat-window>
+  <q-file
+    is-bot
+    name="男娘"
+    tag-content="小男娘"
+    avatar="/avatar/nanniang.webp"
+    file-name="secret.zip"
+    file-size="6.33MB"
+    file-icon-url="/images/guide/compressed_file.webp"
+    href="https://www.bilibili.com/video/BV1GJ411x7h7"
+  />
+</q-window>
 ```
 
-**输出**
+#### 输出
 
-<chat-window title="QQ 聊天">
-  <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>这是一条消息</chat-msg>
-  <chat-msg name="NCBM" avatar="/avatar/ncbm.webp">这是一条消息</chat-msg>
-  <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">这是一位南梁</chat-msg>
-  <chat-img name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp" src="/avatar/nanniang.webp"></chat-img>
-  <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">
-    <chat-quote>
-      <img src="/avatar/nanniang.webp" alt="男娘身材照"/>
-    </chat-quote>
-    这是男娘的照片
-  </chat-msg>
-  <chat-toast>男娘撤回了一条消息</chat-toast>
-  <chat-voice
-    name="男娘"
-    tag="小男娘"
-    avatar="/avatar/nanniang.webp"
-    audioSrc="http://music.163.com/song/media/outer/url?id=5221167.mp3"
-    @click="cheated = true"
-  ></chat-voice>
-  <chat-toast v-if="cheated == true" >你被骗了</chat-toast>
-  <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>看看男娘</chat-msg>
-  <forward-chat
-    name="男娘"
-    title="男娘"
-    tag="小男娘"
-    avatar="/avatar/nanniang.webp"
-    :contents="[
-      '小男娘：男娘身材照',
-      '小男娘: [图片]',
-      '小男娘: [图片]',
-      '小男娘: [图片]'
-    ]"
-  />
-  <chat-msg name="男娘" tag="小男娘" avatar="/avatar/nanniang.webp">
-   <chat-file
-      filename="secret.zip"
-      filesize="6.33MB"
-      fileicon="/images/guide/compressed_file.webp"
-      href="https://www.bilibili.com/video/BV1GJ411x7h7"
-    />
-  </chat-msg>
-</chat-window>
+<contributing-chat :volume="volume" />

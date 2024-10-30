@@ -2,6 +2,10 @@
 outline: [2, 3]
 ---
 
+<script setup lang="ts">
+import messageChat from '@/chatComponents/guide/messageChat.vue'
+</script>
+
 # 涩图 の 加工
 
 在不同平台中，一条消息可能会有承载有各种不同的表现形式，它可能是一段纯文本、一张图片、一段语音、一篇富文本文章，也有可能是多种类型的组合等等。
@@ -45,7 +49,7 @@ await UniMessage.image("xxx.jpg").finish()
 - QQ 群中的消息段可能由 `MessageSegment.at`、`MessageSegment.image`、`MessageSegment.text` 等等组成
 - Telegram 中的消息段可能由 `MessageSegment.location`、`MessageSegment.venue`、`MessageSegment.poll` 等等组成
 
-<Mark>这也意味着，你需要导入对应的协议适配器中的消息序列和消息段后才能使用其特殊的工厂方法。</Mark>
+<mark>这也意味着，你需要导入对应的协议适配器中的消息序列和消息段后才能使用其特殊的工厂方法。</mark>
 
 你也觉得很麻烦对吧，没关系，我们有 Alconna
 
@@ -147,13 +151,4 @@ async def _():
 
 这样，当用户输入 `/来张涩图` ， Bot 便会发送一张 ~~精美的~~ 涩图以及关于它的详细信息
 
-<chat-window title="NoneBot Console">
-  <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>/来张涩图</chat-msg>
-  <chat-msg name="Hibiscus" tag="机器人" tagType="bot" avatar="/avatar/hibiscus.webp">
-    你要的涩图
-    <img src="https://koishi.chat/logo.png" style="margin: 10px" alt="涩图.png"/>
-    标签: Koishi；画师：<Curtain>某不知名内鬼</Curtain>
-  </chat-msg>
-  <chat-msg name="ddl" avatar="/avatar/ddl.webp" tag="群主" tagType="owner" tagBgColor="#48301e" tagColor="#f98a3f">？</chat-msg>
-  <chat-toast>ddl 已将 Komorebi 禁言 12 小时</chat-toast>
-</chat-window>
+<message-chat />

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import helloHibiscusChat from '@/chatComponents/guide/helloHibiscusChat.vue'
+</script>
+
 # 快速上手
 
 ## 你好，来张涩图
@@ -19,10 +23,7 @@ async def hello_handle(event: Event):
     await hello.finish(f"不要说{message}，来张涩图")  # 最终发送，完成后停止整个流程
 ```
 
-<chat-window title="NoneBot Console">
-  <chat-msg name="Komorebi" avatar="/avatar/komorebi.webp" onright>你好</chat-msg>
-  <chat-msg name="Hibiscus" tag="机器人" tagType="bot" avatar="/avatar/hibiscus.webp">不要说你好，来张涩图</chat-msg>
-</chat-window>
+<hello-hibiscus-chat />
 
 值得注意的是，在执行 `finish` 方法时，NoneBot 会在向机器人用户发送消息内容后**抛出异常来结束事件响应流程**。也就是说，在
 `finish` 被执行后，后面的程序是不会被执行的（类似于 `return`）。如果你需要回复机器人用户消息但不想结束事件处理流程，可以使用注释的部分中展示的 `send` 方法。
@@ -48,7 +49,7 @@ async def hello_handle(event: Event, matcher: Matcher):
 
 ::: details 你好，来张涩图 <img src="/images/guide/wangwang.webp" alt="Doge" class="face"/>
 
-<Comment />
+<comment />
 
 :::
 
@@ -61,8 +62,9 @@ async def hello_handle(event: Event, matcher: Matcher):
 例如，在 Hello 插件中，我们创建了一个名为 `hello_setu` 的事件响应器。它会检查事件是否满足一些条件（`on_message()`
 可以构造一个消息事件响应器，它会响应**所有**消息事件），如果满足，就会触发预先定义的操作（`hello_handle`）。这是插件与用户交互的基础。
 
-<!-- [不是初阶内容]
-
+<!-- [以下不是初阶内容] -->
+<!-- 以下 ChatWindow 的需改以适配 FakeQQUI 更新 -->
+<!--
 ## 辅助函数
 
 NoneBot 提供了许多方便的工具，来帮助你更优雅地向别人要涩图，被称为“事件响应器辅助函数”（下称“辅助函数”）这些辅助函数不仅简化了
