@@ -1,3 +1,10 @@
+<script setup lang="ts">
+defineOptions({
+  // eslint-disable-next-line vue/no-reserved-component-names
+  name: 'Mark'
+})
+</script>
+
 <template>
   <span class="mark">
     <slot></slot>
