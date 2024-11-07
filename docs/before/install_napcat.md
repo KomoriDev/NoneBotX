@@ -8,3 +8,5 @@
   <img src="https://socialify.git.ci/NapNeko/NapCatQQ/image?description=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FNapNeko%2FNapCatQQ%2Fmain%2Flogo.png&name=1&stargazers=1&theme=Auto" alt="NapCatQQ" width="640" height="320" />
 
 ## [点我跳转官方文档哦](https://napneko.com/)
+
+NapCat 官方文档的说明已经足够完善，可以直接参考。
