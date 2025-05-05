@@ -15,7 +15,7 @@ let cheated = ref(false)
 ::: code-group
 
 ```py [NoneBot Native]
-from nonebot.internal.adapter import Event
+from nonebot.adapters import Event
 from nonebot.adapters.onebot.v11 import MessageSegment
 
 matcher = on_command("来张涩图")
@@ -29,7 +29,7 @@ async def _(event: Event):
 ```
 
 ```py [NoneBot Alconna]
-from nonebot.internal.adapter import Event
+from nonebot.adapters import Event
 from nonebot_plugin_alconna import Command, UniMessage
 
 matcher = Command("来张涩图").build(use_cmd_start=True)

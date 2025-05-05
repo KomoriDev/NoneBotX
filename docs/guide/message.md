@@ -59,7 +59,7 @@ await UniMessage.image("xxx.jpg").finish()
 
 ```py [NoneBot Native]
 from nonebot import on_command
-from nonebot.adapter.onebot.v11 import Message, MessageSegment
+from nonebot.adapters.onebot.v11 import Message, MessageSegment
 
 matcher = on_command("来张涩图")
 
@@ -105,7 +105,7 @@ async def _():
 
 ```py [NoneBot Native]
 from nonebot import on_command
-from nonebot.adapter.onebot.v11 import Message, MessageSegment
+from nonebot.adapters.onebot.v11 import Message, MessageSegment
 
 matcher = on_command("来张涩图")
 
