@@ -7,7 +7,7 @@
 ```py
 # plugins/hello.py
 from nonebot import on_message
-from nonebot.adapter import Event
+from nonebot.adapters import Event
 
 hello_setu = on_message()
 
@@ -15,8 +15,8 @@ hello_setu = on_message()
 @hello_setu.handle()
 async def hello_handle(event: Event):
     message = event.get_message()
-    # await hello.send(f"不要说{message}，来张涩图")  # 普通发送，完成后继续后续流程
-    await hello.finish(f"不要说{message}，来张涩图")  # 最终发送，完成后停止整个流程
+    # await hello_setu.send(f"不要说{message}，来张涩图")  # 普通发送，完成后继续后续流程
+    await hello_setu.finish(f"不要说{message}，来张涩图")  # 最终发送，完成后停止整个流程
 ```
 
 <chat-window title="NoneBot Console">
@@ -34,7 +34,7 @@ async def hello_handle(event: Event):
 ```py{4,8}
 # plugins/hello.py
 from nonebot import on_message
-from nonebot.adapter import Event
+from nonebot.adapters import Event
 from nonebot.matcher import Matcher
 
 
