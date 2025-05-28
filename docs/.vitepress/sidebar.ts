@@ -74,6 +74,10 @@ const guide = [
       { text: '涩图 の 加工', link: '/guide/message' },
       { text: '那我问你', link: '/guide/session-control' }
     ]
+  },
+  {
+    text: '常见案例',
+    items: [{ text: '用户系统', link: '/guide/cases/user' }]
   }
 ]
 
