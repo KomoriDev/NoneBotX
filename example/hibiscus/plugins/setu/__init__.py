@@ -36,12 +36,12 @@ async def _(arp: Arparma, r18: bool, tags: Match[tuple[str, ...]]):
         tags_result = "|".join(tags.result)
     else:
         if not arp.find("tags"):
-            return
-
-        resp = await prompt("请输入标签，空格分开", timeout=60)
-        if resp is None:
-            await setu.finish("等待超时")
-        tags_result = "|".join(resp.extract_plain_text().split(" "))
+            tags_result = ""
+        else:
+            resp = await prompt("请输入标签，空格分开", timeout=60)
+            if resp is None:
+                await setu.finish("等待超时")
+            tags_result = "|".join(resp.extract_plain_text().split(" "))
 
     r18_result = 1 if r18 else 0
 
