@@ -31,21 +31,21 @@ SOFTWARE
 """
 
 import os
-from os.path import basename
 from pathlib import Path
+from os.path import basename
 
 from fontTools import subset
 from fontTools.ttLib import TTFont
 
-origin_path = Path('docs')
-ignore_dirs = ['dist', 'public', '.DS_Store', 'cache']
-out_path = Path('docs', 'public', 'fonts')
-fonts_path = Path('fonts')
+origin_path = Path("docs")
+ignore_dirs = ["dist", "public", ".DS_Store", "cache"]
+out_path = Path("docs", "public", "fonts")
+fonts_path = Path("fonts")
 fonts = [
-    'HarmonyOS_Sans_SC.ttf',
+    "HarmonyOS_Sans_SC.ttf",
 ]
 
-content = ''
+content = ""
 
 
 def read(path):
@@ -56,21 +56,21 @@ def read(path):
             continue
         for f in files:
             file_path = Path(root, f)
-            print(f'正在读取 {file_path}')
-            file_content = file_path.read_text(encoding='utf8')
+            print(f"正在读取 {file_path}")
+            file_content = file_path.read_text(encoding="utf8")
             file_content = (
-                file_content.replace('\r\n', '').replace('\n', '').replace('\r', '')
+                file_content.replace("\r\n", "").replace("\n", "").replace("\r", "")
             )
-            content += '\n'.join(file_content)
-            content += '\n'
-    content += ' \n \n \n '
+            content += "\n".join(file_content)
+            content += "\n"
+    content += " \n \n \n "
 
 
-print('读取文件中...')
+print("读取文件中...")
 read(origin_path)
 
 for font in fonts:
-    print(f'正在处理 {font}')
+    print(f"正在处理 {font}")
     out_path.mkdir(parents=True, exist_ok=True)
     f = TTFont(fonts_path / font)
 
@@ -78,7 +78,7 @@ for font in fonts:
 
     subsetter.populate(text=content.rstrip())
     subsetter.subset(f)
-    f.flavor = 'woff2'
+    f.flavor = "woff2"
     out = out_path / font.replace(".ttf", ".woff2")
     f.save(out)
-    print(f'输出路径: {out}')
+    print(f"输出路径: {out}")
