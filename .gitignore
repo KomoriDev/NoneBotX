@@ -130,6 +130,3 @@ dist
 .pnp.*
 
 cache
-
-# python
-.venv
