@@ -104,7 +104,7 @@ sudo dnf install python
 <curtain>你要用 CentOS Stream 那当我没说（</curtain>
 ::::
 
-假如系统软件包管理器提供了 `pyenv` 的话，我们推荐使用这个管理多版本 Python，用法可以自行搜索。
+假如你需要管理多个 Python 版本，我们推荐使用 **uv**——`uv python install 3.12` 一条命令就能把 Python 本体装好，具体用法见[虚拟环境 & 包管理器（uv）](./environment.md)。
 
 ::::warning 从源代码安装只能是最后的退路
 尽管源码包的预设基本能保证安装可用的 Python，但你通常**不应该**用默认编译配置（**因为会缺 SSL
