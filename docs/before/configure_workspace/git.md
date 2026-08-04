@@ -19,7 +19,7 @@
 改动之后与这个快照对比就知道改动了哪些内容了，这就是版本管理的作用。
 
 代码的版本管理工具也被叫做 VCS（Version Control System，版本控制系统），在
-PyCharm 里 Git 位于 VCS 相关的按钮或面板中。
+VS Code 里 Git 位于源代码管理（Source Control）面板中。
 
 目前常见的版本管理工具主要有 SVN（Subversion）和 Git，个人项目通常用 Git
 为主，而开发者们也更喜欢在 GitHub、GitLab 等基于 Git 的平台上上传和管理代码。
@@ -40,11 +40,10 @@ Commit 的更改内容，以及通过命令查看已更改但**未 Commit** 的�
 
 ## 安装 Git
 
-:::tsukkomi 小建议
-建议在阅读完前面的[编辑器的选择](./install_editor/select.md)后再阅读本节，
-假如你打算使用 VS Code 的话，在 Git 的安装过程中需要更改一项配置，
-假如你不打算使用 VS Code 的话，你可以直接阅读本节忽略这项配置。
-:::
+::::tsukkomi 小建议
+建议在阅读完前面的[VS Code 的安装与配置](./vsc.md)后再阅读本节，
+在 Git 的安装过程中需要更改一项配置（把默认编辑器设置为 VS Code）。
+::::
 
 打开 [Git 的官网下载页面](https://git-scm.com/downloads)，根据你的系统类型点击下载链接下载。以
 Windows 为例，在官网下载页面点击 “Windows”，在新弹出的页面下点击 **64-bit Git for Windows Setup**

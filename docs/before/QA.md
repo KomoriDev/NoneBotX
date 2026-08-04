@@ -31,14 +31,14 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 
 当然，你也可以直接阅读本文档，遇到不清楚的内容再查阅官方文档，阅读时请善用搜索功能。
 
-## 4. 关于 Go-CQHTTP
+## 4. 关于 LLBot（协议端）
 
 请容许我先介绍一下：
 
-- [Mirai]，Mirai，是一个高性能，高可扩展性的 QQ 协议库
-- [Go-CQHTTP]，基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现
+- [LLBot]，全称 LuckyLilliaBot（幸运莉莉娅），基于 NTQQ 的 QQ 机器人协议端；
+- [Milky]，基于 HTTP / WebSocket 通信的新时代 QQ 机器人应用接口标准。
 
-简单来说，`NoneBot2` 是通过 `go-cqhttp` 间接连接到 QQ 服务器的。
+简单来说，`NoneBot2` 是通过 `LLBot` 这个协议端间接连接到 QQ 服务器的。
 
 <loading />
 
@@ -47,7 +47,7 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 在使用机器人的时候，你可能会遇到这些问题：
 
 - 明明显示消息发送成功了，但是群友们 / 朋友没有接收到机器人发送的消息
-- 在登录的时候， **go-cqhttp** 报错，报错内容涉及“code 45”等
+- 在登录的时候，**协议端**（如 LLBot）报错，报错内容涉及"code 45"等
 - ……
 
 以上发生的这类事件，我们一般称之为<ruby>风控 <rp>(</rp><rt style="font-size:0.75em">~~喜 报~~</rt><rp>)</rp></ruby>
@@ -104,8 +104,8 @@ NoneBot2 是一个现代、跨平台、可扩展的 Python 聊天机器人框架
 ![baidu]
 
 [快速入门]: ../guide/create_env.md
-[Mirai]: https://github.com/mamoe/mirai
-[Go-CQHTTP]: https://github.com/Mrs4s/go-cqhttp
+[LLBot]: https://github.com/LLOneBot/LuckyLilliaBot
+[Milky]: https://milky.ntqqrev.org/
 [官方文档]: https://nonebot.dev
 [交流群]: https://jq.qq.com/?_wv=1027&k=5OFifDh
 [《提问的智慧》]: https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md

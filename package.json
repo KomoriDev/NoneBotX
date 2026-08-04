@@ -47,5 +47,6 @@
   "dependencies": {
     "@vueuse/core": "^10.3.0",
     "fflate": "^0.8.0"
-  }
+  },
+  "packageManager": "pnpm@11.20.0"
 }

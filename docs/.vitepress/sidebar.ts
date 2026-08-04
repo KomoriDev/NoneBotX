@@ -10,25 +10,7 @@ const before = [
         collapsed: true,
         items: [
           { text: 'Python 环境搭建', link: '/before/configure_workspace/python' },
-          {
-            text: '代码编辑器的安装及配置',
-            link: '/before/configure_workspace/install_editor/',
-            collapsed: true,
-            items: [
-              {
-                text: '编辑器的选择',
-                link: '/before/configure_workspace/install_editor/select'
-              },
-              {
-                text: 'PyCharm 的安装与配置',
-                link: '/before/configure_workspace/install_editor/pyc'
-              },
-              {
-                text: 'VS Code 的安装与配置',
-                link: '/before/configure_workspace/install_editor/vsc'
-              }
-            ]
-          },
+          { text: 'VS Code 的安装与配置', link: '/before/configure_workspace/vsc' },
           {
             text: '虚拟环境 & 包管理器',
             link: 'before/configure_workspace/environment'
@@ -36,30 +18,13 @@ const before = [
           { text: 'Git 的安装与配置', link: '/before/configure_workspace/git' }
         ]
       },
-      { text: 'NapCat 的安装与配置', link: '/before/install_napcat' },
-      { text: 'Lagrange 的安装与配置', link: '/before/install_lagrange' },
-      { text: 'Go-CQHTTP 的安装与配置', link: '/before/install_go-cqhttp' },
-      { text: '通过 NoneBot GUI 一键部署', link: '/before/gui_deploy' },
+      { text: 'LLBot 的安装与配置', link: '/before/install_llbot' },
       { text: '名词解释', link: '/before/terms' }
     ]
   },
   {
     text: '社区及社区项目介绍',
-    items: [
-      { text: '社区介绍', link: '/before/introduction/' },
-      {
-        text: '社区项目',
-        link: '/before/introduction/project/',
-        items: [
-          { text: 'SAA', link: '/before/introduction/project/saa' },
-          { text: 'Alconna', link: '/before/introduction/project/alconna' },
-          { text: 'KiramiBot', link: '/before/introduction/project/kirami' },
-          { text: 'SoraBot', link: '/before/introduction/project/sora' },
-          { text: 'Novelai', link: '/before/introduction/project/novelai' },
-          { text: 'Nonebot Flutter GUI', link: '/before/introduction/project/nbgui' }
-        ]
-      }
-    ]
+    items: [{ text: '社区介绍', link: '/before/introduction/' }, { text: '广告位待出租' }]
   }
 ]
 
