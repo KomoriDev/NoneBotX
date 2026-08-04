@@ -23,6 +23,10 @@ Windows 安装时记得勾选 **"添加到 PATH"**（Add to PATH），
 - **Pylance**：类型检查与补全的增强（安装 Python 扩展时会一并安装）
 - **Ruff**（`charliermarsh.ruff`）：Python 的 lint 与格式化工具，装一个顶俩
 
+:::: tip
+暂时不装也没关系：`nb create` 时选上相应的拓展支持，之后用 VS Code 打开项目文件夹，编辑器会自动弹出建议安装的拓展
+::::
+
 在设置（`Ctrl+,`）中搜索 `editor.formatOnSave` 并勾选，即可在保存时自动格式化代码。
 
 ### Black 安装与配置（可选）
