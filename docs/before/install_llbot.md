@@ -70,7 +70,7 @@ LLBot 实际上也支持 OneBot 11 和 Satori 协议，但本文档默认使用 
 启用方式：修改 `bin/pmhq/pmhq_config.json`，将 `headless` 设置为 `true`。
 ::::
 
-LLBot 自带 WebUI（默认 <http://localhost:3080>），可以可视化配置和查看实时日志。
+LLBot 自带 WebUI（默认 `http://localhost:3080`），可以可视化配置和查看实时日志。
 
 ## 配置 Milky
 
