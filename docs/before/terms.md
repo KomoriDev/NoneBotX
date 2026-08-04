@@ -47,11 +47,13 @@
   CoolQ HTTP 接口，现多用于转换 QQ 的接口以便统一对接；
 - **OneBot V12** 指 **OneBot** 体系的第 12 版协议标准，此标准是一套独立的新标准（不向下兼容），追求实现多平台兼容与统一对接。
 
-### Go-CQHTTP
+### LLBot
 
-- **Go-CQHTTP** 用于指代这款基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现<curtain>，社区内有简称 “gocq”</curtain>；
-- `go-cqhttp` 指 Go-CQHTTP 的可执行程序文件。
+- **LLBot** 用于指代[这款基于 NTQQ 的 QQ 机器人协议端](https://github.com/LLOneBot/LuckyLilliaBot)，全称
+  **LuckyLilliaBot**，中文名**幸运莉莉娅**<curtain>，社区内也简称 "llbot"</curtain>；
+- 本文档中，**LLBot** 即指代连接 NoneBot 与 QQ 服务器的**协议端**。
 
-:::tsukkomi ？
-**Go-CQHTTP** 在 **OneBot V11** 上拓展了不少接口，大体上可以视为 **OneBot V11** 标准的超集实现，一些开发者也将其视为“事实标准”。
-:::
+### Milky
+
+- **Milky** 用于指代[这一新时代 QQ 机器人应用接口标准](https://milky.ntqqrev.org/)，基于 HTTP / WebSocket 通信；
+- 本文档默认使用 **Milky** 协议与 LLBot 通信<curtain>~~，OneBot 是什么，真不熟~~</curtain>。
