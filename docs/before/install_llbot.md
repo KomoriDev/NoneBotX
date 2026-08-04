@@ -102,7 +102,7 @@ Milky 的 **WS 和 HTTP 实际上是共用一个端口**的。
 使用 `nb create` 创建项目时：
 
 1. 适配器选择 **nonebot-adapter-milky**；
-2. 驱动取消勾选 `fastapi`，勾选 **httpx** 和 **websockets**（或者只选 **aiohttp**）；
+2. 勾选 **httpx** 和 **websockets**（或者只选 **aiohttp**）；
 3. 项目管理器选择 **uv**。
 
 ### 配置连接
